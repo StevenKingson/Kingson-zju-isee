@@ -60,9 +60,11 @@ html[data-tea-theme="night"] #album-description,
 html[data-tea-theme="night"] #artbook-status,
 html[data-tea-theme="night"] #artbook-placeholder { color: #bcb0bf; }
 
-.tea-tools { display: flex; align-items: center; gap: 0.2rem; margin-left: 0.5rem; flex-shrink: 0; }
-.tea-icon-button { position: relative; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid var(--tea-border); background: var(--tea-soft); cursor: pointer; padding: 0.1rem; }
-.tea-icon-button > img { width: 100%; height: 100%; object-fit: contain; }
+.tea-tools { display: flex; align-items: center; gap: 0.35rem; margin-left: 0.5rem; flex-shrink: 0; }
+.tea-icon-button { display: inline-flex; align-items: center; gap: 0.35rem; border-radius: 2rem; border: 1px solid var(--tea-border); color: var(--tea-text); background: var(--tea-soft); cursor: pointer; padding: 0.1rem 0.6rem 0.1rem 0.1rem; font: inherit; }
+.tea-control-icon { position: relative; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; flex-shrink: 0; }
+.tea-control-icon > img { width: 100%; height: 100%; object-fit: contain; }
+.tea-control-label { font-size: 0.65rem; font-weight: 500; line-height: 1.3; white-space: nowrap; }
 .tea-icon-badge { position: absolute; right: -0.12rem; bottom: -0.07rem; border: 1px solid var(--tea-border); background: var(--tea-panel); color: var(--tea-accent); min-width: 0.8rem; height: 0.8rem; border-radius: 50%; display: grid; place-items: center; font-size: 0.48rem; line-height: 1; }
 .tea-list-button { font-size: 1.4rem; width: 1.5rem; height: 2rem; border: 0; background: transparent; color: inherit; cursor: pointer; }
 .tea-tools button:disabled { opacity: 0.45; cursor: default; }
@@ -112,9 +114,16 @@ html[data-tea-theme="night"] #artbook-placeholder { color: #bcb0bf; }
 .tea-music-panel[hidden], .course-pet[hidden], #guestbook-local[hidden] { display: none !important; }
 @media (max-width: 600px) {
   .tea-tools { gap: 0.16rem; margin-left: 0.1rem; }
-  .tea-icon-button { width: 2rem; height: 2rem; }
+  .tea-icon-button { gap: 0.2rem; padding: 0.1rem 0.35rem 0.1rem 0.1rem; }
+  .tea-control-icon { width: 1.55rem; height: 1.55rem; }
+  .tea-control-label { font-size: 0.5rem; }
   .tea-list-button { width: 1.2rem; }
   .md-header__title { margin-left: 0.2rem; font-size: 0.75rem; }
   .course-pet { right: 0.5rem; bottom: 0.7rem; width: 100px; height: 140px; }
   .guestbook-submit-row { align-items: flex-start; flex-direction: column; gap: 0.5rem; }
+}
+@media (max-width: 420px) {
+  .tea-icon-button { flex-direction: column; gap: 0; padding: 0.1rem 0.35rem; border-radius: 0.6rem; }
+  .tea-control-icon { width: 1.25rem; height: 1.25rem; }
+  .tea-control-label { font-size: 0.53rem; }
 }

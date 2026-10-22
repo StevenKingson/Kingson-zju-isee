@@ -2,12 +2,5 @@
 
 {% block extrahead %}
   {{ super() }}
-  <script>
-    // Apply the saved choice before the first paint, including on a direct page visit.
-    try {
-      document.documentElement.dataset.teaTheme = localStorage.getItem("tea-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day");
-    } catch (_) {
-      document.documentElement.dataset.teaTheme = "day";
-    }
-  </script>
+  <script src="{{ 'javascripts/theme-clock.js' | url }}"></script>
 {% endblock %}

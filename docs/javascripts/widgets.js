@@ -25,14 +25,22 @@
   const themeImage = new Image();
   themeImage.alt = "";
   const themeBadge = make("span", "tea-icon-badge");
-  themeButton.append(themeImage, themeBadge);
+  const themeIcon = make("span", "tea-control-icon");
+  themeIcon.setAttribute("aria-hidden", "true");
+  themeIcon.append(themeImage, themeBadge);
+  const themeLabel = make("span", "tea-control-label");
+  themeButton.append(themeIcon, themeLabel);
   const playButton = make("button", "tea-icon-button tea-music-button");
   playButton.type = "button";
   const avatar = make("span", "music-avatar");
   avatar.setAttribute("aria-hidden", "true");
   avatar.dataset.character = String(Math.floor(Math.random() * 5));
   const playBadge = make("span", "tea-icon-badge", "▶");
-  playButton.append(avatar, playBadge);
+  const playIcon = make("span", "tea-control-icon");
+  playIcon.setAttribute("aria-hidden", "true");
+  playIcon.append(avatar, playBadge);
+  const playLabel = make("span", "tea-control-label", "播放 BGM");
+  playButton.append(playIcon, playLabel);
   const listButton = make("button", "tea-list-button", "☷");
   listButton.type = "button";
   listButton.setAttribute("aria-label", "打开歌曲目录");
@@ -80,15 +88,19 @@
     document.body.dataset.mdColorScheme = theme === "night" ? "slate" : "default";
     themeImage.src = url(`${imagePath}theme-${theme}.png${theme === "night" ? "?v=pajamas-242" : ""}`);
     themeBadge.textContent = theme === "day" ? "☀" : "☾";
+    themeLabel.textContent = theme === "day" ? "白天模式" : "夜间模式";
     themeButton.setAttribute("aria-label", theme === "day" ? "切换到夜晚主题" : "切换到白天主题");
-    themeButton.title = theme === "day" ? "白天 · 点击切换夜晚" : "夜晚 · 点击切换白天";
+    themeButton.title = `本地时间 06:00–18:00 为白天，其余为夜间；点击切换到${theme === "day" ? "夜间" : "白天"}，下个昼夜时段恢复自动切换。`;
     const frame = document.querySelector("iframe.giscus-frame");
     frame?.contentWindow?.postMessage({ giscus: { setConfig: { theme: theme === "night" ? "dark" : "light" } } }, "https://giscus.app");
   }
   themeButton.addEventListener("click", () => {
-    applyTheme(theme === "day" ? "night" : "day");
-    try { localStorage.setItem("tea-theme", theme); } catch { /* Still works for this visit. */ }
+    const next = theme === "day" ? "night" : "day";
+    if (window.teaThemeClock) window.teaThemeClock.setManualTheme(next);
+    else applyTheme(next);
   });
+  window.addEventListener("tea-theme-change", (event) => applyTheme(event.detail));
+  if (window.teaThemeClock) theme = window.teaThemeClock.theme;
   applyTheme(theme);
 
   function openPanel(open) {
@@ -116,6 +128,7 @@
   }
   function syncPlayer() {
     playBadge.textContent = audio.paused ? "▶" : "Ⅱ";
+    playLabel.textContent = audio.paused ? "播放 BGM" : "暂停 BGM";
     playButton.setAttribute("aria-label", audio.paused ? "播放背景音乐" : "暂停背景音乐");
     playButton.setAttribute("aria-pressed", String(!audio.paused));
     playButton.title = `${audio.paused ? "播放" : "暂停"}：${tracks[current]?.title || "背景音乐"}`;
