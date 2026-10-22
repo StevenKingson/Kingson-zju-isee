@@ -16,13 +16,17 @@ function createClock(hour, minute = 0, second = 0, options = {}) {
     constructor(...args) { if (args.length) super(...args); else super(now); }
     static now() { return now; }
   }
-  vm.runInNewContext(source, { window, document, Date: ClockDate,
+  const context = { window, document, Date: ClockDate,
     localStorage: {
       getItem(key) { if (options.blockStorage) throw Error("blocked"); return saved.get(key) ?? null; },
       setItem(key, value) { if (options.blockStorage) throw Error("blocked"); saved.set(key, value); }
     },
     CustomEvent: class { constructor(type, init) { this.type = type; this.detail = init.detail; } },
-    setTimeout() { return 1; }, clearTimeout() {} });
+    setTimeout() { return 1; }, clearTimeout() {} };
+  vm.runInNewContext(source, context);
+  const initialController = window.teaThemeClock;
+  vm.runInNewContext(source, context);
+  assert.equal(window.teaThemeClock, initialController, "Page changes must reuse the existing clock");
   return { controller: window.teaThemeClock, document, listeners,
     advance(day, hour, minute = 0) { now = new Date(2026, 9, day, hour, minute).getTime(); window.teaThemeClock.sync(); } };
 }

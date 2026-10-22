@@ -1,6 +1,10 @@
 // Runs in the document head so the local-time theme is applied before painting.
 (() => {
   "use strict";
+  if (window.teaThemeClock) {
+    window.teaThemeClock.sync();
+    return;
+  }
   const storageKey = "tea-theme-time-override";
   let override = readOverride();
   let timer;
