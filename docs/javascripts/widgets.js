@@ -196,7 +196,7 @@
       return;
     }
     tracks.forEach((track, index) => {
-      const button = make("button", "music-track", `${String(index + 1).padStart(2, "0")}  ${track.title}`);
+      const button = make("button", "music-track", `${String(track.number ?? index + 1).padStart(2, "0")}  ${track.title}`);
       button.type = "button";
       button.addEventListener("click", () => { attempted.clear(); selectTrack(index); });
       trackList.append(button);

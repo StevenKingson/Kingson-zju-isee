@@ -1,9 +1,164 @@
 {
   "tracks": [
     {
-      "id": "FantasticYouth - 小喋日和.mp3",
-      "title": "FantasticYouth - 小喋日和",
-      "src": "assets/music/FantasticYouth%20-%20%E5%B0%8F%E5%96%8B%E6%97%A5%E5%92%8C.mp3"
+      "id": "01-cagayake-girls.mp3",
+      "title": "Cagayake!GIRLS（闪耀吧！女孩）",
+      "number": 1,
+      "src": "assets/music/01-cagayake-girls.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 250.12
+    },
+    {
+      "id": "02-dont-say-lazy.mp3",
+      "title": "Don't say \"lazy\"",
+      "number": 2,
+      "src": "assets/music/02-dont-say-lazy.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 263.973
+    },
+    {
+      "id": "04-fuwa-fuwa-time-mio.mp3",
+      "title": "ふわふわ時間（轻飘飘的时间）· 秋山澪版",
+      "number": 4,
+      "src": "assets/music/04-fuwa-fuwa-time-mio.mp3",
+      "version": "完整版 · 单曲版 · 秋山澪主唱",
+      "duration": 239.0
+    },
+    {
+      "id": "05-fuwa-fuwa-time-yui.mp3",
+      "title": "ふわふわ時間（轻飘飘的时间）· 平泽唯版",
+      "number": 5,
+      "src": "assets/music/05-fuwa-fuwa-time-yui.mp3",
+      "version": "完整版 · Studio Mix · 平泽唯主唱",
+      "duration": 236.053
+    },
+    {
+      "id": "06-tsubasa-wo-kudasai.mp3",
+      "title": "翼をください（给我一双翅膀）",
+      "number": 6,
+      "src": "assets/music/06-tsubasa-wo-kudasai.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 203.92
+    },
+    {
+      "id": "07-curry-nochi-rice.mp3",
+      "title": "カレーのちライス（咖喱后米饭）",
+      "number": 7,
+      "src": "assets/music/07-curry-nochi-rice.mp3",
+      "version": "完整版 · Studio Mix · 平泽唯主唱",
+      "duration": 196.08
+    },
+    {
+      "id": "08-watashi-no-koi-wa-hotchkiss.mp3",
+      "title": "わたしの恋はホッチキス（我的爱是订书机）",
+      "number": 8,
+      "src": "assets/music/08-watashi-no-koi-wa-hotchkiss.mp3",
+      "version": "完整版 · Studio Mix · 唯＆澪主唱",
+      "duration": 263.92
+    },
+    {
+      "id": "09-fude-pen-ball-pen.mp3",
+      "title": "ふでペン ～ボールペン～（毛笔 ～圆珠笔～）",
+      "number": 9,
+      "src": "assets/music/09-fude-pen-ball-pen.mp3",
+      "version": "完整版 · Studio Mix · 平泽唯主唱",
+      "duration": 237.48
+    },
+    {
+      "id": "10-go-go-maniac.mp3",
+      "title": "GO! GO! MANIAC",
+      "number": 10,
+      "src": "assets/music/10-go-go-maniac.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 248.268
+    },
+    {
+      "id": "11-listen.mp3",
+      "title": "Listen!!",
+      "number": 11,
+      "src": "assets/music/11-listen.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 225.234
+    },
+    {
+      "id": "12-utauyo-miracle.mp3",
+      "title": "Utauyo!!MIRACLE",
+      "number": 12,
+      "src": "assets/music/12-utauyo-miracle.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 242.16
+    },
+    {
+      "id": "13-no-thank-you.mp3",
+      "title": "No, thank you!",
+      "number": 13,
+      "src": "assets/music/13-no-thank-you.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 257.493
+    },
+    {
+      "id": "14-pure-pure-heart.mp3",
+      "title": "ぴゅあぴゅあはーと（纯纯的心 / Pure Pure Heart）",
+      "number": 14,
+      "src": "assets/music/14-pure-pure-heart.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 276.2
+    },
+    {
+      "id": "15-gohan-wa-okazu.mp3",
+      "title": "ごはんはおかず（米饭是菜）",
+      "number": 15,
+      "src": "assets/music/15-gohan-wa-okazu.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 191.627
+    },
+    {
+      "id": "16-u-and-i.mp3",
+      "title": "U&I",
+      "number": 16,
+      "src": "assets/music/16-u-and-i.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 275.76
+    },
+    {
+      "id": "17-tenshi-ni-fureta-yo.mp3",
+      "title": "天使にふれたよ！（相遇天使）",
+      "number": 17,
+      "src": "assets/music/17-tenshi-ni-fureta-yo.mp3",
+      "version": "完整版 · Studio Mix",
+      "duration": 281.893
+    },
+    {
+      "id": "18-ichiban-ippai.mp3",
+      "title": "いちばんいっぱい（全部都是第一）",
+      "number": 18,
+      "src": "assets/music/18-ichiban-ippai.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 250.28
+    },
+    {
+      "id": "19-unmei-wa-endless.mp3",
+      "title": "Unmei♪wa♪Endless!",
+      "number": 19,
+      "src": "assets/music/19-unmei-wa-endless.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 232.227
+    },
+    {
+      "id": "20-samidare-20-love.mp3",
+      "title": "五月雨20Love",
+      "number": 20,
+      "src": "assets/music/20-samidare-20-love.mp3",
+      "version": "完整版 · Studio Mix",
+      "duration": 243.347
+    },
+    {
+      "id": "21-singing.mp3",
+      "title": "Singing!",
+      "number": 21,
+      "src": "assets/music/21-singing.mp3",
+      "version": "完整版 · 单曲版",
+      "duration": 234.56
     }
   ]
 }
