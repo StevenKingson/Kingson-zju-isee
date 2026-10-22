@@ -353,20 +353,23 @@
       const configured = config.repo && config.repoId && config.category && config.categoryId;
       if (!configured) {
         if (["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)) {
-          notice.textContent = "本机预览模式 · 留言仅保存在当前浏览器，不会公开或自动同步。最多保留最近 100 条，请按需导出备份。GitHub 仓库创建后，可接通 Giscus 共享留言。";
+          notice.textContent = "本机预览模式 · 留言仅保存在当前浏览器，不会公开或自动同步。最多保留最近 100 条，请按需导出备份。完成 Giscus 配置后可接通共享留言。";
           setupLocalGuestbook(container);
         } else {
           notice.textContent = "茶会留言板正在准备中，站长接通 GitHub 留言服务后即可使用。";
         }
         return;
       }
-      notice.textContent = "共享留言由 GitHub Discussions 保存，登录 GitHub 后即可留言。";
+      const directLink = container.querySelector("#guestbook-direct-link");
+      if (directLink && config.discussionUrl) directLink.href = config.discussionUrl;
+      notice.textContent = "共享留言由 GitHub Discussions 保存，登录 GitHub 后即可留言。若评论框加载较慢，可点击上方链接直接留言。";
       const script = document.createElement("script");
       script.src = "https://giscus.app/client.js";
       script.async = true;
       script.crossOrigin = "anonymous";
       const attributes = {repo: config.repo, "repo-id": config.repoId, category: config.category,
-        "category-id": config.categoryId, mapping: "specific", term: "KING桑の放课后茶会 · 留言板",
+        "category-id": config.categoryId, mapping: config.discussionNumber ? "number" : "specific",
+        term: String(config.discussionNumber || "KING桑の放课后茶会 · 留言板"),
         strict: "1", "reactions-enabled": "1", "emit-metadata": "0", "input-position": "top",
         theme: theme === "night" ? "dark" : "light", lang: "zh-CN", loading: "lazy"};
       for (const [key, value] of Object.entries(attributes)) script.setAttribute(`data-${key}`, value);

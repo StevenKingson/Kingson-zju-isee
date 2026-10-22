@@ -1,0 +1,61 @@
+name: 友链申请
+description: 来茶会串门，申请交换友情链接。
+title: "[友链申请] "
+labels: ["友链申请"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎来到 KING桑の放课后茶会！请填写下面的站点信息。
+        申请提交后由站长查看，并在本 Issue 回复；通过后会加入网站友链页。
+  - type: input
+    id: site-name
+    attributes:
+      label: 网站名称
+      placeholder: 你的博客或网站名称
+    validations:
+      required: true
+  - type: input
+    id: site-url
+    attributes:
+      label: 网站地址
+      description: 请填写可以正常打开的完整网址，建议使用 HTTPS。
+      placeholder: https://example.com/
+    validations:
+      required: true
+  - type: input
+    id: site-description
+    attributes:
+      label: 一句话介绍
+      placeholder: 简单介绍你的网站，建议 50 字以内。
+    validations:
+      required: true
+  - type: input
+    id: site-avatar
+    attributes:
+      label: 头像或站点图标地址（选填）
+      description: 图片的公开直链，不填写也可以申请。
+      placeholder: https://example.com/avatar.png
+    validations:
+      required: false
+  - type: input
+    id: reciprocal-link
+    attributes:
+      label: 放置本站友链的页面（选填）
+      placeholder: https://example.com/friends/
+    validations:
+      required: false
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: 想对站长说的话（选填）
+      placeholder: 兴趣爱好、网站内容，或者简单打个招呼。
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已确认填写的信息准确，网站可以正常访问。
+          required: true

@@ -7,6 +7,10 @@ hide:
 
 来过茶会，就留下几句话吧。聊聊喜欢的番剧、最近在听的歌，或者简单打个招呼。
 
+留言会公开保存在 GitHub Discussions，登录 GitHub 后即可发表和回复。请友善交流；想交换友链，可以前往[友链申请](../friends/index.md)。
+
+<p class="guestbook-direct"><a id="guestbook-direct-link" href="https://github.com/StevenKingson/Kingson-isee.github.io/discussions/1">在 GitHub 打开留言板 ↗</a></p>
+
 <section id="guestbook" aria-label="茶会留言板">
   <div id="guestbook-notice" class="guestbook-notice" role="status">正在准备留言板…</div>
   <div class="giscus" id="giscus-comments"></div>
@@ -27,4 +31,4 @@ hide:
   </div>
 </section>
 
-<noscript>请启用 JavaScript 来查看和填写留言。</noscript>
+<noscript>请启用 JavaScript 来查看和填写留言，或点击上方链接直接前往 GitHub 留言。</noscript>

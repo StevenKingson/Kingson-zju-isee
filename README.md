@@ -126,23 +126,33 @@ python -m venv .venv
 
 然后完整刷新浏览器页面。曲库内不会自动包含电脑其他位置的文件。
 
-## 留言板：本机预览与共享留言
+## 留言板与友链申请
 
-网站仓库已创建为 `StevenKingson/Kingson-isee.github.io`。共享留言还需要接通 Giscus；本机预览时，留言只保存在当前浏览器，最多保留最近 100 条。清除浏览器数据可能使它们丢失，可以点击“导出备份”下载 JSON 文件。本机留言不会自动发布或同步到 GitHub。
+留言板使用 [Giscus](https://giscus.app/zh-CN)，连接 `StevenKingson/Kingson-isee.github.io` 的 GitHub Discussions。访客登录 GitHub 后即可发表、回复和添加表情；昼夜主题会同步到评论框。
 
-上线后的共享留言使用 [Giscus](https://giscus.app/zh-CN)，保存到 GitHub Discussions。未完成配置时，公开网站只显示“正在准备中”，不会把本机预览当成共享留言。
+- 网站留言页：<https://stevenkingson.github.io/Kingson-isee.github.io/guestbook/>。
+- 对应的留言主帖：<https://github.com/StevenKingson/Kingson-isee.github.io/discussions/1>。
+- `docs/assets/giscus.json` 已保存仓库 ID、Announcements 分类 ID 和主帖编号，不需要添加密码或令牌。
+- 本机预览和公开网站连接同一条讨论。旧的本机留言仍留在原浏览器的本地存储中，不会自动发布或同步。
+- 如果评论框因网络原因打不开，可以点击页面上的“在 GitHub 打开留言板”直接留言。
 
-按以下步骤接通：
+### 怎样管理留言
 
-1. 打开准备存放留言的 **公开 GitHub 仓库**，点击顶部 **Settings**。
-2. 在 **General → Features** 中，勾选 **Discussions**。
-3. 打开 [Giscus 配置页](https://giscus.app/zh-CN)，按网页提示安装 Giscus 应用，并只选择需要使用的仓库。
-4. 在 Giscus 网页的“仓库”栏输入 `StevenKingson/Kingson-isee.github.io`，选择一个 Discussion 分类，例如 Announcements。
-5. 向下找到自动生成的 `<script>` 配置，里面会出现 `data-repo`、`data-repo-id`、`data-category`、`data-category-id`。
-6. 用记事本打开 `docs/assets/giscus.json`，把这四个值分别填入 `repo`、`repoId`、`category`、`categoryId` 的英文双引号中。不要删除逗号和双引号，也不需要粘贴整段脚本。
-7. 保存并刷新。留言页会自动切换成共享留言，访客登录 GitHub 后即可留言。留言可在仓库的 Discussions 中管理，昼夜主题也会同步到评论框。
+1. 打开上面的留言主帖，登录你的 GitHub 账号。
+2. 直接回复访客；需要管理单条留言时，点击留言右上角的 `…` 菜单。
+3. 保留这条讨论，网站始终连接同一个主帖，不会因网址或标题变化产生另一份留言板。
 
-这里填写的仓库和分类 ID 是公开配置，不需要填写 GitHub 密码或访问令牌。
+Giscus 应用只需安装到本网站仓库，权限为 Discussions 读写、基础仓库信息读取。若以后迁移仓库，需要重新授权并更新配置中的仓库、分类和讨论编号。
+
+### 怎样处理友链申请
+
+友链页的“申请友链”会打开 GitHub Issue 表单，收集网站名称、网址、介绍，以及可选的头像、互链位置和补充说明。申请自动带上“友链申请”标签，访客可通过同一条 Issue 查询进度。
+
+1. 打开仓库 **Issues**，点击“友链申请”标签，查看待处理申请。
+2. 查看对方站点；通过后，在 `docs/friends/index.md` 的“茶会的朋友”下面添加链接和介绍，并删除首次使用的空位提示。
+3. 提交并推送，Pages 会自动更新。然后在申请 Issue 中回复结果，处理完成后关闭 Issue。
+
+申请不会自动加入友链，以便你决定展示哪些站点。表单定义在 `.github/ISSUE_TEMPLATE/friend-link.yml`；友链页同时给出了本站名称、地址、介绍和茶杯图标。
 
 ## GitHub Pages 自动部署
 
