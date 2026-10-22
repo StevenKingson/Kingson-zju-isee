@@ -11,7 +11,7 @@
 3. 在浏览器地址栏输入 `http://127.0.0.1:8000/`，按回车。
 4. 停止预览时，点击命令窗口，按 `Ctrl+C`；如果提示是否终止，输入 `Y` 并按回车。
 
-这是本机预览地址。公开网站地址为 <https://stevenkingson.github.io/Kingson-isee.github.io/>，通过 GitHub Pages 自动部署。
+这是本机预览地址。公开网站地址为 <https://stevenkingson.github.io/Kingson-zju-isee/>，通过 GitHub Pages 自动部署。
 
 ## 怎样修改内容
 
@@ -131,10 +131,10 @@ python -m venv .venv
 
 ## 留言板与友链申请
 
-留言板使用 [Giscus](https://giscus.app/zh-CN)，连接 `StevenKingson/Kingson-isee.github.io` 的 GitHub Discussions。访客登录 GitHub 后即可发表、回复和添加表情；昼夜主题会同步到评论框。
+留言板使用 [Giscus](https://giscus.app/zh-CN)，连接 `StevenKingson/Kingson-zju-isee` 的 GitHub Discussions。访客登录 GitHub 后即可发表、回复和添加表情；昼夜主题会同步到评论框。
 
-- 网站留言页：<https://stevenkingson.github.io/Kingson-isee.github.io/guestbook/>。
-- 对应的留言主帖：<https://github.com/StevenKingson/Kingson-isee.github.io/discussions/1>。
+- 网站留言页：<https://stevenkingson.github.io/Kingson-zju-isee/guestbook/>。
+- 对应的留言主帖：<https://github.com/StevenKingson/Kingson-zju-isee/discussions/1>。
 - `docs/assets/giscus.json` 已保存仓库 ID、Announcements 分类 ID 和主帖编号，不需要添加密码或令牌。
 - 本机预览和公开网站连接同一条讨论。旧的本机留言仍留在原浏览器的本地存储中，不会自动发布或同步。
 - 如果评论框因网络原因打不开，可以点击页面上的“在 GitHub 打开留言板”直接留言。
@@ -159,9 +159,9 @@ Giscus 应用只需安装到本网站仓库，权限为 Discussions 读写、基
 
 ## GitHub Pages 自动部署
 
-源代码仓库：<https://github.com/StevenKingson/Kingson-isee.github.io>。
+源代码仓库：<https://github.com/StevenKingson/Kingson-zju-isee>。
 
-网站网址：<https://stevenkingson.github.io/Kingson-isee.github.io/>。
+网站网址：<https://stevenkingson.github.io/Kingson-zju-isee/>。
 
 `.github/workflows/ci.yml` 会在每次推送到 `main` 后安装 `requirements.txt` 中的 MkDocs 和 Material，更新画集和曲库列表，严格检查并构建网站，然后使用 GitHub 官方 Pages Actions 发布。
 

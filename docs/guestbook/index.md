@@ -9,7 +9,7 @@ hide:
 
 留言会公开保存在 GitHub Discussions，登录 GitHub 后即可发表和回复。请友善交流；想交换友链，可以前往[友链申请](../friends/index.md)。
 
-<p class="guestbook-direct"><a id="guestbook-direct-link" href="https://github.com/StevenKingson/Kingson-isee.github.io/discussions/1">在 GitHub 打开留言板 ↗</a></p>
+<p class="guestbook-direct"><a id="guestbook-direct-link" href="https://github.com/StevenKingson/Kingson-zju-isee/discussions/1">在 GitHub 打开留言板 ↗</a></p>
 
 <section id="guestbook" aria-label="茶会留言板">
   <div id="guestbook-notice" class="guestbook-notice" role="status">正在准备留言板…</div>

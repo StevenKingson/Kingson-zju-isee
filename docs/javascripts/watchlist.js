@@ -3,7 +3,7 @@
   if (window.teaWatchlist) return;
   window.teaWatchlist = true;
   const root = new URL("../", document.currentScript.src);
-  const recommendationUrl = "https://github.com/StevenKingson/Kingson-isee.github.io/issues/new?template=anime-recommendation.yml";
+  const recommendationUrl = "https://github.com/StevenKingson/Kingson-zju-isee/issues/new?template=anime-recommendation.yml";
   let events;
   const make = (tag, className, text) => {
     const element = document.createElement(tag);

@@ -11,9 +11,9 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REMOTE = "https://github.com/StevenKingson/Kingson-isee.github.io.git"
-WEBSITE = "https://stevenkingson.github.io/Kingson-isee.github.io/"
-ACTIONS = "https://github.com/StevenKingson/Kingson-isee.github.io/actions"
+REMOTE = "https://github.com/StevenKingson/Kingson-zju-isee.git"
+WEBSITE = "https://stevenkingson.github.io/Kingson-zju-isee/"
+ACTIONS = "https://github.com/StevenKingson/Kingson-zju-isee/actions"
 CHINA_TIME = timezone(timedelta(hours=8))
 
 

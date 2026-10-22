@@ -37,9 +37,9 @@ blockquote{margin:20px 0;padding:12px 18px;border-left:4px solid #c68ab1;backgro
 <p>这份指南对应你的项目文件夹：<code>E:\projects\github_web</code>。</p>
 <p><strong>平时只需记住四步：改文件 → 保存 → 本机预览 → 双击“一键上传到GitHub.bat”。</strong></p>
 <ul>
-<li>公开网站：<a href="https://stevenkingson.github.io/Kingson-isee.github.io/">https://stevenkingson.github.io/Kingson-isee.github.io/</a></li>
-<li>GitHub 仓库：<a href="https://github.com/StevenKingson/Kingson-isee.github.io">https://github.com/StevenKingson/Kingson-isee.github.io</a></li>
-<li>发布进度：<a href="https://github.com/StevenKingson/Kingson-isee.github.io/actions">https://github.com/StevenKingson/Kingson-isee.github.io/actions</a></li>
+<li>公开网站：<a href="https://stevenkingson.github.io/Kingson-zju-isee/">https://stevenkingson.github.io/Kingson-zju-isee/</a></li>
+<li>GitHub 仓库：<a href="https://github.com/StevenKingson/Kingson-zju-isee">https://github.com/StevenKingson/Kingson-zju-isee</a></li>
+<li>发布进度：<a href="https://github.com/StevenKingson/Kingson-zju-isee/actions">https://github.com/StevenKingson/Kingson-zju-isee/actions</a></li>
 </ul>
 <p><code>网站操作指南.html</code> 可以双击，用浏览器阅读；不联网也能打开。<code>网站操作指南.md</code> 是这份指南的文字原稿。</p>
 <h2 id="1-第一次编辑前先找到文件">1. 第一次编辑前，先找到文件</h2>
@@ -338,7 +338,7 @@ $$
 <h2 id="7-处理友链申请和留言">7. 处理友链申请和留言</h2>
 <h3 id="查看通过友链申请">查看、通过友链申请</h3>
 <ol>
-<li>打开仓库的 <a href="https://github.com/StevenKingson/Kingson-isee.github.io/issues">Issues</a>，查看带“友链申请”标签的申请。</li>
+<li>打开仓库的 <a href="https://github.com/StevenKingson/Kingson-zju-isee/issues">Issues</a>，查看带“友链申请”标签的申请。</li>
 <li>打开对方网站，决定是否收录。</li>
 <li>打开 <code>docs/friends/index.md</code>，在“茶会的朋友”下面添加：</li>
 </ol>
@@ -351,7 +351,7 @@ $$
 </ol>
 <p>友链不会自动通过。页面上的申请表单在 <code>.github/ISSUE_TEMPLATE/friend-link.yml</code> 中；不需要改表单时不用动这个文件。</p>
 <h3 id="回复和管理留言">回复和管理留言</h3>
-<p>打开<a href="https://github.com/StevenKingson/Kingson-isee.github.io/discussions/1">留言主帖</a>，登录 GitHub 后回复访客。管理单条留言时，点击留言右上角的 <code>…</code> 菜单。</p>
+<p>打开<a href="https://github.com/StevenKingson/Kingson-zju-isee/discussions/1">留言主帖</a>，登录 GitHub 后回复访客。管理单条留言时，点击留言右上角的 <code>…</code> 菜单。</p>
 <p>网页留言和 GitHub 主帖中的评论是同一份内容，新增留言不需要重新部署。<code>docs/guestbook/index.md</code> 只负责网页上方的介绍；不要把访客留言手动复制进去。</p>
 <h2 id="8-本机预览再一键上传">8. 本机预览，再一键上传</h2>
 <p>右上角图标旁有文字说明：“白天模式 / 夜间模式”表示当前主题，“播放 BGM / 暂停 BGM”表示点击后的音乐操作。主题按访客设备的本地时间自动切换：06:00–18:00 为白天，其余为夜间。也可以手动点击主题按钮，选择会保留到下个昼夜时段，然后恢复自动；页面一直打开时也会按时间更新。</p>
@@ -374,9 +374,9 @@ $$
 <p>程序不会上传 <code>site/</code>、<code>.venv/</code>、<code>__pycache__/</code>、<code>output/</code> 和日志。每次上传都会留下一个带时间的 Git 提交，方便以后查找版本。</p>
 <h3 id="第三步等待公开网站更新">第三步：等待公开网站更新</h3>
 <ol>
-<li>打开 <a href="https://github.com/StevenKingson/Kingson-isee.github.io/actions">GitHub Actions</a>。</li>
+<li>打开 <a href="https://github.com/StevenKingson/Kingson-zju-isee/actions">GitHub Actions</a>。</li>
 <li>点击最新一条 <code>Build and deploy website</code>，等待 <code>build</code> 和 <code>deploy</code> 都出现绿色对勾。</li>
-<li>打开<a href="https://stevenkingson.github.io/Kingson-isee.github.io/">公开网站</a>，按 <strong>Ctrl＋F5</strong> 刷新。</li>
+<li>打开<a href="https://stevenkingson.github.io/Kingson-zju-isee/">公开网站</a>，按 <strong>Ctrl＋F5</strong> 刷新。</li>
 </ol>
 <p>上传成功表示代码已到 GitHub，公开网站还要等待 Actions 发布，通常需要几分钟。没有任何改动时，程序会提示“无需重复上传”；如果上次提交已保存但推送失败，再次双击会继续推送。</p>
 <h2 id="9-常见问题怎么处理">9. 常见问题怎么处理</h2>
