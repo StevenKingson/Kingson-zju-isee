@@ -1,0 +1,261 @@
+:root {
+  --md-default-bg-color: #fff;
+  --md-primary-fg-color: #fff;
+  --md-primary-bg-color: #252525;
+}
+
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid #eee;
+}
+
+.md-tabs {
+  border-bottom: 1px solid #eee;
+}
+
+.home-hero {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.home-eyebrow {
+  color: #888;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.3rem;
+}
+
+.md-typeset .home-hero h1 {
+  color: #222;
+  font-size: clamp(1.65rem, 4.5vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  line-height: 1.5;
+  margin: 0 0 1.1rem;
+}
+
+.home-description {
+  color: #777;
+  line-height: 2;
+}
+
+.md-typeset .home-link {
+  display: inline-block;
+  margin-top: 1.4rem;
+  color: #333;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 0.3rem;
+}
+
+.md-typeset .home-link:hover {
+  color: #526cfe;
+  border-color: #526cfe;
+}
+
+.md-footer {
+  background: #fff;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+.md-footer-meta {
+  background: #fff;
+}
+
+/* A transparent vector redrawn from the cup on illustration 233. */
+.md-typeset h1::before {
+  content: "";
+  display: inline-block;
+  width: 1.25em;
+  height: 1.15em;
+  margin-right: 0.35em;
+  vertical-align: -0.12em;
+  background: url("../assets/icons/tea-cup.svg") center / contain no-repeat;
+}
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 76vh;
+  padding: 4rem 1.2rem 5.5rem;
+  border-radius: 0.4rem;
+  background: #faf6f8;
+}
+
+.home-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.has-background .home-background { opacity: 1; }
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, #ffffff20, #ffffff30 65%, #ffffffd9);
+}
+
+.home-copy {
+  padding: clamp(1.2rem, 4vw, 3rem);
+  max-width: 100%;
+  background: #fffffff0;
+  border: 1px solid #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 40px #46374412;
+}
+
+.home-background-tools {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.65rem;
+}
+
+.home-background-tools button,
+.home-background-tools a {
+  background: #fffffff2;
+  border: 1px solid #e6d7e0;
+  border-radius: 2rem;
+  padding: 0.4rem 0.75rem;
+  color: #6d3e58;
+  cursor: pointer;
+}
+
+#background-status { background: #fffffff2; color: #555; }
+#background-status:empty { display: none; }
+
+.acg-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.md-typeset .acg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1.7rem;
+  border: 1px solid #eadde5;
+  border-radius: 0.5rem;
+  background: #fffafb;
+  color: #64505c;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .acg-card:hover { border-color: #b65b91; box-shadow: 0 4px 20px #b65b9112; }
+.acg-card strong { font-size: 1.2rem; color: #352a31; }
+.acg-card-label { font-size: 0.55rem; letter-spacing: 0.12em; color: #98617f; }
+.acg-card-arrow { margin-top: auto; padding-top: 1rem; color: #a34c7f; }
+
+.artbook {
+  border: 1px solid #e7dfe4;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 1.4rem 0;
+  background: #fff;
+}
+
+.artbook-heading,
+.artbook-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.7rem;
+}
+
+#album-description { width: 100%; color: #84717b; font-size: 0.6rem; }
+
+.artbook select,
+.artbook input {
+  border: 1px solid #d8c6d0;
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.5rem;
+  font: inherit;
+  background: white;
+  max-width: 100%;
+  color: #493740;
+}
+
+.artbook select { flex: 1; min-width: 0; }
+.artbook input { width: 4.5rem; }
+
+.artbook button {
+  cursor: pointer;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #dcc9d4;
+  border-radius: 0.25rem;
+  font: inherit;
+  background: #fff8fc;
+  color: #824566;
+}
+
+.artbook button:disabled,
+.home-background-tools button:disabled { opacity: 0.45; cursor: default; }
+.artbook button:hover:enabled { background: #f5e9f0; }
+.artbook :focus-visible,
+.home-background-tools :focus-visible { outline: 2px solid #b65b91; outline-offset: 3px; }
+
+.artbook-viewport {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(18rem, 66vh, 44rem);
+  background: #f3f0f2;
+  border-block: 1px solid #e7dfe4;
+}
+
+.md-typeset #artbook-image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: opacity 0.15s;
+}
+
+#artbook-image:not([src]), #artbook-image.is-loading { opacity: 0; }
+#artbook-placeholder { position: absolute; color: #796773; font-size: 0.75rem; text-align: center; padding: 1rem; }
+.artbook-viewport .artbook-fullscreen { position: absolute; right: 0.7rem; bottom: 0.7rem; background: #fffffff0; font-size: 0.65rem; }
+.artbook-viewport:fullscreen { width: 100vw; height: 100vh; background: #242025; border: 0; }
+#artbook-counter { min-width: 4.5rem; text-align: center; font-variant-numeric: tabular-nums; }
+#artbook-jump { display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; margin-left: auto; }
+#artbook-original { font-size: 0.65rem; }
+#artbook-status { margin: 0; padding: 0 1rem 0.8rem; color: #796773; font-size: 0.65rem; }
+
+@media (max-width: 600px) {
+  .home-hero { min-height: 72vh; padding-inline: 0.65rem; }
+  .md-typeset .home-hero h1 { font-size: 1.45rem; }
+  .home-eyebrow { font-size: 0.5rem; letter-spacing: 0.1em; }
+  .artbook-heading, .artbook-controls { padding: 0.7rem; }
+  #artbook-jump { margin-left: 0; width: 100%; }
+  .artbook-viewport { height: 55vh; min-height: 15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-background, #artbook-image, .acg-card { transition: none; }
+}

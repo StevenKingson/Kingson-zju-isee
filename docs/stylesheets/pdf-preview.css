@@ -1,0 +1,40 @@
+.md-typeset .report-pdf {
+  border: 1px solid var(--tea-border);
+  border-radius: 0.4rem;
+  background: var(--tea-panel);
+  color: var(--tea-text);
+  box-shadow: none;
+  font-size: 0.7rem;
+  overflow: hidden;
+  padding: 0;
+  margin: 1rem 0;
+}
+.md-typeset .report-pdf > summary {
+  margin: 0;
+  padding: 0.7rem 2rem;
+  background: var(--tea-soft);
+  color: var(--tea-accent);
+  cursor: pointer;
+}
+.pdf-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; padding: 0.7rem; }
+.pdf-page-form { display: flex; align-items: center; gap: 0.3rem; margin: 0; }
+.pdf-toolbar input { width: 3.7rem; }
+.pdf-toolbar button, .pdf-toolbar input, .pdf-toolbar select, .pdf-retry {
+  font: inherit;
+  border: 1px solid var(--tea-border);
+  border-radius: 0.25rem;
+  padding: 0.35rem 0.45rem;
+  background: var(--tea-panel);
+  color: var(--tea-text);
+}
+.pdf-toolbar button, .pdf-retry { cursor: pointer; }
+.pdf-toolbar button:disabled { opacity: 0.4; cursor: default; }
+.pdf-toolbar :focus-visible, .report-pdf > summary:focus-visible, .pdf-viewport:focus-visible {
+  outline: 2px solid var(--tea-accent); outline-offset: 2px;
+}
+.pdf-viewport { width: 100%; max-height: 75vh; overflow: auto; padding: 12px; background: #d9d7dc; }
+.pdf-viewport canvas { display: block; margin: 0 auto; background: #fff; box-shadow: 0 2px 12px #0002; }
+.pdf-viewport canvas[hidden], .pdf-retry[hidden] { display: none; }
+.pdf-status { margin: 0 !important; padding: 0.6rem 0.7rem; color: var(--tea-muted); }
+.pdf-retry { margin: 0 0.7rem 0.7rem; }
+html[data-tea-theme="night"] .pdf-viewport { background: #15131a; }

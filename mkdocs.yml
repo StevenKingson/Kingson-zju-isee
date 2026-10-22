@@ -1,0 +1,162 @@
+site_name: KING桑の放课后茶会
+site_url: !ENV [SITE_URL, 'http://127.0.0.1:8000/']
+site_description: 记录课程笔记与日常，欢迎来到 KING桑的放课后茶会。
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: zh
+  font: false
+  palette:
+    scheme: default
+    primary: white
+    accent: indigo
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+
+nav:
+- 主页: index.md
+- 课程:
+  - 课程总览: course/index.md
+  - 大一:
+    - 学年总览: course/year1/index.md
+    - 课程总结合订本: course/year1/overview.md
+    - 专业基础课程:
+      - 微积分（甲）Ⅰ、微积分（甲）Ⅱ: course/year1/hard/calculus/index.md
+      - 线性代数（甲）: course/year1/hard/linear-algebra/index.md
+      - C程序设计基础及实验: course/year1/hard/c-programming/index.md
+      - 工程图学: course/year1/hard/engineering-drawing/index.md
+      - 大学物理（甲）Ⅰ: course/year1/hard/physics-1/index.md
+      - 常微分方程: course/year1/hard/ode/index.md
+    - 专业必修课程:
+      - 电子工程训练（甲）: course/year1/major/electronics-training/index.md
+      - 集成电路导论: course/year1/major/ic-introduction/index.md
+    - 思政军体类课程:
+      - 军训: course/year1/politics/military-training/index.md
+      - 新中国史: course/year1/politics/new-china-history/index.md
+      - 思想道德与法治: course/year1/politics/ethics-law/index.md
+      - 形势与政策Ⅰ: course/year1/politics/situation-policy/index.md
+      - 中国近现代史纲要: course/year1/politics/modern-china-history/index.md
+    - 通识选修课程:
+      - 生物医学工程——智慧医疗的前世今生: course/year1/general-electives/biomedical-engineering/index.md
+      - 大学生朋辈心理辅导: course/year1/general-electives/peer-counseling/index.md
+      - 先秦诸子思想: course/year1/general-electives/pre-qin-thought/index.md
+      - 视唱练耳: course/year1/general-electives/sight-singing/index.md
+      - 职业生涯与发展规划: course/year1/general-electives/career-planning/index.md
+    - 体育类课程:
+      - 乒乓球（初级）: course/year1/sports/table-tennis/index.md
+      - 游泳（中级）: course/year1/sports/swimming/index.md
+    - 外语类课程:
+      - 大学英语Ⅳ: course/year1/languages/english-4/index.md
+      - 英语水平测试: course/year1/languages/english-test/index.md
+    - 转专业经验: course/year1/transfer.md
+  - 大二:
+    - 学年总览: course/year2/index.md
+    - 课程总结合订本: course/year2/overview.md
+    - 通识必修课程:
+      - 军事理论: course/year2/general-required/military-theory/index.md
+      - 马克思主义基本原理: course/year2/general-required/marxism/index.md
+      - 大学英语Ⅲ: course/year2/general-required/english-3/index.md
+      - 大学物理（甲）Ⅱ: course/year2/general-required/physics-2/index.md
+    - 通识选修课程:
+      - 经济法理论与实务: course/year2/general-electives/economic-law/index.md
+      - 合唱艺术: course/year2/general-electives/choral-art/index.md
+    - 专业基础课程:
+      - 复变函数与积分变换: course/year2/foundation/complex-analysis/index.md
+      - 电子电路基础: course/year2/foundation/electronic-circuits/index.md
+      - 概率论与数理统计: course/year2/foundation/probability-statistics/index.md
+      - 数字系统设计: course/year2/foundation/digital-systems/index.md
+      - 信号与系统: course/year2/foundation/signals-systems/index.md
+    - 专业必修课程:
+      - 信息与电子工程导论:
+        - 课程心得: course/year2/major-required/isee-introduction/index.md
+        - 报告目录: course/year2/major-required/isee-introduction/reports/index.md
+        - 实验 1 · 基于 MATLAB 的信号频谱分析: course/year2/major-required/isee-introduction/reports/experiment-1/index.md
+        - 实验 2 · 基于 Simulink 的信号调制仿真: course/year2/major-required/isee-introduction/reports/experiment-2/index.md
+        - 实验 3 · 基于 Multisim 的三极管放大电路仿真: course/year2/major-required/isee-introduction/reports/experiment-3/index.md
+      - 半导体物理: course/year2/major-required/semiconductor-physics/index.md
+      - 人工智能: course/year2/major-required/artificial-intelligence/index.md
+      - 认知实践: course/year2/major-required/cognitive-practice/index.md
+    - 实验课合集:
+      - 大学物理实验:
+        - 课程心得: course/year2/labs/physics-lab/index.md
+        - 报告目录: course/year2/labs/physics-lab/reports/index.md
+        - 动态法测量材料杨氏模量: course/year2/labs/physics-lab/reports/dynamic-young/index.md
+        - 金属材料杨氏模量测量: course/year2/labs/physics-lab/reports/metal-young/index.md
+        - 示波器的使用: course/year2/labs/physics-lab/reports/oscilloscope/index.md
+        - 分光计的调整和使用: course/year2/labs/physics-lab/reports/spectrometer/index.md
+        - 交流电路功率因数实验、组装整流器: course/year2/labs/physics-lab/reports/power-factor-rectifier/index.md
+        - 铁磁材料的磁滞回线和基本磁化曲线: course/year2/labs/physics-lab/reports/hysteresis/index.md
+        - 双棱镜干涉: course/year2/labs/physics-lab/reports/biprism/index.md
+        - 光的偏振应用研究: course/year2/labs/physics-lab/reports/polarization/index.md
+        - 等厚干涉: course/year2/labs/physics-lab/reports/equal-thickness/index.md
+        - 光电效应测量普朗克常量: course/year2/labs/physics-lab/reports/photoelectric/index.md
+        - 用双臂电桥测低电阻: course/year2/labs/physics-lab/reports/kelvin-bridge/index.md
+        - 万用表的设计: course/year2/labs/physics-lab/reports/multimeter/index.md
+        - 惠斯登电桥: course/year2/labs/physics-lab/reports/wheatstone/index.md
+        - 非平衡电桥: course/year2/labs/physics-lab/reports/unbalanced-bridge/index.md
+      - 电子电路设计实验Ⅰ:
+        - 课程心得: course/year2/labs/circuit-design-1/index.md
+        - 报告目录: course/year2/labs/circuit-design-1/reports/index.md
+        - 实验 1 · 电路定律验证实验: course/year2/labs/circuit-design-1/reports/experiment-1/index.md
+        - 实验 2 · 一阶 RC 电路的瞬态响应过程实验研究: course/year2/labs/circuit-design-1/reports/experiment-2/index.md
+        - 实验 3 · OrCAD 软件练习: course/year2/labs/circuit-design-1/reports/experiment-3/index.md
+        - 实验 4、5 · 晶体管共射放大电路设计、仿真与测试: course/year2/labs/circuit-design-1/reports/experiment-4-5/index.md
+        - 实验 6 · 集成运算放大器应用电路研究（Ⅰ）: course/year2/labs/circuit-design-1/reports/experiment-6/index.md
+        - 实验 7 · 集成运算放大器应用电路研究（Ⅱ）: course/year2/labs/circuit-design-1/reports/experiment-7/index.md
+      - 电子电路设计实验Ⅱ:
+        - 课程心得: course/year2/labs/circuit-design-2/index.md
+        - 报告目录: course/year2/labs/circuit-design-2/reports/index.md
+        - 电流–电压转换电路实验研究: course/year2/labs/circuit-design-2/reports/current-voltage/index.md
+      - 数字系统设计实验:
+        - 课程心得: course/year2/labs/digital-systems-lab/index.md
+        - 报告目录: course/year2/labs/digital-systems-lab/reports/index.md
+        - Lab 5 · 常用组合电路模块的设计和应用: course/year2/labs/digital-systems-lab/reports/lab-5/index.md
+        - Lab 19 · 音乐播放实验: course/year2/labs/digital-systems-lab/reports/lab-19/index.md
+    - 个性修读课程:
+      - 本专业进阶模块:
+        - 数值分析方法: course/year2/personal/numerical-analysis/index.md
+      - 跨专业课程:
+        - 微观经济学（甲）: course/year2/personal/microeconomics/index.md
+        - 医学仪器的创新与实践: course/year2/personal/medical-instruments/index.md
+    - 体育类课程:
+      - 游泳（中级）、游泳（初级）: course/year2/sports/swimming/index.md
+- ACG宝库:
+  - 宝库首页: acg/index.md
+  - KING桑の追番日记: acg/diary/index.md
+  - 快来看轻音少女美图: acg/gallery/index.md
+- 友链: friends/index.md
+- 关于: about/index.md
+- 留言板: guestbook/index.md
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/widgets.css
+  - stylesheets/pdf-preview.css
+
+extra_javascript:
+  - javascripts/site.js
+  - javascripts/widgets.js
+  - javascripts/pdf-preview.js
+  - javascripts/mathjax.js
+  - javascripts/vendor/mathjax/es5/tex-mml-chtml.js
+
+plugins:
+  - search:
+      lang: zh
+
+markdown_extensions:
+  - md_in_html
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+      smart_dollar: false
+  - pymdownx.tilde
+  - pymdownx.caret
+  - tables
+
+extra:
+  generator: false
