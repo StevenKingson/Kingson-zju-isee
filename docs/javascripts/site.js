@@ -9,6 +9,19 @@
   pageEvents = new AbortController();
   const hero = document.querySelector(".home-hero");
   const gallery = document.querySelector(".artbook");
+  document.body.classList.toggle("tea-home", Boolean(hero));
+  if (hero) {
+    // Measure the real navigation/footer height, including changes caused by zoom.
+    const chrome = [...document.querySelectorAll(".md-header, .md-tabs, .md-footer")];
+    const fitHome = () => {
+      const height = chrome.reduce((sum, element) => sum + element.getBoundingClientRect().height, 0);
+      hero.style.setProperty("--tea-chrome-height", `${height}px`);
+    };
+    const observer = new ResizeObserver(fitHome);
+    chrome.forEach((element) => observer.observe(element));
+    pageEvents.signal.addEventListener("abort", () => observer.disconnect(), { once: true });
+    fitHome();
+  }
   if (!hero && !gallery) return;
 
   async function loadAlbums() {

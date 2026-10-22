@@ -259,3 +259,19 @@
 @media (prefers-reduced-motion: reduce) {
   .home-background, #artbook-image, .acg-card { transition: none; }
 }
+
+/* On desktop, the hero occupies the space left by navigation and footer. */
+@media (min-width: 960px) {
+  .tea-home .md-main__inner { margin-top: 0; margin-bottom: 0; }
+  .tea-home .md-content__inner { padding-top: 0.6rem; margin-bottom: 0.6rem; }
+  .tea-home .md-content__inner::before,
+  .tea-home .md-content__inner::after { display: none; }
+  .tea-home .home-hero {
+    height: max(21rem, calc(100dvh - var(--tea-chrome-height, 121px) - 1.2rem));
+    min-height: 0;
+    padding: 1.2rem 1rem 3.5rem;
+  }
+  .tea-home .home-copy { padding: clamp(1rem, 3vh, 2rem); }
+  .tea-home .home-eyebrow { margin-bottom: 0.8rem; }
+  .tea-home .home-link { margin-top: 0.8rem; }
+}

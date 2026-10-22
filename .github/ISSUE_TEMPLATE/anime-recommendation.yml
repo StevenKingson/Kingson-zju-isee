@@ -1,0 +1,27 @@
+name: 番剧推荐
+description: 向 KING桑 推荐一部值得补的番剧。
+title: "[番剧推荐] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎来安利！留下番剧名称和推荐理由，我会查看并挑选感兴趣的作品加入“打算补”。
+  - type: input
+    id: anime-title
+    attributes:
+      label: 番剧名称
+      placeholder: 请写完整名称，有多季时可以补充推荐的季度。
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 推荐理由
+      description: 最打动你的是什么？尽量不剧透；如有剧透请提前注明。
+    validations:
+      required: true
+  - type: input
+    id: information
+    attributes:
+      label: 作品资料链接（选填）
+      description: 可以填写动画官网、Bangumi 或其他作品介绍页面。

@@ -1,0 +1,47 @@
+{
+  "watching": [
+    {
+      "season": "2026年10月新番",
+      "anime": [
+        {
+          "id": "jojo-sbr",
+          "title": "JOJO的奇妙冒险 彪马野郎第二第三赛段",
+          "cover": "assets/anime/jojo-sbr.jpg",
+          "status": "正在追",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://jojo-portal.com/news/anime/594/",
+          "sourceName": "JOJO 动画官网"
+        }
+      ]
+    }
+  ],
+  "planned": [
+    {
+      "id": "ruri",
+      "title": "琉璃的宝石",
+      "cover": "assets/anime/ruri.png",
+      "status": "打算补",
+      "completed": false,
+      "review": "",
+      "score": null,
+      "source": "https://rurinohouseki.com/",
+      "sourceName": "琉璃的宝石动画官网"
+    }
+  ],
+  "recommended": [
+    {
+      "id": "k-on",
+      "title": "轻音少女",
+      "cover": "assets/anime/k-on.jpg",
+      "coverFit": "cover",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "伟大无需多言，少女乐队最高的山和最长的河，KON永不毕业！",
+      "score": 10,
+      "source": "https://www.tbs.co.jp/tbs-ch/item/a0086/",
+      "sourceName": "TBS 轻音少女节目官网"
+    }
+  ]
+}

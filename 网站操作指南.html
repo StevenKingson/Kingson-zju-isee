@@ -94,12 +94,16 @@ blockquote{margin:20px 0;padding:12px 18px;border-left:4px solid #c68ab1;backgro
 <td>各学年的 <code>overview.md</code></td>
 </tr>
 <tr>
-<td>追番日记目录</td>
+<td>追番页面介绍</td>
 <td><code>docs/acg/diary/index.md</code></td>
 </tr>
 <tr>
-<td>当前的轻音少女推荐笔记</td>
-<td><code>docs/acg/diary/k-on.md</code></td>
+<td>番剧分类、季度、评价和评分</td>
+<td><code>docs/assets/anime/watchlist.json</code></td>
+</tr>
+<tr>
+<td>番剧封面图片</td>
+<td><code>docs/assets/anime/</code></td>
 </tr>
 <tr>
 <td>画集图片、首页随机背景来源</td>
@@ -201,15 +205,71 @@ $$
 <ol start="7">
 <li>按需更新学年总览和课程首页中的课程数量。本机预览能打开新课程后，再一键上传。</li>
 </ol>
-<h3 id="新增追番日记">新增追番日记</h3>
+<h3 id="更新追番日记封面卡片">更新追番日记（封面卡片）</h3>
 <ol>
-<li>打开 <code>docs/acg/diary</code>，复制 <code>k-on.md</code>，给副本起名，例如 <code>my-anime.md</code>。</li>
-<li>用记事本修改副本的标题和内容。</li>
-<li>打开同文件夹的 <code>index.md</code>，在“日记目录”中加上：</li>
+<li>打开 <code>docs/assets/anime/watchlist.json</code>，右键 → 打开方式 → 记事本。这里集中保存番剧信息。</li>
+<li>三个英文名称分别对应：<code>watching</code> = 正在追、<code>planned</code> = 打算补、<code>recommended</code> = 疯狂推。正在追里的 <code>season</code> 是季度名称，例如 <code>2026年10月新番</code>；每个季度的 <code>anime</code> 方括号里放这一季的番剧。</li>
+<li>修改现有条目时，主要改下面这些值：</li>
 </ol>
-<pre><code class="language-markdown">- [我的新番剧推荐](my-anime.md) — 一句话推荐理由。
-</code></pre>
-<p>这样访客就能从日记目录进入文章。如果还希望它直接出现在侧边导航，再按现有格式把路径 <code>acg/diary/my-anime.md</code> 加入 <code>mkdocs.yml</code>。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>怎么填写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>不重复的简短英文名称，例如 <code>my-anime</code></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>番剧名称，保留前后的英文双引号</td>
+</tr>
+<tr>
+<td><code>cover</code></td>
+<td>封面路径，例如 <code>assets/anime/my-anime.jpg</code>；把图片放进 <code>docs/assets/anime/</code></td>
+</tr>
+<tr>
+<td><code>coverFit</code></td>
+<td>可选；写 <code>"cover"</code> 会铺满封面并裁掉两侧；不写这个字段则完整显示原图</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>正在追</code>、<code>打算补</code> 或 <code>疯狂推</code></td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td>看完写 <code>true</code>，未看完写 <code>false</code>；看完会显示“已补完”标签</td>
+</tr>
+<tr>
+<td><code>review</code></td>
+<td>评价文字；暂时不写则保留 <code>""</code>；换行写 <code>\n</code></td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td>0～10 的数字，例如 <code>10</code>、<code>9.5</code>；未评分写 <code>null</code>，数字不加引号</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>图片出处的完整网址</td>
+</tr>
+<tr>
+<td><code>sourceName</code></td>
+<td>出处名称，例如“动画官网”</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>新增番剧：复制同组里从 <code>{</code> 到对应 <code>}</code> 的完整条目，放进同一对方括号 <code>[]</code> 里面。两个条目之间加一个英文逗号 <code>,</code>，最后一个条目后不加逗号。</li>
+<li>新增季度：在 <code>watching</code> 方括号里复制现有的整个季度对象，修改 <code>season</code>，再修改这个季度 <code>anime</code> 里的番剧。季度按照文件中的顺序显示，建议把最新季度放在最前面。</li>
+<li>从“打算补”移到“疯狂推”：把该番剧的完整条目剪切到 <code>recommended</code>，修改 <code>status</code>，把 <code>completed</code> 设为 <code>true</code>，然后写评价和评分。注意修正两边相邻条目之间的逗号。</li>
+<li>保存文件，打开本机预览。点击封面应直接显示评价，再点一次或按 Esc 收起；页面不会跳转。</li>
+<li>确认效果后双击根目录的“一键上传到GitHub.bat”。</li>
+</ol>
+<p>封面建议从作品官网、电视台或发行方的官方作品页寻找。把图片下载到本机资源目录，并在 <code>source</code> 记录出处，之后不会因为外站禁止直接引用而突然消失。现有三张图的来源记录在 <code>scripts/anime-artwork-sources.md</code>。</p>
+<p>“打算补”下方的“推荐一部番”会打开仓库的 GitHub Issue 表单。访客需要登录 GitHub；你在仓库 Issues 查看推荐，再自行挑选加入清单。表单文件是 <code>.github/ISSUE_TEMPLATE/anime-recommendation.yml</code>。</p>
 <h2 id="5-添加或替换实验报告-pdf">5. 添加或替换实验报告 PDF</h2>
 <p>现有报告都位于对应课程的 <code>reports/</code> 下。例如：</p>
 <pre><code class="language-text">docs/course/year2/labs/circuit-design-1/reports/experiment-2/

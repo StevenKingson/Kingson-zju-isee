@@ -135,11 +135,13 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/widgets.css
   - stylesheets/pdf-preview.css
+  - stylesheets/watchlist.css
 
 extra_javascript:
   - javascripts/site.js
   - javascripts/widgets.js
   - javascripts/pdf-preview.js
+  - javascripts/watchlist.js
   - javascripts/mathjax.js
   - javascripts/vendor/mathjax/es5/tex-mml-chtml.js
 
