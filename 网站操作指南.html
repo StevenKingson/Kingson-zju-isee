@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KING桑的网站操作指南</title>
+<style>
+:root{color-scheme:light;--accent:#a65387;--ink:#302a34;--muted:#726976;--line:#e9dfe7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#faf8fb;color:var(--ink);font:16px/1.85 "Microsoft YaHei",system-ui,sans-serif}
+header{padding:34px max(24px,calc((100% - 1200px)/2));border-bottom:1px solid var(--line);background:white}
+header strong{font-size:23px}header p{margin:6px 0 0;color:var(--muted)}
+.layout{max-width:1250px;margin:auto;display:grid;grid-template-columns:245px minmax(0,1fr);gap:30px;padding:30px 24px 70px}
+nav{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:14px;padding:12px;background:white;border:1px solid var(--line);border-radius:14px}
+nav ul{padding-left:22px}nav a{text-decoration:none}main{min-width:0;background:white;border:1px solid var(--line);border-radius:18px;padding:26px 38px}
+h1{font-size:30px;margin-top:0}h2{font-size:24px;margin-top:2.2em;padding-bottom:8px;border-bottom:1px solid var(--line);scroll-margin-top:25px}h3{font-size:19px;margin-top:1.8em}
+a{color:var(--accent);overflow-wrap:anywhere}code{font-family:Consolas,"Microsoft YaHei",monospace;background:#f5eff5;border-radius:4px;padding:2px 5px;font-size:.9em;overflow-wrap:anywhere}
+pre{overflow:auto;padding:18px;background:#f7f4f8;border:1px solid var(--line);border-radius:10px;line-height:1.6}pre code{background:none;padding:0;overflow-wrap:normal}
+table{border-collapse:collapse;width:100%;font-size:14px;display:block;overflow:auto}th,td{border:1px solid var(--line);text-align:left;vertical-align:top;padding:10px 12px}th{background:#f7f1f6}
+blockquote{margin:20px 0;padding:12px 18px;border-left:4px solid #c68ab1;background:#fbf5fa}blockquote p{margin:0}li{margin:6px 0}hr{border:0;border-top:1px solid var(--line);margin:35px 0}
+@media(max-width:850px){.layout{display:block;padding:20px 14px}nav{position:static;max-height:none;margin-bottom:20px}main{padding:24px 20px}h1{font-size:26px}}
+@media print{body{background:white}header,nav{display:none}.layout{display:block;padding:0}main{border:0;padding:0}pre{white-space:pre-wrap}h2,h3{break-after:avoid}a{color:inherit}}
+</style></head><body>
+<header><strong>☕ KING桑の放课后茶会 · 站长手册</strong><p>修改内容 → 本机预览 → 双击上传 → 等待网站更新</p></header>
+<div class="layout"><nav aria-label="操作指南目录"><div class="toc">
+<ul>
+<li><a href="#1-第一次编辑前先找到文件">1. 第一次编辑前，先找到文件</a></li>
+<li><a href="#2-修改现有网页">2. 修改现有网页</a></li>
+<li><a href="#3-常用文字图片和公式格式">3. 常用文字、图片和公式格式</a></li>
+<li><a href="#4-新增课程或追番日记">4. 新增课程或追番日记</a></li>
+<li><a href="#5-添加或替换实验报告-pdf">5. 添加或替换实验报告 PDF</a></li>
+<li><a href="#6-更新画集和-bgm">6. 更新画集和 BGM</a></li>
+<li><a href="#7-处理友链申请和留言">7. 处理友链申请和留言</a></li>
+<li><a href="#8-本机预览再一键上传">8. 本机预览，再一键上传</a></li>
+<li><a href="#9-常见问题怎么处理">9. 常见问题怎么处理</a></li>
+<li><a href="#10-哪些文件平时不需要动">10. 哪些文件平时不需要动</a></li>
+</ul>
+</div>
+</nav><main><h1 id="king桑的网站操作指南">KING桑的网站操作指南</h1>
+<p>这份指南对应你的项目文件夹：<code>E:\projects\github_web</code>。</p>
+<p><strong>平时只需记住四步：改文件 → 保存 → 本机预览 → 双击“一键上传到GitHub.bat”。</strong></p>
+<ul>
+<li>公开网站：<a href="https://stevenkingson.github.io/Kingson-isee.github.io/">https://stevenkingson.github.io/Kingson-isee.github.io/</a></li>
+<li>GitHub 仓库：<a href="https://github.com/StevenKingson/Kingson-isee.github.io">https://github.com/StevenKingson/Kingson-isee.github.io</a></li>
+<li>发布进度：<a href="https://github.com/StevenKingson/Kingson-isee.github.io/actions">https://github.com/StevenKingson/Kingson-isee.github.io/actions</a></li>
+</ul>
+<p><code>网站操作指南.html</code> 可以双击，用浏览器阅读；不联网也能打开。<code>网站操作指南.md</code> 是这份指南的文字原稿。</p>
+<h2 id="1-第一次编辑前先找到文件">1. 第一次编辑前，先找到文件</h2>
+<ol>
+<li>按键盘 <strong>Win＋E</strong> 打开文件资源管理器。</li>
+<li>点击上方地址栏，输入 <code>E:\projects\github_web</code>，按回车。</li>
+<li>在资源管理器顶部点击“查看 → 显示 → 文件扩展名”。如果是旧版 Windows，在“查看”选项卡勾选“文件扩展名”。这样能分清 <code>index.md</code> 和误存的 <code>index.md.txt</code>。</li>
+<li>找到要改的 <code>.md</code> 文件，右键点击，选择“打开方式 → 记事本”。如果没有记事本，点击“选择其他应用”再选记事本。</li>
+<li>改完按 <strong>Ctrl＋S</strong> 保存。刚刚改错且还没关闭记事本时，可以按 <strong>Ctrl＋Z</strong> 撤销。</li>
+</ol>
+<p>Markdown（<code>.md</code>）就是带简单排版符号的文字文件，下面会给你可复制的例子。只改正文时，不需要改程序。</p>
+<h3 id="想改什么打开哪个文件">想改什么，打开哪个文件</h3>
+<p>以下路径都从项目文件夹开始。比如 <code>docs/about/index.md</code>，就是依次打开 <code>docs → about → index.md</code>。</p>
+<table>
+<thead>
+<tr>
+<th>想修改的内容</th>
+<th>对应文件或文件夹</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主页大标题、欢迎语</td>
+<td><code>docs/index.md</code></td>
+</tr>
+<tr>
+<td>网站名称、顶部导航、课程菜单</td>
+<td><code>mkdocs.yml</code></td>
+</tr>
+<tr>
+<td>关于页、自我介绍</td>
+<td><code>docs/about/index.md</code></td>
+</tr>
+<tr>
+<td>友链页、通过申请后的友链</td>
+<td><code>docs/friends/index.md</code></td>
+</tr>
+<tr>
+<td>课程板块首页</td>
+<td><code>docs/course/index.md</code></td>
+</tr>
+<tr>
+<td>大一、大二的课程</td>
+<td><code>docs/course/year1/</code>、<code>docs/course/year2/</code></td>
+</tr>
+<tr>
+<td>大一、大二学年总览</td>
+<td>各学年的 <code>index.md</code></td>
+</tr>
+<tr>
+<td>两篇完整课程总结合订本</td>
+<td>各学年的 <code>overview.md</code></td>
+</tr>
+<tr>
+<td>追番日记目录</td>
+<td><code>docs/acg/diary/index.md</code></td>
+</tr>
+<tr>
+<td>当前的轻音少女推荐笔记</td>
+<td><code>docs/acg/diary/k-on.md</code></td>
+</tr>
+<tr>
+<td>画集图片、首页随机背景来源</td>
+<td><code>docs/assets/artbooks/</code></td>
+</tr>
+<tr>
+<td>BGM 音频、已整理歌曲的名称和编号</td>
+<td><code>docs/assets/music/</code>、其中的 <code>library.json</code></td>
+</tr>
+<tr>
+<td>留言板上方的介绍文字</td>
+<td><code>docs/guestbook/index.md</code></td>
+</tr>
+<tr>
+<td>页面样式（进阶修改）</td>
+<td><code>docs/stylesheets/extra.css</code>、<code>widgets.css</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-修改现有网页">2. 修改现有网页</h2>
+<h3 id="修改关于页">修改“关于”页</h3>
+<ol>
+<li>打开 <code>docs/about/index.md</code>。</li>
+<li>把“正在学习”“平时喜欢”等占位文字改成自己的介绍。</li>
+<li>保留行首的 <code>#</code>、<code>##</code>、<code>-</code>，它们分别表示大标题、小标题、列表。</li>
+<li>按 <strong>Ctrl＋S</strong>。</li>
+</ol>
+<h3 id="修改主页标题和欢迎语">修改主页标题和欢迎语</h3>
+<p>打开 <code>docs/index.md</code>，找到下面这两处，只改标签之间的文字：</p>
+<pre><code class="language-html">&lt;h1&gt;KING桑の放课后茶会&lt;/h1&gt;
+&lt;p class=&quot;home-description&quot;&gt;下课了，来喝杯茶吧。&lt;br&gt;在这里，慢慢记录学习与生活。&lt;/p&gt;
+</code></pre>
+<p><code>&lt;br&gt;</code> 表示换行；保留 <code>&lt;h1&gt;</code>、<code>&lt;/h1&gt;</code>、<code>&lt;p ...&gt;</code> 和 <code>&lt;/p&gt;</code>。如果要同时修改浏览器标题和页眉的网站名称，再打开 <code>mkdocs.yml</code>，修改第一行 <code>site_name:</code> 后面的文字。</p>
+<h3 id="修改现有课程">修改现有课程</h3>
+<p>例如，“大二 → 专业基础课程 → 信号与系统”对应：</p>
+<pre><code class="language-text">docs/course/year2/foundation/signals-systems/index.md
+</code></pre>
+<p>在其中修改心得即可。找不到文件时，可以在 <code>mkdocs.yml</code> 里按 <strong>Ctrl＋F</strong> 搜索课程名称，后面的路径就是它的位置，前面补上 <code>docs/</code>。</p>
+<p>大一“专业基础课程”的文件夹实际叫 <code>hard</code>，“专业必修课程”的文件夹叫 <code>major</code>，这是已有路径，沿用即可。每门课程与 <code>overview.md</code> 合订本是独立页面：改了单门课，不会自动改写合订本；需要两边一致时分别修改。</p>
+<h2 id="3-常用文字图片和公式格式">3. 常用文字、图片和公式格式</h2>
+<p>可以把下面的格式复制进文章，然后替换文字：</p>
+<pre><code class="language-markdown"># 课程名称
+
+这里写开头介绍。段落之间空一行。
+
+## 上课体验
+
+这是普通文字，**这是加粗文字**。
+
+- 第一条心得
+- 第二条心得
+
+## 考核方式
+
+1. 平时作业
+2. 期末考试
+
+[链接名称](https://example.com/)
+</code></pre>
+<p>每篇文章一般只放一个 <code># 大标题</code>，下面的小节用 <code>##</code>，更小的小节用 <code>###</code>。</p>
+<h3 id="给文章添加图片">给文章添加图片</h3>
+<ol>
+<li>在这篇文章所在的文件夹中，新建 <code>images</code> 文件夹。</li>
+<li>把图片复制进去，例如 <code>images/experiment-1.png</code>。</li>
+<li>在文章需要显示图片的位置加入：</li>
+</ol>
+<pre><code class="language-markdown">![实验结果截图](images/experiment-1.png)
+</code></pre>
+<p>这里的图片路径相对于当前 <code>.md</code> 文件。图片必须复制进项目，不能填写电脑上的 <code>E:\...</code> 路径；访问网站的朋友无法读取你电脑的文件。</p>
+<p>建议使用简短的英文文件名，以后引用和移动更方便。</p>
+<h3 id="添加公式">添加公式</h3>
+<p>行内公式：</p>
+<pre><code class="language-markdown">电压满足 $U=IR$。
+</code></pre>
+<p>单独成行的公式，前后各空一行：</p>
+<pre><code class="language-markdown">$$
+H(s)=\frac{1}{RCs+1}
+$$
+</code></pre>
+<h2 id="4-新增课程或追番日记">4. 新增课程或追番日记</h2>
+<h3 id="新增一门课程">新增一门课程</h3>
+<p>以“大二 → 专业基础课程”新增课程为例：</p>
+<ol>
+<li>打开 <code>docs/course/year2/foundation</code>。</li>
+<li>新建文件夹，例如 <code>my-new-course</code>。</li>
+<li>打开记事本，写好文章，点击“文件 → 另存为”。</li>
+<li>保存到刚才的文件夹，文件名填写 <code>index.md</code>，“保存类型”选“所有文件”，编码选 <strong>UTF-8</strong>。确认文件没有变成 <code>index.md.txt</code>。</li>
+<li>打开 <code>mkdocs.yml</code>，找到“大二”下面的“专业基础课程”。在该分类最后一门课下面加一行，与上一行的短横线对齐：</li>
+</ol>
+<pre><code class="language-yaml">      - 信号与系统: course/year2/foundation/signals-systems/index.md
+      - 我的新课程: course/year2/foundation/my-new-course/index.md
+</code></pre>
+<p>只新增第二行，保留原有课程。<code>mkdocs.yml</code> 中的路径从 <code>docs</code> 内部开始，因此不要再加 <code>docs/</code> 前缀。缩进请用空格，与相邻行一致，不要按 Tab。</p>
+<ol start="6">
+<li>在 <code>docs/course/year2/index.md</code> 的对应课程列表中加入：</li>
+</ol>
+<pre><code class="language-markdown">- [我的新课程](foundation/my-new-course/index.md) — 一句话简介。
+</code></pre>
+<ol start="7">
+<li>按需更新学年总览和课程首页中的课程数量。本机预览能打开新课程后，再一键上传。</li>
+</ol>
+<h3 id="新增追番日记">新增追番日记</h3>
+<ol>
+<li>打开 <code>docs/acg/diary</code>，复制 <code>k-on.md</code>，给副本起名，例如 <code>my-anime.md</code>。</li>
+<li>用记事本修改副本的标题和内容。</li>
+<li>打开同文件夹的 <code>index.md</code>，在“日记目录”中加上：</li>
+</ol>
+<pre><code class="language-markdown">- [我的新番剧推荐](my-anime.md) — 一句话推荐理由。
+</code></pre>
+<p>这样访客就能从日记目录进入文章。如果还希望它直接出现在侧边导航，再按现有格式把路径 <code>acg/diary/my-anime.md</code> 加入 <code>mkdocs.yml</code>。</p>
+<h2 id="5-添加或替换实验报告-pdf">5. 添加或替换实验报告 PDF</h2>
+<p>现有报告都位于对应课程的 <code>reports/</code> 下。例如：</p>
+<pre><code class="language-text">docs/course/year2/labs/circuit-design-1/reports/experiment-2/
+</code></pre>
+<h3 id="只替换现有-pdf">只替换现有 PDF</h3>
+<p>把新 PDF 复制到对应报告文件夹，使用与原文件<strong>完全相同</strong>的文件名并替换原文件。页面中的链接和预览会继续使用它。文章中写死的文件大小、页数或正文说明需要按实际情况修改。</p>
+<h3 id="新增一份报告">新增一份报告</h3>
+<ol>
+<li>在该课程的 <code>reports</code> 内新建报告文件夹，如 <code>experiment-new</code>。</li>
+<li>放入 <code>report.pdf</code>，新建 <code>index.md</code>。</li>
+<li>在 <code>index.md</code> 中使用下面的格式：</li>
+</ol>
+<pre><code class="language-markdown"># 我的实验报告
+
+这里写实验简介。
+
+[在线打开 PDF](report.pdf)
+
+&lt;details class=&quot;report-pdf&quot; data-pdf=&quot;report.pdf&quot;&gt;
+  &lt;summary&gt;展开 PDF 预览&lt;/summary&gt;
+&lt;/details&gt;
+</code></pre>
+<ol start="4">
+<li>在该课程的 <code>reports/index.md</code> 加入新报告链接；需要显示在侧边菜单时，也在 <code>mkdocs.yml</code> 加入这份 <code>index.md</code> 的路径。</li>
+</ol>
+<p><code>data-pdf</code> 的文件名要与实际 PDF 一致。不要修改预览用的 <code>class="report-pdf"</code>，展开后就能翻页、输入页码和缩放。</p>
+<h2 id="6-更新画集和-bgm">6. 更新画集和 BGM</h2>
+<h3 id="给现有画集加图">给现有画集加图</h3>
+<p>把新图片复制到 <code>docs/assets/artbooks/k-on-2009-2012/</code>，按已有编号继续命名，例如 <code>424.jpg</code>。同一画集不能出现重复编号，如 <code>001.jpg</code> 与 <code>001.png</code> 会被识别成同一个编号。</p>
+<h3 id="添加另一套画集">添加另一套画集</h3>
+<ol>
+<li>在 <code>docs/assets/artbooks/</code> 新建文件夹，例如 <code>another-artbook</code>。</li>
+<li>放入图片，建议使用 <code>001.jpg</code>、<code>002.jpg</code> 这样的编号。</li>
+<li>如需显示中文画集名，在新文件夹内新建 <code>album.json</code>，复制下面的内容并修改文字：</li>
+</ol>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;我的新画集&quot;,
+  &quot;description&quot;: &quot;这里写画集简介&quot;
+}
+</code></pre>
+<p>重新启动预览或运行一键上传，程序就会刷新列表。新画集会出现在画集选择框中，也会参与首页随机背景。</p>
+<h3 id="添加歌曲">添加歌曲</h3>
+<p>把 MP3 文件复制到 <code>docs/assets/music/</code>。重新启动预览或一键上传后，新歌曲会自动排在现有 20 首之后，名称默认使用文件名。</p>
+<h3 id="修改现有歌曲名称顺序或删除曲目">修改现有歌曲名称、顺序或删除曲目</h3>
+<p>打开 <code>docs/assets/music/library.json</code>：</p>
+<ul>
+<li><code>title</code>：歌曲目录里显示的名称，可以修改。</li>
+<li><code>number</code>：显示的编号；需要为正整数，同一曲库中不要重复。</li>
+<li>每个 <code>{ ... }</code> 代表一首歌；这些条目的排列顺序就是目录顺序。</li>
+<li><code>file</code>：实际音频文件名，必须与文件夹中的文件一致。</li>
+<li>删除已登记歌曲时，同时删除对应的整条 <code>{ ... }</code> 配置和 MP3 文件。JSON 的条目之间用逗号隔开，最后一条后面不加逗号。</li>
+</ul>
+<p><code>playlist.json</code> 是自动生成的，请改 <code>library.json</code>，不要直接改 <code>playlist.json</code>。如果修改后程序提示曲库配置错误，把日志中的报错发给我即可。</p>
+<h2 id="7-处理友链申请和留言">7. 处理友链申请和留言</h2>
+<h3 id="查看通过友链申请">查看、通过友链申请</h3>
+<ol>
+<li>打开仓库的 <a href="https://github.com/StevenKingson/Kingson-isee.github.io/issues">Issues</a>，查看带“友链申请”标签的申请。</li>
+<li>打开对方网站，决定是否收录。</li>
+<li>打开 <code>docs/friends/index.md</code>，在“茶会的朋友”下面添加：</li>
+</ol>
+<pre><code class="language-markdown">- [朋友的网站名称](https://example.com/) — 朋友网站的一句话介绍。
+</code></pre>
+<p>第一次加友链时，删除“这里的座位还空着……”这句占位文字。</p>
+<ol start="4">
+<li>保存、预览、一键上传。</li>
+<li>网站更新后，在申请 Issue 中回复结果，处理完再关闭 Issue。</li>
+</ol>
+<p>友链不会自动通过。页面上的申请表单在 <code>.github/ISSUE_TEMPLATE/friend-link.yml</code> 中；不需要改表单时不用动这个文件。</p>
+<h3 id="回复和管理留言">回复和管理留言</h3>
+<p>打开<a href="https://github.com/StevenKingson/Kingson-isee.github.io/discussions/1">留言主帖</a>，登录 GitHub 后回复访客。管理单条留言时，点击留言右上角的 <code>…</code> 菜单。</p>
+<p>网页留言和 GitHub 主帖中的评论是同一份内容，新增留言不需要重新部署。<code>docs/guestbook/index.md</code> 只负责网页上方的介绍；不要把访客留言手动复制进去。</p>
+<h2 id="8-本机预览再一键上传">8. 本机预览，再一键上传</h2>
+<h3 id="第一步检查修改效果">第一步：检查修改效果</h3>
+<ol>
+<li>在项目根目录双击 <code>start-preview.bat</code>，保留打开的窗口。</li>
+<li>打开浏览器，输入 <code>http://127.0.0.1:8000/</code>。</li>
+<li>检查改过的文字、新增导航、图片和附件能否打开。</li>
+<li>普通文章保存后通常会自动刷新。画集、曲库需要重新扫描时，点击预览命令窗口，按 <strong>Ctrl＋C</strong>，如果提示是否终止，输入 <strong>Y</strong> 并回车，然后重新双击 <code>start-preview.bat</code>。</li>
+</ol>
+<h3 id="第二步上传">第二步：上传</h3>
+<ol>
+<li>保存所有正在编辑的文件。</li>
+<li>回到项目根目录，双击 <strong><code>一键上传到GitHub.bat</code></strong>。</li>
+<li>等待程序依次检查项目、补齐依赖、更新画集和曲库、构建网站、保存版本并上传。</li>
+<li>如果弹出 GitHub 登录，登录 <strong>StevenKingson</strong>，按提示完成验证。当前电脑已经登录时通常不需要这一步。</li>
+<li>看到“上传成功”后，按任意键关闭窗口。</li>
+</ol>
+<p>双击即开始上传，不需要再输入 Git 命令或逐次确认。它会包含项目内所有未被忽略的新增、修改和删除，因此这个文件夹请只放网站相关内容。</p>
+<p>程序不会上传 <code>site/</code>、<code>.venv/</code>、<code>__pycache__/</code>、<code>output/</code> 和日志。每次上传都会留下一个带时间的 Git 提交，方便以后查找版本。</p>
+<h3 id="第三步等待公开网站更新">第三步：等待公开网站更新</h3>
+<ol>
+<li>打开 <a href="https://github.com/StevenKingson/Kingson-isee.github.io/actions">GitHub Actions</a>。</li>
+<li>点击最新一条 <code>Build and deploy website</code>，等待 <code>build</code> 和 <code>deploy</code> 都出现绿色对勾。</li>
+<li>打开<a href="https://stevenkingson.github.io/Kingson-isee.github.io/">公开网站</a>，按 <strong>Ctrl＋F5</strong> 刷新。</li>
+</ol>
+<p>上传成功表示代码已到 GitHub，公开网站还要等待 Actions 发布，通常需要几分钟。没有任何改动时，程序会提示“无需重复上传”；如果上次提交已保存但推送失败，再次双击会继续推送。</p>
+<h2 id="9-常见问题怎么处理">9. 常见问题怎么处理</h2>
+<table>
+<thead>
+<tr>
+<th>看到的情况</th>
+<th>怎样操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件变成 <code>index.md.txt</code></td>
+<td>开启“文件扩展名”，右键重命名为 <code>index.md</code>，确认更改扩展名。</td>
+</tr>
+<tr>
+<td>导航配置报错、找不到页面</td>
+<td>核对 <code>mkdocs.yml</code> 的空格缩进与路径；路径不用加 <code>docs/</code>，文件名要与实际文件一致。</td>
+</tr>
+<tr>
+<td>图片在电脑上能看，上线看不到</td>
+<td>检查图片是否已复制进 <code>docs/</code>；文章使用相对路径，不用本机磁盘路径。注意文件名大小写。</td>
+</tr>
+<tr>
+<td>曲库提示 missing 或 duplicated</td>
+<td>核对 <code>library.json</code> 的 <code>file</code> 是否与 MP3 文件名一致，编号是否重复。</td>
+</tr>
+<tr>
+<td>单个文件超过 100 MiB</td>
+<td>压缩图片/PDF/压缩包，或把大文件拆分，再双击上传；这是 <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github">GitHub 的单文件限制</a>。</td>
+</tr>
+<tr>
+<td>网络断开、登录失败、push 失败</td>
+<td>保留文件，恢复网络或完成 GitHub 登录后再次双击。已经保存的本机提交不会丢失。</td>
+</tr>
+<tr>
+<td>“GitHub 上有本机尚未包含的提交”</td>
+<td>可能曾在 GitHub 网页或另一台电脑修改过。把提示发给我，我会帮你同步；程序不会自动覆盖远程内容。</td>
+</tr>
+<tr>
+<td>“另一个上传窗口正在运行”</td>
+<td>等待原窗口结束，再试一次。不要同时打开多个上传窗口。</td>
+</tr>
+<tr>
+<td>程序显示构建失败</td>
+<td>看窗口最后的具体报错；本次不会继续提交和上传。日志保存在 <code>output/</code> 内，文件名以 <code>upload-</code> 开头。</td>
+</tr>
+<tr>
+<td>上传成功，但网站还是旧内容</td>
+<td>先确认 Actions 已出现绿色对勾，再按 Ctrl＋F5；如果 Actions 红色失败，打开那条记录查看失败步骤。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="没有-python-或-git">没有 Python 或 Git</h3>
+<p>当前电脑已经安装；通常只有换电脑时才会遇到。</p>
+<ul>
+<li><strong>Python</strong>：打开 <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a>，建议安装与本项目一致的 Python 3.11，安装界面勾选 <strong>Add python.exe to PATH</strong>。完成后重新双击上传程序，它会自动建立 <code>.venv</code> 并安装网站依赖。</li>
+<li><strong>Git</strong>：打开 <a href="https://git-scm.com/downloads/win">https://git-scm.com/downloads/win</a>，安装 Git for Windows，通常保留默认选项即可。安装完成后关闭旧命令窗口，重新双击上传程序。</li>
+<li>换电脑需要先从仓库克隆项目（保留 <code>.git</code>），仅下载 ZIP 不包含 Git 版本记录，不能直接使用这个上传程序。</li>
+</ul>
+<h3 id="git-提示没有提交身份">Git 提示没有提交身份</h3>
+<p>在项目文件夹的地址栏输入 <code>powershell</code> 并回车，依次运行：</p>
+<pre><code class="language-powershell">git config user.name &quot;StevenKingson&quot;
+git config user.email &quot;在这里填写你的GitHub提交邮箱&quot;
+</code></pre>
+<p>第二行先把双引号里的文字换成 GitHub <strong>Settings → Emails</strong> 中的邮箱；想隐藏真实邮箱时，可以复制该页面提供的 noreply 邮箱。这里只设置本项目，不修改其他仓库。</p>
+<h3 id="只检查暂时不上传">只检查，暂时不上传</h3>
+<p>在项目文件夹打开 PowerShell，运行：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe scripts\upload-github.py --check-only
+</code></pre>
+<p>它会刷新素材目录、操作指南并检查构建，但不提交或推送。</p>
+<h2 id="10-哪些文件平时不需要动">10. 哪些文件平时不需要动</h2>
+<ul>
+<li><code>site/</code>、<code>.venv/</code>、<code>output/</code>：生成文件、运行环境和本机日志，不是文章原稿。</li>
+<li><code>docs/assets/gallery.json</code>、<code>docs/assets/music/playlist.json</code>：自动生成的目录，重新扫描会覆盖手动修改。</li>
+<li><code>docs/javascripts/</code>、<code>overrides/</code>：播放器、画集、PDF 预览等功能代码；只改文章时不用动。</li>
+<li><code>docs/assets/giscus.json</code>：已经接通留言主帖的配置，日常回复留言不用改。</li>
+<li><code>scripts/import-course-notes.py</code>：早期导入课程用的脚本，重新运行会覆盖生成的课程页面，日常编辑不要运行它。</li>
+</ul>
+<p>这份指南的原稿是根目录的 <code>网站操作指南.md</code>。修改原稿后，一键上传程序会自动重新生成浏览器阅读版。</p></main></div>
+</body></html>
