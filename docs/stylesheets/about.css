@@ -1,0 +1,33 @@
+.about-hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: max(28rem, calc(100svh - var(--about-top, 150px))); padding: 1.5rem 1rem 4rem; text-align: center; }
+.md-typeset .about-avatar { display: block; width: clamp(11rem, 25vw, 16rem); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 0.25rem solid var(--tea-panel); outline: 1px solid var(--tea-border); box-shadow: 0 10px 40px #67425a18; }
+.md-typeset .about-hero h1 { margin: 0.5rem 0 0.2rem; color: var(--tea-text); font-size: 1.65rem; font-weight: 500; }
+.about-hero h1::before { display: none; }
+.about-socials { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.7rem; }
+.md-typeset .about-social { display: inline-flex; align-items: center; justify-content: center; min-width: 5.6rem; min-height: 2.2rem; border: 1px solid var(--tea-border); border-radius: 2rem; padding: 0.45rem 1rem; background: var(--tea-panel); color: var(--tea-text); font: inherit; font-size: 0.7rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.md-typeset .about-wechat-button { color: #24835a; }
+.md-typeset .about-bilibili { color: #b55385; }
+.md-typeset .about-cc98 { color: #4e70a2; }
+.about-social:hover { background: var(--tea-soft); border-color: var(--tea-accent); }
+.about-social:focus-visible, .about-scroll:focus-visible, .about-dialog-close:focus-visible { outline: 2px solid var(--tea-accent); outline-offset: 4px; }
+.md-typeset .about-scroll { position: absolute; bottom: 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.2rem; color: var(--tea-muted); font-size: 0.6rem; letter-spacing: 0.05em; }
+.about-scroll span { font-size: 1rem; }
+.about-story { max-width: 37rem; margin: 0 auto; padding: 4rem 1rem 5rem; min-height: 65svh; scroll-margin-top: 5rem; }
+.md-typeset .about-story h2 { margin-top: 0; }
+.about-wechat { position: fixed; inset: 0; margin: auto; width: min(24rem, calc(100vw - 1.6rem)); max-height: calc(100dvh - 1.6rem); padding: 0.8rem; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--tea-border); border-radius: 0.7rem; background: var(--tea-panel); color: var(--tea-text); box-shadow: 0 15px 80px #0005; }
+.about-wechat::backdrop { background: #17121bd1; backdrop-filter: blur(4px); }
+.about-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.md-typeset .about-dialog-heading h2 { margin: 0; font-size: 0.8rem; }
+.about-dialog-close { display: grid; place-items: center; flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%; color: var(--tea-text); background: var(--tea-soft); border: 1px solid var(--tea-border); cursor: pointer; font-size: 1.2rem; }
+.md-typeset .about-wechat img { display: block; width: auto; max-width: 100%; height: auto; max-height: calc(100dvh - 8rem); object-fit: contain; margin: 0.6rem auto; border-radius: 0.35rem; background: #fff; }
+.md-typeset .about-wechat p { color: var(--tea-muted); margin: 0; text-align: center; font-size: 0.55rem; }
+html:has(.about-wechat[open]) { overflow: hidden; }
+html[data-tea-theme="night"] .about-wechat-button { color: #8ed8b2; }
+html[data-tea-theme="night"] .about-bilibili { color: #efa6d0; }
+html[data-tea-theme="night"] .about-cc98 { color: #a5c4f4; }
+@media (max-width: 600px) {
+  .about-hero { gap: 0.8rem; padding-inline: 0; }
+  .about-socials { gap: 0.45rem; }
+  .md-typeset .about-social { min-width: 4.5rem; padding-inline: 0.65rem; }
+  .about-story { padding: 3rem 0.3rem; }
+}
+@media (prefers-reduced-motion: reduce) { .about-social { transition: none; } }

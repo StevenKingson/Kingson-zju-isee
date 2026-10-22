@@ -13,6 +13,33 @@
           "score": null,
           "source": "https://jojo-portal.com/news/anime/594/",
           "sourceName": "JOJO 动画官网"
+        },
+        {
+          "id": "cyberpunk-edgerunners-2",
+          "title": "赛博朋克 边缘行者第二季",
+          "cover": "assets/anime/cyberpunk2.jpg",
+          "status": "正在追",
+          "completed": true,
+          "review": "节奏混乱，人物动机不明，不知道要讲什么",
+          "score": 5,
+          "source": "https://www.cyberpunk.net/en/edgerunners2",
+          "sourceName": "赛博朋克：边缘行者第二季官网"
+        }
+      ]
+    },
+    {
+      "season": "2026年7月新番",
+      "anime": [
+        {
+          "id": "draw-this-then-die",
+          "title": "描绘直至生命尽头",
+          "cover": "assets/anime/draw.jpg",
+          "status": "正在追",
+          "completed": true,
+          "review": "最纯粹的热爱与感动，看完哈特暖暖的",
+          "score": 9,
+          "source": "https://www.vap.co.jp/korekaite-shine/",
+          "sourceName": "描绘直至生命尽头动画官网"
         }
       ]
     }
@@ -28,6 +55,17 @@
       "score": null,
       "source": "https://rurinohouseki.com/",
       "sourceName": "琉璃的宝石动画官网"
+    },
+    {
+      "id": "rezero-season-2",
+      "title": "RE：从零开始的异世界生活 第二季",
+      "cover": "assets/anime/rezero2.jpg",
+      "status": "打算补",
+      "completed": false,
+      "review": "",
+      "score": null,
+      "source": "https://kadokawa-animation.jp/lineup/re-zero-anime-2nd",
+      "sourceName": "KADOKAWA Re:Zero 第二季作品页"
     }
   ],
   "recommended": [
@@ -42,6 +80,17 @@
       "score": 10,
       "source": "https://www.tbs.co.jp/tbs-ch/item/a0086/",
       "sourceName": "TBS 轻音少女节目官网"
+    },
+    {
+      "id": "dark-gathering",
+      "title": "黑暗集会",
+      "cover": "assets/anime/dark-gathering.jpg",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "比较小众的宝藏灵异番，虽然制作贫穷，但是剧情优秀，观感也好，推荐看原作漫画",
+      "score": 7,
+      "source": "https://darkgathering.jp/",
+      "sourceName": "黑暗集会动画官网"
     }
   ]
 }

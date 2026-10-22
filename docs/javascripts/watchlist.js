@@ -26,7 +26,7 @@
     image.decoding = "async";
     if (anime.coverFit === "cover") image.classList.add("anime-image-fill");
     button.append(image);
-    button.append(make("span", `anime-status${anime.completed ? " is-complete" : ""}`, anime.completed ? "已补完" : anime.status),
+    button.append(make("span", `anime-status${anime.completed ? " is-complete" : ""}`, anime.completed ? "已看完" : anime.status),
       make("span", "anime-cover-hint", "点击看评价 ↗"));
     const overlay = make("span", "anime-review");
     overlay.id = `anime-review-${key}`;
