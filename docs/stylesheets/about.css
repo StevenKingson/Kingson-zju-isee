@@ -1,5 +1,5 @@
 .about-hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: max(28rem, calc(100svh - var(--about-top, 150px))); padding: 1.5rem 1rem 4rem; text-align: center; }
-.md-typeset .about-avatar { display: block; width: clamp(11rem, 25vw, 16rem); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 0.25rem solid var(--tea-panel); outline: 1px solid var(--tea-border); box-shadow: 0 10px 40px #67425a18; }
+.md-typeset .about-avatar { display: block; width: clamp(11rem, 25vw, 16rem); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 1px solid var(--tea-border); box-shadow: 0 10px 40px #67425a18; }
 .md-typeset .about-hero h1 { margin: 0.5rem 0 0.2rem; color: var(--tea-text); font-size: 1.65rem; font-weight: 500; }
 .about-hero h1::before { display: none; }
 .about-socials { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.7rem; }

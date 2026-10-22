@@ -6,7 +6,7 @@ hide:
 ---
 
 <section class="about-hero" aria-label="KING桑的个人主页">
-  <img class="about-avatar" src="../assets/profile/avatar.jpg" alt="KING桑的头像" width="1200" height="1200">
+  <img class="about-avatar" src="../assets/profile/avatar-filled.png" alt="KING桑的头像" width="1254" height="1254">
   <h1>KING桑</h1>
   <div class="about-socials" aria-label="找到我">
     <button class="about-social about-wechat-button" type="button" aria-haspopup="dialog" aria-controls="wechat-contact">微信</button>

@@ -75,7 +75,7 @@ blockquote{margin:20px 0;padding:12px 18px;border-left:4px solid #c68ab1;backgro
 </tr>
 <tr>
 <td>关于页的大头像、微信二维码</td>
-<td><code>docs/assets/profile/avatar.jpg</code>、<code>docs/assets/profile/wechat-qr.png</code></td>
+<td><code>docs/assets/profile/avatar-filled.png</code>、<code>docs/assets/profile/wechat-qr.png</code></td>
 </tr>
 <tr>
 <td>友链页、通过申请后的友链</td>
@@ -211,7 +211,7 @@ $$
 </ol>
 <h3 id="更新关于页的头像与联系方式">更新关于页的头像与联系方式</h3>
 <ul>
-<li>换头像：把新图片放进 <code>docs/assets/profile/</code>，命名为 <code>avatar.jpg</code> 并替换原文件。如果原图不是 JPG，可以保留其真实后缀，然后同步修改 <code>docs/about/index.md</code> 中头像的文件名。</li>
+<li>换头像：把新图片放进 <code>docs/assets/profile/</code>，命名为 <code>avatar-filled.png</code> 并替换原文件。如果原图不是 PNG，可以保留其真实后缀，然后同步修改 <code>docs/about/index.md</code> 中头像的文件名。</li>
 <li>换微信二维码：用新的完整二维码图片替换 <code>docs/assets/profile/wechat-qr.png</code>，保持四周留白，避免影响扫码。微信按钮会在当前页弹出二维码。</li>
 <li>改 B站或 CC98 链接：打开 <code>docs/about/index.md</code>，找到对应按钮的 <code>href="https://..."</code>，只替换引号中的网址。网址末尾不要加中文逗号。</li>
 <li>写个人介绍：同一文件中找到 <code>## 关于我</code>，修改其下方的文字。首屏保留头像和按钮，个人介绍会在向下翻页后显示。</li>
