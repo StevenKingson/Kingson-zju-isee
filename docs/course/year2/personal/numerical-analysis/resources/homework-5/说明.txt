@@ -1,0 +1,73 @@
+problem1.c 输出：
+--- Table a ---
+Results for x values:
+f'(1.1) = 17.142505
+f'(1.2) = 22.193635
+f'(1.3) = 27.107350
+f'(1.4) = 32.709255
+
+--- Table b ---
+Results for x values:
+f'(8.1) = 3.076600
+f'(8.3) = 3.116150
+f'(8.5) = 3.139975
+f'(8.7) = 3.153425
+
+preoblem2 解答过程见pdf文件
+
+problem3.c 输出：
+--- Approximations for Integrals ---
+
+Integral (a):
+  Trapezoidal Rule: 0.469149
+  Simpson's Rule:   0.479426
+
+Integral (b):
+  Trapezoidal Rule: 0.086643
+  Simpson's Rule:   0.084411
+
+Integral (c):
+  Trapezoidal Rule: 0.043810
+  Simpson's Rule:   0.043232
+
+Integral (d):
+  Trapezoidal Rule: 0.320503
+  Simpson's Rule:   0.321481
+
+problem4.c 输出：
+--- Romberg Integration Results ---
+Integral (a): R_3,3 = 0.909337
+Integral (b): R_3,3 = 0.000000
+Integral (c): R_3,3 = 0.693489
+Integral (d): R_3,3 = 0.405465
+
+problem5.c 输出：
+--- Euler's Method Results for IVP (a) ---
+t_i       w_i
+------------------
+1.00      1.000000
+1.10      1.000000
+1.20      1.008264
+1.30      1.022641
+1.40      1.041352
+1.50      1.063184
+1.60      1.087266
+1.70      1.112959
+1.80      1.139803
+1.90      1.167445
+2.00      1.195612
+
+--- Euler's Method Results for IVP (b) ---
+t_i       w_i
+------------------
+1.00      0.000000
+1.20      0.200000
+1.40      0.438889
+1.60      0.720494
+1.80      1.043513
+2.00      1.402685
+2.20      1.791985
+2.40      2.206103
+2.60      2.640656
+2.80      3.092193
+3.00      3.557945

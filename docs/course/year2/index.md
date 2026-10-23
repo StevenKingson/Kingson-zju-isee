@@ -35,7 +35,7 @@
 
 - [大学物理实验](labs/physics-lab/index.md) · 14 份实验报告
 - [电子电路设计实验Ⅰ](labs/circuit-design-1/index.md) · 6 份实验报告
-- [电子电路设计实验Ⅱ](labs/circuit-design-2/index.md) · 1 份实验报告
+- [电子电路设计实验Ⅱ](labs/circuit-design-2/index.md) · 2 份实验报告
 - [数字系统设计实验](labs/digital-systems-lab/index.md) · 2 份实验报告
 
 ## 个性修读课程

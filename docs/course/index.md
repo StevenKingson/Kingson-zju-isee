@@ -31,6 +31,17 @@ hide:
 | 信息与电子工程导论 | 3 | [信电导实验报告](year2/major-required/isee-introduction/reports/index.md) |
 | 大学物理实验 | 14 | [大物实验报告](year2/labs/physics-lab/reports/index.md) |
 | 电子电路设计实验Ⅰ | 6（含实验 4、5 合并报告） | [电设Ⅰ实验报告](year2/labs/circuit-design-1/reports/index.md) |
-| 电子电路设计实验Ⅱ | 1 | [电设Ⅱ实验报告](year2/labs/circuit-design-2/reports/index.md) |
+| 电子电路设计实验Ⅱ | 2 | [电设Ⅱ实验报告](year2/labs/circuit-design-2/reports/index.md) |
 | 数字系统设计实验 | 2 | [数电实验报告](year2/labs/digital-systems-lab/reports/index.md) |
 
+
+## 新增课程资料
+
+本次补充了大二六门课程的复习资料、作业和项目，进入对应课程即可阅读和下载。
+
+- 数值分析方法：[完整经验分享](year2/personal/numerical-analysis/experience.md) · [六次作业与花瓶插值项目](year2/personal/numerical-analysis/resources/index.md)
+- [信号与系统：频谱研究、FFT 和语音识别工程](year2/foundation/signals-systems/resources/index.md)
+- [合唱艺术：期末知识点与考前速记](year2/general-electives/choral-art/index.md)
+- [电子电路基础：2025 年课程设计](year2/foundation/electronic-circuits/resources/course-design/index.md)
+- [人工智能：开卷 A4 资料](year2/major-required/artificial-intelligence/resources/open-book/index.md)
+- [电设Ⅱ：STM32 函数信号发生器设计](year2/labs/circuit-design-2/reports/function-generator/index.md)

@@ -2,7 +2,7 @@
 
 [← 电子电路设计实验Ⅰ · 课程心得](../../index.md) · [全部实验报告](../index.md)
 
-- [在线打开 PDF（940 KB）](%E5%AE%9E%E9%AA%8C2.pdf)
+- [在线打开 PDF（987 KB）](%E5%AE%9E%E9%AA%8C2.pdf)
 
 <details class="report-pdf" data-pdf="%E5%AE%9E%E9%AA%8C2.pdf">
 <summary>展开 PDF 预览</summary>

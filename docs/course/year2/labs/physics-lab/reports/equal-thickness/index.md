@@ -2,7 +2,7 @@
 
 [← 大学物理实验 · 课程心得](../../index.md) · [全部实验报告](../index.md)
 
-- [在线打开 PDF（2.3 MB）](%E7%AD%89%E5%8E%9A%E5%B9%B2%E6%B6%89%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.pdf)
+- [在线打开 PDF（2.7 MB）](%E7%AD%89%E5%8E%9A%E5%B9%B2%E6%B6%89%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.pdf)
 
 <details class="report-pdf" data-pdf="%E7%AD%89%E5%8E%9A%E5%B9%B2%E6%B6%89%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.pdf">
 <summary>展开 PDF 预览</summary>

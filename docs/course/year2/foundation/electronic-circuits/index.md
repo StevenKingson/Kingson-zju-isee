@@ -13,3 +13,5 @@
 教材预定界面的教材是英文原书，又贵又没用，不建议购买。
 
 一些资料：
+
+- [2025 年课程设计题目与 PDF 预览](resources/course-design/index.md)

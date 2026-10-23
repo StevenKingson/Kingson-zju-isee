@@ -62,13 +62,23 @@ nav:
       - 大学物理（甲）Ⅱ: course/year2/general-required/physics-2/index.md
     - 通识选修课程:
       - 经济法理论与实务: course/year2/general-electives/economic-law/index.md
-      - 合唱艺术: course/year2/general-electives/choral-art/index.md
+      - 合唱艺术:
+        - 课程心得: course/year2/general-electives/choral-art/index.md
+        - 期末复习知识点汇总: course/year2/general-electives/choral-art/review.md
+        - 考前突击必背: course/year2/general-electives/choral-art/quick-review.md
     - 专业基础课程:
       - 复变函数与积分变换: course/year2/foundation/complex-analysis/index.md
-      - 电子电路基础: course/year2/foundation/electronic-circuits/index.md
+      - 电子电路基础:
+        - 课程心得: course/year2/foundation/electronic-circuits/index.md
+        - 2025 年课程设计: course/year2/foundation/electronic-circuits/resources/course-design/index.md
       - 概率论与数理统计: course/year2/foundation/probability-statistics/index.md
       - 数字系统设计: course/year2/foundation/digital-systems/index.md
-      - 信号与系统: course/year2/foundation/signals-systems/index.md
+      - 信号与系统:
+        - 课程心得: course/year2/foundation/signals-systems/index.md
+        - 课程资料: course/year2/foundation/signals-systems/resources/index.md
+        - 课程设计 · 频谱特性研究: course/year2/foundation/signals-systems/resources/spectrum-study/index.md
+        - FFT 蝶形运算实现: course/year2/foundation/signals-systems/resources/fft-butterfly/index.md
+        - 数字语音识别 GUI: course/year2/foundation/signals-systems/resources/digit-recognition/index.md
     - 专业必修课程:
       - 信息与电子工程导论:
         - 课程心得: course/year2/major-required/isee-introduction/index.md
@@ -77,7 +87,9 @@ nav:
         - 实验 2 · 基于 Simulink 的信号调制仿真: course/year2/major-required/isee-introduction/reports/experiment-2/index.md
         - 实验 3 · 基于 Multisim 的三极管放大电路仿真: course/year2/major-required/isee-introduction/reports/experiment-3/index.md
       - 半导体物理: course/year2/major-required/semiconductor-physics/index.md
-      - 人工智能: course/year2/major-required/artificial-intelligence/index.md
+      - 人工智能:
+        - 课程心得: course/year2/major-required/artificial-intelligence/index.md
+        - 开卷 A4 资料: course/year2/major-required/artificial-intelligence/resources/open-book/index.md
       - 认知实践: course/year2/major-required/cognitive-practice/index.md
     - 实验课合集:
       - 大学物理实验:
@@ -110,6 +122,7 @@ nav:
         - 课程心得: course/year2/labs/circuit-design-2/index.md
         - 报告目录: course/year2/labs/circuit-design-2/reports/index.md
         - 电流–电压转换电路实验研究: course/year2/labs/circuit-design-2/reports/current-voltage/index.md
+        - STM32 函数信号发生器设计: course/year2/labs/circuit-design-2/reports/function-generator/index.md
       - 数字系统设计实验:
         - 课程心得: course/year2/labs/digital-systems-lab/index.md
         - 报告目录: course/year2/labs/digital-systems-lab/reports/index.md
@@ -117,7 +130,17 @@ nav:
         - Lab 19 · 音乐播放实验: course/year2/labs/digital-systems-lab/reports/lab-19/index.md
     - 个性修读课程:
       - 本专业进阶模块:
-        - 数值分析方法: course/year2/personal/numerical-analysis/index.md
+        - 数值分析方法:
+          - 课程心得: course/year2/personal/numerical-analysis/index.md
+          - 课程总结与经验分享: course/year2/personal/numerical-analysis/experience.md
+          - 课程资料: course/year2/personal/numerical-analysis/resources/index.md
+          - 作业 1: course/year2/personal/numerical-analysis/resources/homework-1/index.md
+          - 作业 2: course/year2/personal/numerical-analysis/resources/homework-2/index.md
+          - 作业 3: course/year2/personal/numerical-analysis/resources/homework-3/index.md
+          - 作业 4: course/year2/personal/numerical-analysis/resources/homework-4/index.md
+          - 作业 5: course/year2/personal/numerical-analysis/resources/homework-5/index.md
+          - 作业 6: course/year2/personal/numerical-analysis/resources/homework-6/index.md
+          - 期末项目 · 花瓶轮廓插值与重构: course/year2/personal/numerical-analysis/resources/vase-project/index.md
       - 跨专业课程:
         - 微观经济学（甲）: course/year2/personal/microeconomics/index.md
         - 医学仪器的创新与实践: course/year2/personal/medical-instruments/index.md
