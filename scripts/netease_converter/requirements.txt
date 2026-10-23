@@ -1,0 +1,6 @@
+cryptography==50.0.2
+lameenc==1.9.0
+mutagen==1.48.1
+numpy==2.3.3
+soundfile==0.14.0
+pyinstaller==6.22.3
