@@ -60,6 +60,11 @@
   const nowPlaying = make("p", "music-now-playing", "正在读取曲库…");
   const musicStatus = make("p", "music-status");
   musicStatus.setAttribute("role", "status");
+  const playlistPicker = make("label", "music-playlist-picker", "选择歌单");
+  const playlistSelect = make("select", "music-playlist-select");
+  playlistSelect.setAttribute("aria-label", "选择歌单");
+  playlistSelect.disabled = true;
+  playlistPicker.append(playlistSelect);
   const trackList = make("div", "music-track-list");
   const playerControls = make("div", "music-player-controls");
   const randomButton = make("button", "tea-text-button", "随机下一首 ↻");
@@ -74,8 +79,8 @@
   volume.setAttribute("aria-label", "背景音乐音量");
   volumeLabel.append(volume);
   playerControls.append(randomButton, volumeLabel);
-  panel.append(heading, nowPlaying, musicStatus, trackList, playerControls,
-    make("p", "music-footnote", "随机播放 · 首次有声播放可能需要点击 ▶"));
+  panel.append(heading, playlistPicker, nowPlaying, musicStatus, trackList, playerControls,
+    make("p", "music-footnote", "仅在当前歌单内随机播放 · 首次播放请点击 ▶"));
   const audio = new Audio();
   audio.id = "tea-bgm";
   audio.preload = "metadata";
@@ -118,12 +123,14 @@
   });
 
   let tracks = [];
+  let playlists = [];
+  let activePlaylist = null;
   let current = -1;
   let attempted = new Set();
   const resume = read("tea-bgm-session", null, sessionStorage);
   function rememberMusic() {
     if (current < 0) return;
-    save("tea-bgm-session", {id: tracks[current].id, time: audio.currentTime,
+    save("tea-bgm-session", {id: tracks[current].id, playlist: activePlaylist?.id, time: audio.currentTime,
       playing: !audio.paused, volume: audio.volume}, sessionStorage);
   }
   function syncPlayer() {
@@ -137,7 +144,10 @@
       button.classList.toggle("is-current", index === current);
       button.setAttribute("aria-pressed", String(index === current));
     }
-    if (current >= 0) nowPlaying.textContent = `${audio.paused ? "已选" : "正在播放"} · ${tracks[current].title}`;
+    if (current >= 0) {
+      const track = tracks[current];
+      nowPlaying.textContent = `${audio.paused ? "已选" : "正在播放"} · ${activePlaylist?.title || ""} · ${track.title}${track.artist ? " · " + track.artist : ""}`;
+    }
   }
   async function play() {
     try {
@@ -147,7 +157,7 @@
     } catch (error) {
       if (error.name === "AbortError") return;
       musicStatus.textContent = error.name === "NotAllowedError"
-        ? "歌曲已随机选好，点击右上角 ▶ 开始播放。"
+        ? "已在当前歌单随机选好歌曲，点击右上角 ▶ 开始播放。"
         : "这首歌暂时无法播放，请重新点击播放或选择其他歌曲。";
     }
     syncPlayer();
@@ -156,11 +166,15 @@
     if (!tracks.length) return;
     current = index;
     audio.src = url(tracks[current].src);
+    const selectedId = tracks[current].id;
     if (seek > 0) audio.addEventListener("loadedmetadata", () => {
-      if (Number.isFinite(audio.duration)) audio.currentTime = Math.min(seek, Math.max(0, audio.duration - 0.1));
+      if (tracks[current]?.id === selectedId && Number.isFinite(audio.duration)) {
+        audio.currentTime = Math.min(seek, Math.max(0, audio.duration - 0.1));
+      }
     }, {once: true});
     audio.load();
     syncPlayer();
+    rememberMusic();
     if (autoplay) void play();
   }
   function randomTrack() {
@@ -169,6 +183,38 @@
     if (tracks.length > 1 && next === current) next = (next + 1) % tracks.length;
     selectTrack(next);
   }
+  function activatePlaylist(playlist, autoplay = false, restore = null) {
+    audio.pause();
+    activePlaylist = playlist;
+    tracks = playlist.tracks;
+    current = -1;
+    attempted.clear();
+    musicStatus.textContent = "";
+    playlistSelect.value = playlist.id;
+    save("tea-playlist", playlist.id);
+    trackList.replaceChildren();
+    playButton.disabled = randomButton.disabled = !tracks.length;
+    if (!tracks.length) {
+      audio.removeAttribute("src");
+      audio.load();
+      nowPlaying.textContent = `${playlist.title} · 还没有歌曲`;
+      syncPlayer();
+      return;
+    }
+    tracks.forEach((track, index) => {
+      const button = make("button", "music-track", `${String(track.number ?? index + 1).padStart(2, "0")}  ${track.title}${track.artist ? " · " + track.artist : ""}`);
+      button.type = "button";
+      button.addEventListener("click", () => { attempted.clear(); selectTrack(index); });
+      trackList.append(button);
+    });
+    const restoredIndex = restore ? tracks.findIndex((track) => track.id === restore.id) : -1;
+    if (restoredIndex >= 0) selectTrack(restoredIndex, restore.playing, restore.time);
+    else selectTrack(Math.floor(Math.random() * tracks.length), autoplay);
+  }
+  playlistSelect.addEventListener("change", () => {
+    const playlist = playlists.find((item) => item.id === playlistSelect.value);
+    if (playlist) activatePlaylist(playlist, !audio.paused);
+  });
   playButton.disabled = true;
   randomButton.disabled = true;
   syncPlayer();
@@ -184,12 +230,13 @@
   audio.addEventListener("pause", () => { syncPlayer(); rememberMusic(); });
   audio.addEventListener("ended", randomTrack);
   audio.addEventListener("error", () => {
+    if (!tracks.length || !audio.error) return;
     attempted.add(current);
     if (attempted.size < tracks.length) {
       const next = tracks.findIndex((_, index) => !attempted.has(index));
       selectTrack(next);
     } else {
-      musicStatus.textContent = "曲库中的歌曲暂时无法播放，请检查音乐文件或更换浏览器。";
+      musicStatus.textContent = "当前歌单暂时无法播放，请选择另一个歌单或稍后重试。";
       openPanel(true);
     }
   });
@@ -202,23 +249,18 @@
     if (!response.ok) throw new Error();
     return response.json();
   }).then((data) => {
-    tracks = data.tracks;
-    if (!tracks.length) {
-      nowPlaying.textContent = "曲库还没有歌曲";
-      musicStatus.textContent = "将歌曲放入 docs/assets/music 后重新启动预览。";
-      return;
-    }
-    tracks.forEach((track, index) => {
-      const button = make("button", "music-track", `${String(track.number ?? index + 1).padStart(2, "0")}  ${track.title}`);
-      button.type = "button";
-      button.addEventListener("click", () => { attempted.clear(); selectTrack(index); });
-      trackList.append(button);
+    playlists = Array.isArray(data.playlists) && data.playlists.length
+      ? data.playlists : [{id: "k-on", title: "轻音少女", tracks: data.tracks || []}];
+    playlists.forEach((playlist) => {
+      const option = make("option", "", `${playlist.title} · ${playlist.tracks.length} 首`);
+      option.value = playlist.id;
+      playlistSelect.append(option);
     });
-    playButton.disabled = false;
-    randomButton.disabled = false;
-    const resumedIndex = resume ? tracks.findIndex((track) => track.id === resume.id) : -1;
-    if (resumedIndex >= 0) selectTrack(resumedIndex, resume.playing, resume.time);
-    else randomTrack();
+    playlistSelect.disabled = false;
+    const savedId = resume?.playlist || read("tea-playlist", "k-on");
+    const playlist = playlists.find((item) => item.id === savedId)
+      || playlists.find((item) => item.tracks.length) || playlists[0];
+    activatePlaylist(playlist, true, resume);
   }).catch(() => {
     nowPlaying.textContent = "暂时无法读取歌曲目录";
     musicStatus.textContent = "请刷新重试，或重新启动预览更新曲库。";

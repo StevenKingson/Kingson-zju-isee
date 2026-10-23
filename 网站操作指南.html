@@ -114,8 +114,8 @@ blockquote{margin:20px 0;padding:12px 18px;border-left:4px solid #c68ab1;backgro
 <td><code>docs/assets/artbooks/</code></td>
 </tr>
 <tr>
-<td>BGM 音频、已整理歌曲的名称和编号</td>
-<td><code>docs/assets/music/</code>、其中的 <code>library.json</code></td>
+<td>BGM 音频、歌单和歌曲名称</td>
+<td>轻音少女在 <code>docs/assets/music/</code>，Vaundy 在其下的 <code>vaundy/</code>；各自的 <code>library.json</code> 管理本歌单。</td>
 </tr>
 <tr>
 <td>留言板上方的介绍文字</td>
@@ -367,12 +367,31 @@ $$
 </code></pre>
 <p>重新启动预览或运行一键上传，程序就会刷新列表。新画集会出现在画集选择框中，也会参与首页随机背景。</p>
 <h3 id="添加歌曲">添加歌曲</h3>
-<p>把 MP3 文件复制到 <code>docs/assets/music/</code>。重新启动预览或一键上传后，新歌曲会自动排在现有 20 首之后，名称默认使用文件名。</p>
+<p>现在有两个独立歌单：<strong>轻音少女（20 首）</strong>、<strong>Vaundy（21 首）</strong>。点网页右上角的 <strong>☷ 歌曲目录</strong>，在“选择歌单”中切换；歌曲目录和随机下一首都只针对当前歌单。浏览器会记住选择。播放中切换会继续播放，暂停时切换会保持暂停。</p>
+<ul>
+<li>给轻音少女歌单加歌：把 MP3 复制到 <code>docs/assets/music/</code>。</li>
+<li>给 Vaundy 歌单加歌：把 MP3 复制到 <code>docs/assets/music/vaundy/</code>。</li>
+</ul>
+<p>重新启动预览或一键上传后，新歌曲会自动排在对应歌单末尾，名称默认使用文件名。Vaundy 歌单已按你的要求排除《Assumptions》，本机原始音乐文件夹保留。</p>
+<h3 id="添加独立的新歌单">添加独立的新歌单</h3>
+<ol>
+<li>在 <code>docs/assets/music/</code> 下新建文件夹，例如 <code>my-playlist</code>。</li>
+<li>将歌曲复制进去。文件夹会自动成为一个单独歌单，不会混进轻音少女歌单。</li>
+<li>如果要自定义歌单名称，在该文件夹内新建 <code>library.json</code>，填入以下内容：</li>
+</ol>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;my-playlist&quot;,
+  &quot;title&quot;: &quot;我的新歌单&quot;,
+  &quot;tracks&quot;: []
+}
+</code></pre>
+<p><code>id</code> 不要与其他歌单重复。重新启动预览或上传，歌单会自动出现在选择框中。</p>
 <h3 id="修改现有歌曲名称顺序或删除曲目">修改现有歌曲名称、顺序或删除曲目</h3>
-<p>打开 <code>docs/assets/music/library.json</code>：</p>
+<p>轻音少女使用 <code>docs/assets/music/library.json</code>，Vaundy 使用 <code>docs/assets/music/vaundy/library.json</code>。打开要修改的歌单配置，在 <code>tracks</code> 内编辑：</p>
 <ul>
 <li><code>title</code>：歌曲目录里显示的名称，可以修改。</li>
-<li><code>number</code>：显示的编号；需要为正整数，同一曲库中不要重复。</li>
+<li><code>artist</code>：歌曲的演唱者，可选。</li>
+<li><code>number</code>：显示的编号；需要为正整数，同一歌单中不要重复。</li>
 <li>每个 <code>{ ... }</code> 代表一首歌；这些条目的排列顺序就是目录顺序。</li>
 <li><code>file</code>：实际音频文件名，必须与文件夹中的文件一致。</li>
 <li>删除已登记歌曲时，同时删除对应的整条 <code>{ ... }</code> 配置和 MP3 文件。JSON 的条目之间用逗号隔开，最后一条后面不加逗号。</li>

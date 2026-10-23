@@ -1,10 +1,394 @@
 {
+  "playlists": [
+    {
+      "id": "k-on",
+      "title": "轻音少女",
+      "tracks": [
+        {
+          "id": "01-cagayake-girls.mp3",
+          "title": "Cagayake!GIRLS（闪耀吧！女孩）",
+          "number": 1,
+          "src": "assets/music/01-cagayake-girls.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 250.12
+        },
+        {
+          "id": "02-dont-say-lazy.mp3",
+          "title": "Don't say \"lazy\"",
+          "number": 2,
+          "src": "assets/music/02-dont-say-lazy.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 263.973
+        },
+        {
+          "id": "04-fuwa-fuwa-time-mio.mp3",
+          "title": "ふわふわ時間（轻飘飘的时间）· 秋山澪版",
+          "number": 4,
+          "src": "assets/music/04-fuwa-fuwa-time-mio.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版 · 秋山澪主唱",
+          "duration": 239.0
+        },
+        {
+          "id": "05-fuwa-fuwa-time-yui.mp3",
+          "title": "ふわふわ時間（轻飘飘的时间）· 平泽唯版",
+          "number": 5,
+          "src": "assets/music/05-fuwa-fuwa-time-yui.mp3",
+          "artist": "",
+          "version": "完整版 · Studio Mix · 平泽唯主唱",
+          "duration": 236.053
+        },
+        {
+          "id": "06-tsubasa-wo-kudasai.mp3",
+          "title": "翼をください（给我一双翅膀）",
+          "number": 6,
+          "src": "assets/music/06-tsubasa-wo-kudasai.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 203.92
+        },
+        {
+          "id": "07-curry-nochi-rice.mp3",
+          "title": "カレーのちライス（咖喱后米饭）",
+          "number": 7,
+          "src": "assets/music/07-curry-nochi-rice.mp3",
+          "artist": "",
+          "version": "完整版 · Studio Mix · 平泽唯主唱",
+          "duration": 196.08
+        },
+        {
+          "id": "08-watashi-no-koi-wa-hotchkiss.mp3",
+          "title": "わたしの恋はホッチキス（我的爱是订书机）",
+          "number": 8,
+          "src": "assets/music/08-watashi-no-koi-wa-hotchkiss.mp3",
+          "artist": "",
+          "version": "完整版 · Studio Mix · 唯＆澪主唱",
+          "duration": 263.92
+        },
+        {
+          "id": "09-fude-pen-ball-pen.mp3",
+          "title": "ふでペン ～ボールペン～（毛笔 ～圆珠笔～）",
+          "number": 9,
+          "src": "assets/music/09-fude-pen-ball-pen.mp3",
+          "artist": "",
+          "version": "完整版 · Studio Mix · 平泽唯主唱",
+          "duration": 237.48
+        },
+        {
+          "id": "10-go-go-maniac.mp3",
+          "title": "GO! GO! MANIAC",
+          "number": 10,
+          "src": "assets/music/10-go-go-maniac.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 248.268
+        },
+        {
+          "id": "11-listen.mp3",
+          "title": "Listen!!",
+          "number": 11,
+          "src": "assets/music/11-listen.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 225.234
+        },
+        {
+          "id": "12-utauyo-miracle.mp3",
+          "title": "Utauyo!!MIRACLE",
+          "number": 12,
+          "src": "assets/music/12-utauyo-miracle.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 242.16
+        },
+        {
+          "id": "13-no-thank-you.mp3",
+          "title": "No, thank you!",
+          "number": 13,
+          "src": "assets/music/13-no-thank-you.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 257.493
+        },
+        {
+          "id": "14-pure-pure-heart.mp3",
+          "title": "ぴゅあぴゅあはーと（纯纯的心 / Pure Pure Heart）",
+          "number": 14,
+          "src": "assets/music/14-pure-pure-heart.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 276.2
+        },
+        {
+          "id": "15-gohan-wa-okazu.mp3",
+          "title": "ごはんはおかず（米饭是菜）",
+          "number": 15,
+          "src": "assets/music/15-gohan-wa-okazu.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 191.627
+        },
+        {
+          "id": "16-u-and-i.mp3",
+          "title": "U&I",
+          "number": 16,
+          "src": "assets/music/16-u-and-i.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 275.76
+        },
+        {
+          "id": "17-tenshi-ni-fureta-yo.mp3",
+          "title": "天使にふれたよ！（相遇天使）",
+          "number": 17,
+          "src": "assets/music/17-tenshi-ni-fureta-yo.mp3",
+          "artist": "",
+          "version": "完整版 · Studio Mix",
+          "duration": 281.893
+        },
+        {
+          "id": "18-ichiban-ippai.mp3",
+          "title": "いちばんいっぱい（全部都是第一）",
+          "number": 18,
+          "src": "assets/music/18-ichiban-ippai.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 250.28
+        },
+        {
+          "id": "19-unmei-wa-endless.mp3",
+          "title": "Unmei♪wa♪Endless!",
+          "number": 19,
+          "src": "assets/music/19-unmei-wa-endless.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 232.227
+        },
+        {
+          "id": "20-samidare-20-love.mp3",
+          "title": "五月雨20Love",
+          "number": 20,
+          "src": "assets/music/20-samidare-20-love.mp3",
+          "artist": "",
+          "version": "完整版 · Studio Mix",
+          "duration": 243.347
+        },
+        {
+          "id": "21-singing.mp3",
+          "title": "Singing!",
+          "number": 21,
+          "src": "assets/music/21-singing.mp3",
+          "artist": "",
+          "version": "完整版 · 单曲版",
+          "duration": 234.56
+        }
+      ]
+    },
+    {
+      "id": "vaundy",
+      "title": "Vaundy",
+      "tracks": [
+        {
+          "id": "vaundy/Aimer,Vaundy - 地球儀.mp3",
+          "title": "地球儀",
+          "number": 1,
+          "src": "assets/music/vaundy/Aimer%2CVaundy%20-%20%E5%9C%B0%E7%90%83%E5%84%80.mp3",
+          "artist": "Aimer/Vaundy",
+          "version": "",
+          "duration": 232.896
+        },
+        {
+          "id": "vaundy/Vaundy - CHAINSAW BLOOD.mp3",
+          "title": "CHAINSAW BLOOD",
+          "number": 2,
+          "src": "assets/music/vaundy/Vaundy%20-%20CHAINSAW%20BLOOD.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 201.024
+        },
+        {
+          "id": "vaundy/Vaundy - life hack.mp3",
+          "title": "life hack",
+          "number": 3,
+          "src": "assets/music/vaundy/Vaundy%20-%20life%20hack.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 226.488
+        },
+        {
+          "id": "vaundy/Vaundy - mabataki.mp3",
+          "title": "mabataki",
+          "number": 4,
+          "src": "assets/music/vaundy/Vaundy%20-%20mabataki.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 243.96
+        },
+        {
+          "id": "vaundy/Vaundy - napori.mp3",
+          "title": "napori",
+          "number": 5,
+          "src": "assets/music/vaundy/Vaundy%20-%20napori.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 203.832
+        },
+        {
+          "id": "vaundy/Vaundy - Tokimeki.mp3",
+          "title": "Tokimeki",
+          "number": 6,
+          "src": "assets/music/vaundy/Vaundy%20-%20Tokimeki.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 212.04
+        },
+        {
+          "id": "vaundy/Vaundy - しわあわせ.mp3",
+          "title": "しわあわせ",
+          "number": 7,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E3%81%97%E3%82%8F%E3%81%82%E3%82%8F%E3%81%9B.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 278.28
+        },
+        {
+          "id": "vaundy/Vaundy - 不可幸力.mp3",
+          "title": "不可幸力",
+          "number": 8,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E4%B8%8D%E5%8F%AF%E5%B9%B8%E5%8A%9B.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 200.28
+        },
+        {
+          "id": "vaundy/Vaundy - 常熱.mp3",
+          "title": "常熱",
+          "number": 9,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E5%B8%B8%E7%86%B1.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 239.712
+        },
+        {
+          "id": "vaundy/Vaundy - 忘れる前に.mp3",
+          "title": "忘れる前に",
+          "number": 10,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E5%BF%98%E3%82%8C%E3%82%8B%E5%89%8D%E3%81%AB.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 242.736
+        },
+        {
+          "id": "vaundy/Vaundy - 怪獣の花唄.mp3",
+          "title": "怪獣の花唄",
+          "number": 11,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E6%80%AA%E7%8D%A3%E3%81%AE%E8%8A%B1%E5%94%84.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 224.832
+        },
+        {
+          "id": "vaundy/Vaundy - 恋風邪にのせて.mp3",
+          "title": "恋風邪にのせて",
+          "number": 12,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E6%81%8B%E9%A2%A8%E9%82%AA%E3%81%AB%E3%81%AE%E3%81%9B%E3%81%A6.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 255.96
+        },
+        {
+          "id": "vaundy/Vaundy - 東京フラッシュ.mp3",
+          "title": "東京フラッシュ",
+          "number": 13,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E6%9D%B1%E4%BA%AC%E3%83%95%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 258.888
+        },
+        {
+          "id": "vaundy/Vaundy - 灯火.mp3",
+          "title": "灯火",
+          "number": 14,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E7%81%AF%E7%81%AB.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 178.92
+        },
+        {
+          "id": "vaundy/Vaundy - 花占い.mp3",
+          "title": "花占い",
+          "number": 15,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E8%8A%B1%E5%8D%A0%E3%81%84.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 207.6
+        },
+        {
+          "id": "vaundy/Vaundy - 融解sink.mp3",
+          "title": "融解sink",
+          "number": 16,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E8%9E%8D%E8%A7%A3sink.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 242.112
+        },
+        {
+          "id": "vaundy/Vaundy - 裸の勇者.mp3",
+          "title": "裸の勇者",
+          "number": 17,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E8%A3%B8%E3%81%AE%E5%8B%87%E8%80%85.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 202.008
+        },
+        {
+          "id": "vaundy/Vaundy - 踊り子.mp3",
+          "title": "踊り子",
+          "number": 18,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E8%B8%8A%E3%82%8A%E5%AD%90.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 230.136
+        },
+        {
+          "id": "vaundy/Vaundy - 逆光 - replica -.mp3",
+          "title": "逆光 - replica -",
+          "number": 19,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E9%80%86%E5%85%89%20-%20replica%20-.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 238.008
+        },
+        {
+          "id": "vaundy/Vaundy - 風神.mp3",
+          "title": "風神",
+          "number": 20,
+          "src": "assets/music/vaundy/Vaundy%20-%20%E9%A2%A8%E7%A5%9E.mp3",
+          "artist": "Vaundy",
+          "version": "",
+          "duration": 235.656
+        },
+        {
+          "id": "vaundy/Vaundy,Cory Wong - トドメの一撃 feat. Cory Wong.mp3",
+          "title": "トドメの一撃 feat. Cory Wong",
+          "number": 21,
+          "src": "assets/music/vaundy/Vaundy%2CCory%20Wong%20-%20%E3%83%88%E3%83%89%E3%83%A1%E3%81%AE%E4%B8%80%E6%92%83%20feat.%20Cory%20Wong.mp3",
+          "artist": "Vaundy/Cory Wong",
+          "version": "",
+          "duration": 310.2
+        }
+      ]
+    }
+  ],
   "tracks": [
     {
       "id": "01-cagayake-girls.mp3",
       "title": "Cagayake!GIRLS（闪耀吧！女孩）",
       "number": 1,
       "src": "assets/music/01-cagayake-girls.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 250.12
     },
@@ -13,6 +397,7 @@
       "title": "Don't say \"lazy\"",
       "number": 2,
       "src": "assets/music/02-dont-say-lazy.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 263.973
     },
@@ -21,6 +406,7 @@
       "title": "ふわふわ時間（轻飘飘的时间）· 秋山澪版",
       "number": 4,
       "src": "assets/music/04-fuwa-fuwa-time-mio.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版 · 秋山澪主唱",
       "duration": 239.0
     },
@@ -29,6 +415,7 @@
       "title": "ふわふわ時間（轻飘飘的时间）· 平泽唯版",
       "number": 5,
       "src": "assets/music/05-fuwa-fuwa-time-yui.mp3",
+      "artist": "",
       "version": "完整版 · Studio Mix · 平泽唯主唱",
       "duration": 236.053
     },
@@ -37,6 +424,7 @@
       "title": "翼をください（给我一双翅膀）",
       "number": 6,
       "src": "assets/music/06-tsubasa-wo-kudasai.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 203.92
     },
@@ -45,6 +433,7 @@
       "title": "カレーのちライス（咖喱后米饭）",
       "number": 7,
       "src": "assets/music/07-curry-nochi-rice.mp3",
+      "artist": "",
       "version": "完整版 · Studio Mix · 平泽唯主唱",
       "duration": 196.08
     },
@@ -53,6 +442,7 @@
       "title": "わたしの恋はホッチキス（我的爱是订书机）",
       "number": 8,
       "src": "assets/music/08-watashi-no-koi-wa-hotchkiss.mp3",
+      "artist": "",
       "version": "完整版 · Studio Mix · 唯＆澪主唱",
       "duration": 263.92
     },
@@ -61,6 +451,7 @@
       "title": "ふでペン ～ボールペン～（毛笔 ～圆珠笔～）",
       "number": 9,
       "src": "assets/music/09-fude-pen-ball-pen.mp3",
+      "artist": "",
       "version": "完整版 · Studio Mix · 平泽唯主唱",
       "duration": 237.48
     },
@@ -69,6 +460,7 @@
       "title": "GO! GO! MANIAC",
       "number": 10,
       "src": "assets/music/10-go-go-maniac.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 248.268
     },
@@ -77,6 +469,7 @@
       "title": "Listen!!",
       "number": 11,
       "src": "assets/music/11-listen.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 225.234
     },
@@ -85,6 +478,7 @@
       "title": "Utauyo!!MIRACLE",
       "number": 12,
       "src": "assets/music/12-utauyo-miracle.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 242.16
     },
@@ -93,6 +487,7 @@
       "title": "No, thank you!",
       "number": 13,
       "src": "assets/music/13-no-thank-you.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 257.493
     },
@@ -101,6 +496,7 @@
       "title": "ぴゅあぴゅあはーと（纯纯的心 / Pure Pure Heart）",
       "number": 14,
       "src": "assets/music/14-pure-pure-heart.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 276.2
     },
@@ -109,6 +505,7 @@
       "title": "ごはんはおかず（米饭是菜）",
       "number": 15,
       "src": "assets/music/15-gohan-wa-okazu.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 191.627
     },
@@ -117,6 +514,7 @@
       "title": "U&I",
       "number": 16,
       "src": "assets/music/16-u-and-i.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 275.76
     },
@@ -125,6 +523,7 @@
       "title": "天使にふれたよ！（相遇天使）",
       "number": 17,
       "src": "assets/music/17-tenshi-ni-fureta-yo.mp3",
+      "artist": "",
       "version": "完整版 · Studio Mix",
       "duration": 281.893
     },
@@ -133,6 +532,7 @@
       "title": "いちばんいっぱい（全部都是第一）",
       "number": 18,
       "src": "assets/music/18-ichiban-ippai.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 250.28
     },
@@ -141,6 +541,7 @@
       "title": "Unmei♪wa♪Endless!",
       "number": 19,
       "src": "assets/music/19-unmei-wa-endless.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 232.227
     },
@@ -149,6 +550,7 @@
       "title": "五月雨20Love",
       "number": 20,
       "src": "assets/music/20-samidare-20-love.mp3",
+      "artist": "",
       "version": "完整版 · Studio Mix",
       "duration": 243.347
     },
@@ -157,6 +559,7 @@
       "title": "Singing!",
       "number": 21,
       "src": "assets/music/21-singing.mp3",
+      "artist": "",
       "version": "完整版 · 单曲版",
       "duration": 234.56
     }

@@ -84,6 +84,8 @@ html[data-tea-theme="night"] #artbook-placeholder { color: #bcb0bf; }
 .tea-music-panel { position: fixed; z-index: 50; right: max(0.65rem, calc((100vw - 61rem) / 2)); top: 3.2rem; width: min(20rem, calc(100vw - 1.3rem)); max-height: calc(100dvh - 4rem); overflow-y: auto; padding: 1rem; border: 1px solid var(--tea-border); border-radius: 0.65rem; background: var(--tea-panel); color: var(--tea-text); box-shadow: 0 8px 40px #33203325; font-size: 0.7rem; }
 .music-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .music-panel-heading strong { font-size: 0.85rem; }
+.music-playlist-picker { display: grid; gap: 0.4rem; margin: 0.85rem 0; color: var(--tea-muted); font-size: 0.65rem; }
+.music-playlist-select { width: 100%; min-height: 2rem; padding: 0.4rem 0.6rem; border: 1px solid var(--tea-border); border-radius: 0.35rem; background: var(--tea-panel); color: var(--tea-text); font: inherit; cursor: pointer; }
 .tea-text-button, #guestbook button { border: 1px solid var(--tea-border); color: var(--tea-accent); background: var(--tea-soft); border-radius: 0.3rem; padding: 0.4rem 0.6rem; cursor: pointer; font: inherit; }
 .music-now-playing { line-height: 1.7; overflow-wrap: anywhere; margin-bottom: 0.35rem; }
 .music-status { color: var(--tea-muted); font-size: 0.6rem; line-height: 1.7; }

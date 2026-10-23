@@ -1,0 +1,174 @@
+{
+  "id": "vaundy",
+  "title": "Vaundy",
+  "tracks": [
+    {
+      "file": "Aimer,Vaundy - 地球儀.mp3",
+      "number": 1,
+      "title": "地球儀",
+      "artist": "Aimer/Vaundy",
+      "duration_seconds": 232.896,
+      "album": "Walpurgis"
+    },
+    {
+      "file": "Vaundy - CHAINSAW BLOOD.mp3",
+      "number": 2,
+      "title": "CHAINSAW BLOOD",
+      "artist": "Vaundy",
+      "duration_seconds": 201.024,
+      "album": "CHAINSAW BLOOD"
+    },
+    {
+      "file": "Vaundy - life hack.mp3",
+      "number": 3,
+      "title": "life hack",
+      "artist": "Vaundy",
+      "duration_seconds": 226.488,
+      "album": "life hack"
+    },
+    {
+      "file": "Vaundy - mabataki.mp3",
+      "number": 4,
+      "title": "mabataki",
+      "artist": "Vaundy",
+      "duration_seconds": 243.96,
+      "album": "mabataki"
+    },
+    {
+      "file": "Vaundy - napori.mp3",
+      "number": 5,
+      "title": "napori",
+      "artist": "Vaundy",
+      "duration_seconds": 203.832,
+      "album": "strobo"
+    },
+    {
+      "file": "Vaundy - Tokimeki.mp3",
+      "number": 6,
+      "title": "Tokimeki",
+      "artist": "Vaundy",
+      "duration_seconds": 212.04,
+      "album": "Tokimeki"
+    },
+    {
+      "file": "Vaundy - しわあわせ.mp3",
+      "number": 7,
+      "title": "しわあわせ",
+      "artist": "Vaundy",
+      "duration_seconds": 278.28,
+      "album": "しわあわせ"
+    },
+    {
+      "file": "Vaundy - 不可幸力.mp3",
+      "number": 8,
+      "title": "不可幸力",
+      "artist": "Vaundy",
+      "duration_seconds": 200.28,
+      "album": "不可幸力"
+    },
+    {
+      "file": "Vaundy - 常熱.mp3",
+      "number": 9,
+      "title": "常熱",
+      "artist": "Vaundy",
+      "duration_seconds": 239.712,
+      "album": "replica"
+    },
+    {
+      "file": "Vaundy - 忘れる前に.mp3",
+      "number": 10,
+      "title": "忘れる前に",
+      "artist": "Vaundy",
+      "duration_seconds": 242.736,
+      "album": "忘れる前に"
+    },
+    {
+      "file": "Vaundy - 怪獣の花唄.mp3",
+      "number": 11,
+      "title": "怪獣の花唄",
+      "artist": "Vaundy",
+      "duration_seconds": 224.832,
+      "album": "strobo"
+    },
+    {
+      "file": "Vaundy - 恋風邪にのせて.mp3",
+      "number": 12,
+      "title": "恋風邪にのせて",
+      "artist": "Vaundy",
+      "duration_seconds": 255.96,
+      "album": "恋風邪にのせて"
+    },
+    {
+      "file": "Vaundy - 東京フラッシュ.mp3",
+      "number": 13,
+      "title": "東京フラッシュ",
+      "artist": "Vaundy",
+      "duration_seconds": 258.888,
+      "album": "Tokyo Flash"
+    },
+    {
+      "file": "Vaundy - 灯火.mp3",
+      "number": 14,
+      "title": "灯火",
+      "artist": "Vaundy",
+      "duration_seconds": 178.92,
+      "album": "strobo"
+    },
+    {
+      "file": "Vaundy - 花占い.mp3",
+      "number": 15,
+      "title": "花占い",
+      "artist": "Vaundy",
+      "duration_seconds": 207.6,
+      "album": "花占い"
+    },
+    {
+      "file": "Vaundy - 融解sink.mp3",
+      "number": 16,
+      "title": "融解sink",
+      "artist": "Vaundy",
+      "duration_seconds": 242.112,
+      "album": "融解sink"
+    },
+    {
+      "file": "Vaundy - 裸の勇者.mp3",
+      "number": 17,
+      "title": "裸の勇者",
+      "artist": "Vaundy",
+      "duration_seconds": 202.008,
+      "album": "裸の勇者"
+    },
+    {
+      "file": "Vaundy - 踊り子.mp3",
+      "number": 18,
+      "title": "踊り子",
+      "artist": "Vaundy",
+      "duration_seconds": 230.136,
+      "album": "踊り子"
+    },
+    {
+      "file": "Vaundy - 逆光 - replica -.mp3",
+      "number": 19,
+      "title": "逆光 - replica -",
+      "artist": "Vaundy",
+      "duration_seconds": 238.008,
+      "album": "replica"
+    },
+    {
+      "file": "Vaundy - 風神.mp3",
+      "number": 20,
+      "title": "風神",
+      "artist": "Vaundy",
+      "duration_seconds": 235.656,
+      "album": "風神"
+    },
+    {
+      "file": "Vaundy,Cory Wong - トドメの一撃 feat. Cory Wong.mp3",
+      "number": 21,
+      "title": "トドメの一撃 feat. Cory Wong",
+      "artist": "Vaundy/Cory Wong",
+      "duration_seconds": 310.2,
+      "album": "トドメの一撃 feat. Cory Wong"
+    }
+  ]
+}
