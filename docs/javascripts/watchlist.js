@@ -89,10 +89,50 @@
         shelf.setAttribute("aria-labelledby", heading.id);
         heading.append(make("span", "anime-shelf-number", `0${index + 1}`), document.createTextNode(section.title),
           make("span", "anime-count", String(section.groups.reduce((sum, group) => sum + group.anime.length, 0))));
-        shelf.append(heading, make("p", "anime-shelf-intro", section.intro));
+        const headingRow = make("div", "anime-shelf-heading");
+        headingRow.append(heading);
+        let seasonIndex, seasonMenu;
+        if (section.key === "watching" && section.groups.length) {
+          seasonIndex = make("details", "anime-season-index");
+          const summary = make("summary", "", "季度索引");
+          const arrow = make("span", "anime-index-arrow", "⌄");
+          arrow.setAttribute("aria-hidden", "true");
+          summary.append(arrow);
+          seasonMenu = make("nav", "anime-season-menu");
+          seasonMenu.setAttribute("aria-label", "追番季度索引");
+          seasonIndex.append(summary, seasonMenu);
+          headingRow.append(seasonIndex);
+          document.addEventListener("click", (event) => {
+            if (!seasonIndex.contains(event.target)) seasonIndex.open = false;
+          }, { signal });
+          seasonIndex.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && seasonIndex.open) {
+              seasonIndex.open = false;
+              summary.focus();
+              event.preventDefault();
+            }
+          }, { signal });
+        }
+        shelf.append(headingRow, make("p", "anime-shelf-intro", section.intro));
         section.groups.forEach((group, groupIndex) => {
           const groupBox = make("div", "anime-season");
-          groupBox.append(make("h3", "anime-season-title", group.season));
+          const groupHeading = make("h3", "anime-season-title", group.season);
+          const seasonKey = group.season.match(/\d+/g)?.join("-") || String(groupIndex + 1);
+          groupHeading.id = `anime-${section.key}-season-${seasonKey}`;
+          groupHeading.tabIndex = -1;
+          groupBox.append(groupHeading);
+          if (seasonMenu) {
+            const link = make("a", "", group.season);
+            link.href = `#${groupHeading.id}`;
+            link.append(make("span", "", `${group.anime.length} 部`));
+            link.addEventListener("click", (event) => {
+              event.preventDefault();
+              seasonIndex.open = false;
+              groupHeading.focus({ preventScroll: true });
+              groupHeading.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+            }, { signal });
+            seasonMenu.append(link);
+          }
           group.anime.forEach((anime, animeIndex) => groupBox.append(makeCard(anime, `${section.key}-${groupIndex}-${animeIndex}`, signal)));
           shelf.append(groupBox);
         });
@@ -106,7 +146,12 @@
         }
         shelves.append(shelf);
       });
-      if (!signal.aborted) target.replaceChildren(shelves);
+      if (!signal.aborted) {
+        target.replaceChildren(shelves);
+        if (location.hash.startsWith("#anime-watching-season-")) {
+          document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" });
+        }
+      }
     } catch (error) {
       if (error.name !== "AbortError") {
         target.replaceChildren(make("p", "anime-empty", "日记暂时未能打开，请刷新页面再试一次。"));

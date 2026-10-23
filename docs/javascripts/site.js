@@ -11,14 +11,32 @@
   const gallery = document.querySelector(".artbook");
   document.body.classList.toggle("tea-home", Boolean(hero));
   if (hero) {
-    // Measure the real navigation/footer height, including changes caused by zoom.
+    // Scale a single composition; no independent text reflow or image cropping on zoom.
     const chrome = [...document.querySelectorAll(".md-header, .md-tabs, .md-footer")];
+    const container = hero.parentElement;
+    const main = document.querySelector(".md-main__inner");
     const fitHome = () => {
-      const height = chrome.reduce((sum, element) => sum + element.getBoundingClientRect().height, 0);
-      hero.style.setProperty("--tea-chrome-height", `${height}px`);
+      const style = getComputedStyle(hero);
+      const width = Number(style.getPropertyValue("--home-design-width"));
+      const height = Number(style.getPropertyValue("--home-design-height"));
+      const spacing = (element, properties) => {
+        const computed = getComputedStyle(element);
+        return properties.reduce((sum, property) => sum + (parseFloat(computed[property]) || 0), 0);
+      };
+      const availableWidth = container.clientWidth - spacing(container, ["paddingLeft", "paddingRight"]);
+      const chromeHeight = chrome.reduce((sum, element) => sum + element.getBoundingClientRect().height, 0);
+      const verticalSpacing = spacing(container, ["paddingTop", "paddingBottom", "marginTop", "marginBottom"])
+        + (main ? spacing(main, ["marginTop", "marginBottom"]) : 0);
+      const availableHeight = Math.max(1, innerHeight - chromeHeight - verticalSpacing - 2);
+      const scale = Math.max(0.01, Math.min(availableWidth / width, availableHeight / height));
+      hero.style.width = `${width * scale}px`;
+      hero.style.height = `${height * scale}px`;
+      hero.style.setProperty("--home-scale", String(scale));
     };
     const observer = new ResizeObserver(fitHome);
     chrome.forEach((element) => observer.observe(element));
+    observer.observe(container);
+    window.addEventListener("resize", fitHome, { signal: pageEvents.signal });
     pageEvents.signal.addEventListener("abort", () => observer.disconnect(), { once: true });
     fitHome();
   }

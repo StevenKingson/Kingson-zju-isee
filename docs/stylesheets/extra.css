@@ -14,42 +14,45 @@
 }
 
 .home-hero {
-  min-height: 65vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  --home-design-width: 1200;
+  --home-design-height: 660;
+  --home-scale: 1;
+  width: 100%;
+  aspect-ratio: 20 / 11;
+  margin-inline: auto;
   text-align: center;
-  padding: 3rem 0;
 }
 
 .home-eyebrow {
   color: #888;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  margin-bottom: 1.3rem;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 0 0 16px;
 }
 
 .md-typeset .home-hero h1 {
   color: #222;
-  font-size: clamp(1.65rem, 4.5vw, 3.1rem);
+  font-size: 58px;
   font-weight: 700;
   letter-spacing: 0.035em;
   line-height: 1.5;
-  margin: 0 0 1.1rem;
+  margin: 0 0 22px;
 }
 
 .home-description {
   color: #777;
+  font-size: 20px;
   line-height: 2;
+  margin: 20px 0;
 }
 
 .md-typeset .home-link {
   display: inline-block;
-  margin-top: 1.4rem;
+  margin-top: 16px;
+  font-size: 16px;
   color: #333;
   border-bottom: 1px solid #bbb;
-  padding-bottom: 0.3rem;
+  padding-bottom: 6px;
 }
 
 .md-typeset .home-link:hover {
@@ -80,11 +83,25 @@
 
 .home-hero {
   position: relative;
+  overflow: hidden;
+}
+
+/* Background, text and controls share one fixed composition and one scale. */
+.home-scene {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--home-design-width) * 1px);
+  height: calc(var(--home-design-height) * 1px);
+  transform: translate(-50%, -50%) scale(var(--home-scale));
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
   isolation: isolate;
   overflow: hidden;
-  min-height: 76vh;
-  padding: 4rem 1.2rem 5.5rem;
-  border-radius: 0.4rem;
+  border-radius: 10px;
   background: #faf6f8;
 }
 
@@ -105,7 +122,7 @@
 
 .has-background .home-background { opacity: 1; }
 
-.home-hero::before {
+.home-scene::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -114,33 +131,34 @@
 }
 
 .home-copy {
-  padding: clamp(1.2rem, 4vw, 3rem);
-  max-width: 100%;
+  width: 760px;
+  flex-shrink: 0;
+  padding: 40px;
   background: #fffffff0;
   border: 1px solid #ffffff;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   box-shadow: 0 8px 40px #46374412;
 }
 
 .home-background-tools {
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  font-size: 0.65rem;
+  gap: 10px 20px;
+  font-size: 14px;
 }
 
 .home-background-tools button,
 .home-background-tools a {
   background: #fffffff2;
   border: 1px solid #e6d7e0;
-  border-radius: 2rem;
-  padding: 0.4rem 0.75rem;
+  border-radius: 40px;
+  padding: 8px 15px;
   color: #6d3e58;
   cursor: pointer;
 }
@@ -251,9 +269,13 @@
 #artbook-status { margin: 0; padding: 0 1rem 0.8rem; color: #796773; font-size: 0.65rem; }
 
 @media (max-width: 600px) {
-  .home-hero { min-height: 72vh; padding-inline: 0.65rem; }
-  .md-typeset .home-hero h1 { font-size: 1.45rem; }
-  .home-eyebrow { font-size: 0.5rem; letter-spacing: 0.1em; }
+  .home-hero { --home-design-width: 600; --home-design-height: 760; aspect-ratio: 15 / 19; }
+  .home-copy { width: 520px; padding: 30px 24px; }
+  .md-typeset .home-hero h1 { font-size: 38px; }
+  .home-description { font-size: 24px; }
+  .home-eyebrow { font-size: 14px; }
+  .md-typeset .home-link { font-size: 22px; }
+  .home-background-tools { font-size: 20px; }
   .artbook-heading, .artbook-controls { padding: 0.7rem; }
   #artbook-jump { margin-left: 0; width: 100%; }
   .artbook-viewport { height: 55vh; min-height: 15rem; }
@@ -263,18 +285,7 @@
   .home-background, #artbook-image, .acg-card { transition: none; }
 }
 
-/* On desktop, the hero occupies the space left by navigation and footer. */
-@media (min-width: 960px) {
-  .tea-home .md-main__inner { margin-top: 0; margin-bottom: 0; }
-  .tea-home .md-content__inner { padding-top: 0.6rem; margin-bottom: 0.6rem; }
-  .tea-home .md-content__inner::before,
-  .tea-home .md-content__inner::after { display: none; }
-  .tea-home .home-hero {
-    height: max(21rem, calc(100dvh - var(--tea-chrome-height, 121px) - 1.2rem));
-    min-height: 0;
-    padding: 1.2rem 1rem 3.5rem;
-  }
-  .tea-home .home-copy { padding: clamp(1rem, 3vh, 2rem); }
-  .tea-home .home-eyebrow { margin-bottom: 0.8rem; }
-  .tea-home .home-link { margin-top: 0.8rem; }
-}
+.tea-home .md-main__inner { margin-top: 0; margin-bottom: 0; }
+.tea-home .md-content__inner { padding-top: 0.6rem; margin-bottom: 0.6rem; }
+.tea-home .md-content__inner::before,
+.tea-home .md-content__inner::after { display: none; }

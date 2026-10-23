@@ -86,6 +86,7 @@
   audio.preload = "metadata";
   audio.volume = Math.max(0, Math.min(1, Number(volume.value) || 0));
   document.body.append(panel, audio);
+  let petRhythm;
 
   function applyTheme(value) {
     theme = value;
@@ -151,6 +152,7 @@
   }
   async function play() {
     try {
+      void petRhythm?.prepare();
       await audio.play();
       musicStatus.textContent = "";
       attempted.clear();
@@ -279,11 +281,54 @@
   pet.setAttribute("aria-label", "课程页桌宠，可拖动；聚焦后用方向键移动");
   pet.append(petImage);
   document.body.append(pet);
+  petRhythm = window.TeaMusicRhythm?.attach(audio, pet, petImage);
   // Move only the artwork: the draggable container keeps its position and hit area.
   audio.addEventListener("playing", () => pet.classList.add("is-playing"));
   for (const event of ["pause", "ended", "waiting", "emptied", "error"]) {
     audio.addEventListener(event, () => pet.classList.remove("is-playing"));
   }
+  const backToTop = make("button", "tea-back-to-top", "↑ 回到顶部");
+  backToTop.type = "button";
+  backToTop.hidden = true;
+  document.body.append(backToTop);
+  function positionBackToTop() {
+    if (backToTop.hidden) return;
+    const viewportWidth = document.documentElement.clientWidth;
+    const margin = Math.max(10, Math.min(24, viewportWidth * 0.04));
+    const width = backToTop.offsetWidth, height = backToTop.offsetHeight;
+    let x = viewportWidth - width - margin, y = innerHeight - height - margin;
+    if (!pet.hidden) {
+      const rect = pet.getBoundingClientRect();
+      const gap = Math.max(16, rect.width * 0.1 + 6);
+      const overlaps = (left, top) => left < rect.right + gap && left + width > rect.left - gap
+        && top < rect.bottom + gap && top + height > rect.top - gap;
+      if (overlaps(x, y)) {
+        const candidates = [[rect.left - width - gap, y], [x, rect.top - height - gap],
+          [rect.right + gap, y]];
+        const headerBottom = document.querySelector(".md-header")?.getBoundingClientRect().bottom || 48;
+        const candidate = candidates.find(([left, top]) => left >= margin && left + width <= viewportWidth - margin
+          && top >= headerBottom + 8 && top + height <= innerHeight - margin && !overlaps(left, top));
+        if (candidate) [x, y] = candidate;
+      }
+    }
+    backToTop.style.right = `${Math.max(8, viewportWidth - x - width)}px`;
+    backToTop.style.bottom = `${Math.max(8, innerHeight - y - height)}px`;
+  }
+  let topFrame = 0;
+  function updateBackToTop() {
+    topFrame = 0;
+    backToTop.hidden = window.scrollY < 160;
+    positionBackToTop();
+  }
+  function scheduleBackToTop() {
+    if (!topFrame) topFrame = requestAnimationFrame(updateBackToTop);
+  }
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+  window.addEventListener("scroll", scheduleBackToTop, { passive: true });
+  window.addEventListener("resize", scheduleBackToTop);
+  new MutationObserver(scheduleBackToTop).observe(pet, { attributes: true, attributeFilter: ["hidden"] });
   let petIndex = Math.max(0, Math.min(8, Number(read("tea-pet-character", 0)) || 0));
   let drag = null;
   function updatePet() {
@@ -299,6 +344,7 @@
     pet.style.top = `${y}px`;
     pet.style.right = "auto";
     pet.style.bottom = "auto";
+    positionBackToTop();
   }
   pet.addEventListener("pointerdown", (event) => {
     if (event.button !== 0) return;
@@ -446,6 +492,7 @@
     document.body.dataset.mdColorScheme = theme === "night" ? "slate" : "default";
     openPanel(false);
     setupCourse();
+    scheduleBackToTop();
     void setupGuestbook();
   }
   if (typeof document$ !== "undefined") document$.subscribe(pageReady);

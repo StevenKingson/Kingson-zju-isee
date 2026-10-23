@@ -14,7 +14,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
-    - navigation.top
 
 exclude_docs: |
   course/year2/major-required/isee-introduction/reports/experiment-*/source/report.md
@@ -169,6 +168,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/site.js
+  - javascripts/music-rhythm.js
   - javascripts/widgets.js
   - javascripts/pdf-preview.js
   - javascripts/watchlist.js
