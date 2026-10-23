@@ -40,3 +40,13 @@
 | `assets/anime/opposites.jpg` | [正相反的你和我](https://sh-anime.shochiku.co.jp/seihantai_anime/) | https://sh-anime.shochiku.co.jp/seihantai_anime/common3/images/v3_top_fv_kv01.jpg |
 
 《再见菈菈》保留官网分层设计，底图叠加官方标题层：https://goodbyelara.com/assets/img/top/visual/visual2_title-s.webp 。
+
+## 2026-10-23 「疯狂推」新增三部作品
+
+| 本机文件（相对于 docs） | 官方作品页 | 图片原地址 |
+| --- | --- | --- |
+| `assets/anime/clannad.jpg` | [TBS：CLANNAD 动画官网](https://www.tbs.co.jp/clannad/clannad1/) | https://www.tbs.co.jp/clannad/clannad1/images/top-img.jpg |
+| `assets/anime/jojo-series.jpg` | [JOJO 动画十周年官网：系列角色视觉图](https://jojo-portal.com/special/jojoanime10th/special/002.html) | https://jojo-portal.com/special/jojoanime10th/common/images/event02_kv_03.jpg |
+| `assets/anime/saiki-series.png` | [华纳兄弟探索：齐木楠雄节目官网](https://www.discoveryjapan.jp/cartoonnetwork/c1khkgwzg6zx/) | https://images.microcms-assets.io/assets/9ec4dfe3f47b409aa5fea482e9d272af/dc4be10622a24448a073f817800a69e5/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E2%91%A0.png?w=1200 |
+
+保留原始图片文件。齐木楠雄的官方节目图片左右带黑边，卡片沿用已有的 `coverFit: cover` 展示中央作品视觉图；点击“官方视觉图”可以打开完整出处。

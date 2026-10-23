@@ -257,6 +257,40 @@
       "score": 7,
       "source": "https://darkgathering.jp/",
       "sourceName": "黑暗集会动画官网"
+    },
+    {
+      "id": "clannad",
+      "title": "CLANNAD",
+      "cover": "assets/anime/clannad.jpg",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "不要被画风劝退，第一季偏日常，第二季开始发力，我少数不多看得泪流满面的作品",
+      "score": 10,
+      "source": "https://www.tbs.co.jp/clannad/clannad1/",
+      "sourceName": "TBS CLANNAD 动画官网"
+    },
+    {
+      "id": "jojo-series",
+      "title": "JOJO的奇妙冒险系列",
+      "cover": "assets/anime/jojo-series.jpg",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "不要被画风劝退，荒木天马行空的想象，会带给你极致的追番体验，番里的音乐也很给力，歌单里有很多",
+      "score": 10,
+      "source": "https://jojo-portal.com/special/jojoanime10th/special/002.html",
+      "sourceName": "JOJO 动画十周年官方系列视觉图"
+    },
+    {
+      "id": "saiki-series",
+      "title": "齐木楠雄的灾难系列",
+      "cover": "assets/anime/saiki-series.png",
+      "coverFit": "cover",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "非常适合在闲暇时间随手来上一集的番，轻松搞笑的剧情和较快的节奏，观感很好的校园喜剧",
+      "score": 10,
+      "source": "https://www.discoveryjapan.jp/cartoonnetwork/c1khkgwzg6zx/",
+      "sourceName": "华纳兄弟探索 齐木楠雄节目官网"
     }
   ]
 }
