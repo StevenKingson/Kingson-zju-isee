@@ -54,7 +54,7 @@ assert.deepEqual(spring.step(1 / 60), {x: 1, y: 1});
 
 async function checkAudioLifecycle() {
   const stats = {contexts: 0, sources: 0, resumes: 0, destinationConnections: 0};
-  const active = {hasBeenActive: false};
+  const active = {hasBeenActive: false, isActive: false};
   const context = {
     module: {exports: {}}, navigator: {userActivation: active},
     document: {hidden: false, addEventListener() {}},
@@ -62,9 +62,17 @@ async function checkAudioLifecycle() {
     MutationObserver: class {observe() {}},
     requestAnimationFrame: () => 1, cancelAnimationFrame() {}, addEventListener() {},
     AudioContext: class {
-      constructor() {stats.contexts++; stats.context = this; this.state = 'running'; this.sampleRate = 48000; this.destination = {}; this.listener = null;}
+      constructor() {stats.contexts++; stats.context = this; this.state = context.initialState || 'running'; this.sampleRate = 48000; this.destination = {}; this.listener = null;}
       addEventListener(name, listener) {this.listener = listener;}
-      async resume() {stats.resumes++; this.state = 'running';}
+      resume() {
+        stats.resumes++;
+        if (!active.isActive) return new Promise(resolve => {
+          this.resumeLater = () => {this.state = 'running'; resolve();};
+        });
+        this.state = 'running';
+        this.resumeLater?.();
+        return Promise.resolve();
+      }
       createAnalyser() {return {frequencyBinCount: 1024};}
       createMediaElementSource() {
         stats.sources++;
@@ -80,6 +88,7 @@ async function checkAudioLifecycle() {
   assert.equal(await controller.prepare(), false, 'Untouched autoplay must keep the normal audio route');
   assert.equal(stats.contexts, 0);
   active.hasBeenActive = true;
+  active.isActive = true;
   assert.equal(await controller.prepare(), true);
   assert.equal(await controller.prepare(), true);
   assert.equal(stats.contexts, 1);
@@ -89,6 +98,16 @@ async function checkAudioLifecycle() {
   assert.equal(await controller.prepare(), true);
   assert.equal(stats.resumes, 1, 'A suspended context must be resumable on a later play action');
   assert.equal(stats.sources, 1);
+  context.initialState = 'suspended';
+  active.hasBeenActive = active.isActive = false;
+  const autoplay = context.module.exports.attach({...audio, paused: false}, pet, image);
+  const pending = autoplay.prepare();
+  assert.equal(stats.sources, 1, 'Allowed autoplay must keep its audible route while the audio context is blocked');
+  active.hasBeenActive = active.isActive = true;
+  assert.equal(await autoplay.prepare(), true);
+  assert.equal(await pending, true);
+  assert.equal(stats.sources, 2, 'Unlocking a pending context must create only one source');
+  assert.equal(stats.destinationConnections, 2);
   context.AudioContext = undefined;
   assert.equal(await context.module.exports.attach(audio, pet, image).prepare(), false);
   assert.equal(audio.paused, true, 'The analyser must not change the player state');

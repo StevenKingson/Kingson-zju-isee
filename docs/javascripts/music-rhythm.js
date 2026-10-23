@@ -134,8 +134,14 @@
       const AudioContext = global.AudioContext || global.webkitAudioContext;
       if (!AudioContext || reducedMotion.matches) return false;
       // Autoplay must not be rerouted into a suspended context and become silent.
-      if (!context && navigator.userActivation && !navigator.userActivation.hasBeenActive) return false;
-      if (preparation) return preparation;
+      if (!context && audio.paused && navigator.userActivation && !navigator.userActivation.hasBeenActive) return false;
+      if (preparation) {
+        // A previous autoplay attempt can be waiting for the next user gesture.
+        if (context.state !== "running" && navigator.userActivation?.isActive) {
+          void context.resume().catch(() => {});
+        }
+        return preparation;
+      }
       preparation = (async () => {
         try {
           if (!context) {
@@ -166,7 +172,7 @@
       })().finally(() => { preparation = null; });
       return preparation;
     }
-    audio.addEventListener("playing", sync);
+    audio.addEventListener("playing", () => { sync(); void prepare(); });
     for (const name of ["pause", "ended", "waiting", "emptied", "error", "seeking"]) {
       audio.addEventListener(name, stop);
     }
@@ -177,6 +183,9 @@
       pet.dataset.rhythmBeats = "0";
     });
     document.addEventListener("visibilitychange", sync);
+    document.addEventListener("pointerdown", () => {
+      if (!audio.paused) void prepare();
+    }, { passive: true });
     reducedMotion.addEventListener("change", sync);
     new MutationObserver(sync).observe(pet, { attributes: true, attributeFilter: ["hidden"] });
     global.addEventListener("pagehide", stop);
