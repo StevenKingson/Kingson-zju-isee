@@ -88,11 +88,14 @@
   background: #faf6f8;
 }
 
-.home-background {
+.md-typeset .home-background {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
   object-fit: cover;
   object-position: center;
   z-index: -2;

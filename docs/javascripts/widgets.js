@@ -279,6 +279,11 @@
   pet.setAttribute("aria-label", "课程页桌宠，可拖动；聚焦后用方向键移动");
   pet.append(petImage);
   document.body.append(pet);
+  // Move only the artwork: the draggable container keeps its position and hit area.
+  audio.addEventListener("playing", () => pet.classList.add("is-playing"));
+  for (const event of ["pause", "ended", "waiting", "emptied", "error"]) {
+    audio.addEventListener(event, () => pet.classList.remove("is-playing"));
+  }
   let petIndex = Math.max(0, Math.min(8, Number(read("tea-pet-character", 0)) || 0));
   let drag = null;
   function updatePet() {
