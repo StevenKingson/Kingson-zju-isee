@@ -28,10 +28,11 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Refresh gallery and music catalogues
+      - name: Refresh gallery, music and anime catalogues
         run: |
           python scripts/update-gallery.py
           python scripts/update-music.py
+          python scripts/update-watchlist.py
       - name: Build website
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}/

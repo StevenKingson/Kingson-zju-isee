@@ -15,10 +15,12 @@
 .anime-cover { position: relative; display: block; isolation: isolate; width: 100%; aspect-ratio: 2 / 3; padding: 0; overflow: hidden; border: 1px solid var(--tea-border); border-radius: 0.55rem; background: #f8f7f4; cursor: pointer; color: #fff; text-align: left; font: inherit; box-shadow: 0 6px 20px #3620300a; }
 .md-typeset .anime-image { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s; }
 .md-typeset .anime-image-fill { object-fit: cover; }
+.md-typeset .anime-art-overlay { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
 @media (hover: hover) { .anime-cover:hover .anime-image { transform: scale(1.025); } }
 .anime-cover:focus-visible, .anime-recommend-link:focus-visible { outline: 3px solid var(--tea-accent); outline-offset: 4px; }
 .anime-status { position: absolute; top: 0.65rem; left: 0.65rem; padding: 0.18rem 0.55rem; border-radius: 1rem; background: #25252bcf; color: #fff; font-size: 0.6rem; backdrop-filter: blur(6px); }
 .anime-status.is-complete { background: #315f4de8; }
+.anime-status.is-dropped { background: #704f3ee8; }
 .anime-cover-hint { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.6rem 0.75rem 0.6rem; background: linear-gradient(transparent, #19151ac9); color: #fff; font-size: 0.6rem; letter-spacing: 0.04em; }
 .anime-review { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; gap: 1rem; padding: clamp(0.8rem, 2vw, 1.5rem); background: #19141bd9; backdrop-filter: blur(3px); color: #fff; overflow-y: auto; overscroll-behavior: contain; }
 .anime-review > * { flex-shrink: 0; }

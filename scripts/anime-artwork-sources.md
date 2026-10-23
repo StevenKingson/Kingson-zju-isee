@@ -18,3 +18,25 @@
 | `assets/anime/dark-gathering.jpg` | [黑暗集会官网](https://darkgathering.jp/index_main.php) | https://darkgathering.jp/img/home/visual_05.jpg |
 
 图片直接保存在本机，前台卡片下面保留官方出处链接。没有改动原图。季度分组是站长的追番清单分类。
+
+## 2026-10-23 追番清单扩充
+
+| 本机文件（相对于 docs） | 官方作品页 | 图片原地址 |
+| --- | --- | --- |
+| `assets/anime/student-council.jpg` | [学生会也有洞](https://nama-anaru.com/) | https://nama-anaru.com/teaser_assets/img/main/main_kv_2_sp.jpg |
+| `assets/anime/fx-kurumi.webp` | [FX战士久留美](https://fxkurumi-info.com/) | https://fxkurumi-info.com/assets/img/top/visual/visual1.webp |
+| `assets/anime/ranma3.jpg` | [乱马1/2 第三季](https://ranma-pr.com/en/news/2400/) | https://ranma-pr.com/wp/wp-content/uploads/2026/03/ranma3_teaser-KV_logo_cmini.jpg |
+| `assets/anime/dark-item.webp` | [某暗部的少女共栖](https://toaru-project.com/item/) | https://toaru-project.com/item/core_sys/images/main/home/kv02.webp |
+| `assets/anime/yanineko.webp` | [尼古喵喵](https://yanineko-anime.com/) | https://yanineko-anime.com/wp/wp-content/themes/yanineko-theme/images/kv01-sp.webp |
+| `assets/anime/mushoku3.jpg` | [无职转生 第三季](https://mushokutensei.jp/news/260519_1/) | https://mushokutensei.jp/wp-content/uploads/2026/05/260519_MT3_KV_web-724x1024.jpg |
+| `assets/anime/witch.webp` | [穹庐下的魔女](https://anime-jaadugar.com/) | https://anime-jaadugar.com/wp-content/themes/jaadugar_v2.3/assets/img/top/kv/kv1.webp |
+| `assets/anime/lara.webp` | [再见菈菈](https://goodbyelara.com/) | https://goodbyelara.com/assets/img/top/visual/visual2_bg-s.webp |
+| `assets/anime/hyakkano.webp` | [超超超超超喜欢你的100个女朋友 第三季](https://hyakkano.com/) | https://hyakkano.com/xUtUy1FY/wp-content/themes/hyakkano_v1/assets/webp/common/index/kv_03-07.webp |
+| `assets/anime/grandblue3.webp` | [碧蓝之海 第三季](https://grandblue-anime.com/) | https://grandblue-anime.com/core_sys/images/main/home/kv04.webp |
+| `assets/anime/supermarket.webp` | [在超市后门吸烟的二人](https://yanisuu.com/) | https://yanisuu.com/assets/img/top/kv02_sp.webp |
+| `assets/anime/villainess.webp` | [恶女不才，请多关照~雏宫蝶鼠换身传](https://futsutsuka.net/) | https://futsutsuka.net/assets/img/top/kv_2c-s.webp |
+| `assets/anime/denki.webp` | [20世纪电器目录](https://denkimokuroku.jp/) | https://denkimokuroku.jp/_assets_official/images/top/_01-kv1.webp |
+| `assets/anime/yumemita.webp` | [BanG Dream！YUME∞MITA](https://anime.bang-dream.com/yumemita/) | https://anime.bang-dream.com/yumemita/wordpress/wp-content/themes/yumemita_v2/assets/images/home/img_kv-slide01.webp |
+| `assets/anime/opposites.jpg` | [正相反的你和我](https://sh-anime.shochiku.co.jp/seihantai_anime/) | https://sh-anime.shochiku.co.jp/seihantai_anime/common3/images/v3_top_fv_kv01.jpg |
+
+《再见菈菈》保留官网分层设计，底图叠加官方标题层：https://goodbyelara.com/assets/img/top/visual/visual2_title-s.webp 。

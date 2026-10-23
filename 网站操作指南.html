@@ -249,7 +249,7 @@ $$
 </tr>
 <tr>
 <td><code>status</code></td>
-<td><code>正在追</code>、<code>打算补</code> 或 <code>疯狂推</code></td>
+<td><code>正在追</code>、<code>打算补</code>、<code>疯狂推</code> 或 <code>已弃坑</code>；弃坑时同时把 <code>completed</code> 设为 <code>false</code></td>
 </tr>
 <tr>
 <td><code>completed</code></td>
@@ -278,7 +278,7 @@ $$
 <li>新增季度：在 <code>watching</code> 方括号里复制现有的整个季度对象，修改 <code>season</code>，再修改这个季度 <code>anime</code> 里的番剧。季度按照文件中的顺序显示，建议把最新季度放在最前面。</li>
 <li>从“打算补”移到“疯狂推”：把该番剧的完整条目剪切到 <code>recommended</code>，修改 <code>status</code>，把 <code>completed</code> 设为 <code>true</code>，然后写评价和评分。注意修正两边相邻条目之间的逗号。</li>
 <li>保存文件，打开本机预览。点击封面应直接显示评价，再点一次或按 Esc 收起；页面不会跳转。</li>
-<li>确认效果后双击根目录的“一键上传到GitHub.bat”。</li>
+<li>确认效果后双击根目录的“一键上传到GitHub.bat”。程序会检查清单和封面路径，并同步生成可搜索的文字目录；清单格式或图片路径有误时会停止上传。</li>
 </ol>
 <p>封面建议从作品官网、电视台或发行方的官方作品页寻找。把图片下载到本机资源目录，并在 <code>source</code> 记录出处，之后不会因为外站禁止直接引用而突然消失。现有三张图的来源记录在 <code>scripts/anime-artwork-sources.md</code>。</p>
 <p>“打算补”下方的“推荐一部番”会打开仓库的 GitHub Issue 表单。访客需要登录 GitHub；你在仓库 Issues 查看推荐，再自行挑选加入清单。表单文件是 <code>.github/ISSUE_TEMPLATE/anime-recommendation.yml</code>。</p>

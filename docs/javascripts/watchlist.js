@@ -13,6 +13,7 @@
   };
   function makeCard(anime, key, signal) {
     const card = make("article", "anime-card");
+    const dropped = anime.status === "已弃坑";
     const button = make("button", "anime-cover");
     button.type = "button";
     button.setAttribute("aria-label", `查看《${anime.title}》的评价`);
@@ -24,16 +25,24 @@
     image.width = 600;
     image.height = 850;
     image.decoding = "async";
+    image.loading = "lazy";
     if (anime.coverFit === "cover") image.classList.add("anime-image-fill");
     button.append(image);
-    button.append(make("span", `anime-status${anime.completed ? " is-complete" : ""}`, anime.completed ? "已看完" : anime.status),
+    if (anime.coverOverlay) {
+      const artworkOverlay = make("img", "anime-art-overlay");
+      artworkOverlay.src = new URL(anime.coverOverlay, root).href;
+      artworkOverlay.alt = "";
+      artworkOverlay.loading = "lazy";
+      button.append(artworkOverlay);
+    }
+    button.append(make("span", `anime-status${dropped ? " is-dropped" : anime.completed ? " is-complete" : ""}`, anime.completed ? "已看完" : anime.status),
       make("span", "anime-cover-hint", "点击看评价 ↗"));
     const overlay = make("span", "anime-review");
     overlay.id = `anime-review-${key}`;
     overlay.hidden = true;
     const score = typeof anime.score === "number" ? `${anime.score} / 10` : "暂未评分";
     overlay.append(make("span", "anime-review-label", "KING桑的观后感"), make("strong", "anime-score", score),
-      make("span", "anime-review-text", anime.review || "还没有写下评价，等看完再来聊聊。"),
+      make("span", "anime-review-text", anime.review || (dropped ? "已弃坑，暂未写下评价。" : "还没有写下评价，等看完再来聊聊。")),
       make("span", "anime-review-close", "再点一次收起 · Esc 关闭"));
     button.append(overlay);
     function setOpen(open) {
@@ -47,7 +56,7 @@
     }, { signal });
     card.append(button, make("h4", "anime-title", anime.title));
     const meta = make("div", "anime-card-meta");
-    meta.append(make("span", "anime-card-score", typeof anime.score === "number" ? `★ ${anime.score} / 10` : "评分待更新"));
+    meta.append(make("span", "anime-card-score", typeof anime.score === "number" ? `★ ${anime.score} / 10` : dropped ? "未评分" : "评分待更新"));
     const source = make("a", "anime-source", "官方视觉图 ↗");
     source.href = anime.source;
     source.target = "_blank";

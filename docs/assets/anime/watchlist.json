@@ -24,6 +24,50 @@
           "score": 5,
           "source": "https://www.cyberpunk.net/en/edgerunners2",
           "sourceName": "赛博朋克：边缘行者第二季官网"
+        },
+        {
+          "id": "student-council",
+          "title": "学生会也有洞",
+          "cover": "assets/anime/student-council.jpg",
+          "status": "正在追",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://nama-anaru.com/",
+          "sourceName": "学生会也有洞动画官网"
+        },
+        {
+          "id": "fx-kurumi",
+          "title": "FX战士久留美",
+          "cover": "assets/anime/fx-kurumi.webp",
+          "status": "正在追",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://fxkurumi-info.com/",
+          "sourceName": "FX战士久留美动画官网"
+        },
+        {
+          "id": "ranma3",
+          "title": "乱马1/2 第三季",
+          "cover": "assets/anime/ranma3.jpg",
+          "status": "正在追",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://ranma-pr.com/en/news/2400/",
+          "sourceName": "乱马1/2 第三季动画官网"
+        },
+        {
+          "id": "dark-item",
+          "title": "某暗部的少女共栖",
+          "cover": "assets/anime/dark-item.webp",
+          "status": "正在追",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://toaru-project.com/item/",
+          "sourceName": "某暗部的少女共栖动画官网"
         }
       ]
     },
@@ -40,6 +84,117 @@
           "score": 9,
           "source": "https://www.vap.co.jp/korekaite-shine/",
           "sourceName": "描绘直至生命尽头动画官网"
+        },
+        {
+          "id": "yanineko",
+          "title": "尼古喵喵",
+          "cover": "assets/anime/yanineko.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "制作精良的神人番剧，只要不在吃饭的时候看就行",
+          "score": 8,
+          "source": "https://yanineko-anime.com/",
+          "sourceName": "尼古喵喵动画官网"
+        },
+        {
+          "id": "mushoku3",
+          "title": "无职转生 第三季",
+          "cover": "assets/anime/mushoku3.jpg",
+          "status": "正在追",
+          "completed": true,
+          "review": "制作相比第二季好了不少，改编节奏也很合理，依旧是异世界题材最严厉的父亲",
+          "score": 8,
+          "source": "https://mushokutensei.jp/news/260519_1/",
+          "sourceName": "无职转生 第三季动画官网"
+        },
+        {
+          "id": "witch",
+          "title": "穹庐下的魔女",
+          "cover": "assets/anime/witch.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "历史题材，讲的是蒙古帝国兴衰历史中以个人之躯掀起风暴的几位魔女的故事，富有浪漫气息",
+          "score": 8,
+          "source": "https://anime-jaadugar.com/",
+          "sourceName": "穹庐下的魔女动画官网"
+        },
+        {
+          "id": "lara",
+          "title": "再见菈菈",
+          "cover": "assets/anime/lara.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "制作精美，但是剧情一言难尽，节奏崩坏，人物塑造也有问题",
+          "score": 5,
+          "source": "https://goodbyelara.com/",
+          "sourceName": "再见菈菈动画官网",
+          "coverOverlay": "assets/anime/lara-title.webp"
+        },
+        {
+          "id": "hyakkano",
+          "title": "超超超超超喜欢你的100个女朋友 第三季",
+          "cover": "assets/anime/hyakkano.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "制作组很会整活，对这部作品厨力全开，偏日常的喜剧",
+          "score": 8,
+          "source": "https://hyakkano.com/",
+          "sourceName": "超超超超超喜欢你的100个女朋友 第三季动画官网"
+        },
+        {
+          "id": "grandblue3",
+          "title": "碧蓝之海 第三季",
+          "cover": "assets/anime/grandblue3.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "能动就行，经费不足也认了，原作足够优秀，依旧是必看的搞笑番",
+          "score": 7,
+          "source": "https://grandblue-anime.com/",
+          "sourceName": "碧蓝之海 第三季动画官网"
+        },
+        {
+          "id": "supermarket",
+          "title": "在超市后门吸烟的二人",
+          "cover": "assets/anime/supermarket.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "偏克制的恋爱番，有文艺感，不过人设就很刻意，制作很好，能看",
+          "score": 7,
+          "source": "https://yanisuu.com/",
+          "sourceName": "在超市后门吸烟的二人动画官网"
+        },
+        {
+          "id": "villainess",
+          "title": "恶女不才，请多关照~雏宫蝶鼠换身传",
+          "cover": "assets/anime/villainess.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "动画工房的制作还是很不错的，女主人设也很讨喜，不错的喜剧番",
+          "score": 8,
+          "source": "https://futsutsuka.net/",
+          "sourceName": "恶女不才，请多关照~雏宫蝶鼠换身传动画官网"
+        },
+        {
+          "id": "denki",
+          "title": "20世纪电器目录",
+          "cover": "assets/anime/denki.webp",
+          "status": "已弃坑",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://denkimokuroku.jp/",
+          "sourceName": "20世纪电器目录动画官网"
+        },
+        {
+          "id": "yumemita",
+          "title": "BanG Dream！YUME∞MITA",
+          "cover": "assets/anime/yumemita.webp",
+          "status": "已弃坑",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://anime.bang-dream.com/yumemita/",
+          "sourceName": "BanG Dream！YUME∞MITA动画官网"
         }
       ]
     }
@@ -66,6 +221,17 @@
       "score": null,
       "source": "https://kadokawa-animation.jp/lineup/re-zero-anime-2nd",
       "sourceName": "KADOKAWA Re:Zero 第二季作品页"
+    },
+    {
+      "id": "opposites",
+      "title": "正相反的你和我",
+      "cover": "assets/anime/opposites.jpg",
+      "status": "打算补",
+      "completed": false,
+      "review": "",
+      "score": null,
+      "source": "https://sh-anime.shochiku.co.jp/seihantai_anime/",
+      "sourceName": "正相反的你和我动画官网"
     }
   ],
   "recommended": [
