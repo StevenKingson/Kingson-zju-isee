@@ -28,7 +28,10 @@
       const verticalSpacing = spacing(container, ["paddingTop", "paddingBottom", "marginTop", "marginBottom"])
         + (main ? spacing(main, ["marginTop", "marginBottom"]) : 0);
       const availableHeight = Math.max(1, innerHeight - chromeHeight - verticalSpacing - 2);
-      const scale = Math.max(0.01, Math.min(availableWidth / width, availableHeight / height));
+      const widthScale = availableWidth / width;
+      // A short phone viewport can scroll instead of shrinking the text to an unreadable size.
+      const scale = Math.max(0.01, style.getPropertyValue("--home-fit").trim() === "width"
+        ? widthScale : Math.min(widthScale, availableHeight / height));
       hero.style.width = `${width * scale}px`;
       hero.style.height = `${height * scale}px`;
       hero.style.setProperty("--home-scale", String(scale));

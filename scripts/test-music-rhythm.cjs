@@ -83,7 +83,7 @@ async function checkAudioLifecycle() {
   vm.runInNewContext(fs.readFileSync(require.resolve('../docs/javascripts/music-rhythm.js'), 'utf8'), context);
   const audio = {paused: true, readyState: 4, addEventListener() {}};
   const pet = {hidden: false, dataset: {}};
-  const image = {style: {removeProperty() {}}};
+  const image = {style: {removeProperty(name) {delete this[name];}}};
   const controller = context.module.exports.attach(audio, pet, image);
   assert.equal(await controller.prepare(), false, 'Untouched autoplay must keep the normal audio route');
   assert.equal(stats.contexts, 0);
@@ -98,6 +98,26 @@ async function checkAudioLifecycle() {
   assert.equal(await controller.prepare(), true);
   assert.equal(stats.resumes, 1, 'A suspended context must be resumable on a later play action');
   assert.equal(stats.sources, 1);
+  audio.paused = false;
+  controller.setEnabled(true);
+  await controller.prepare();
+  image.style.transform = 'scale(1.1, 0.9)';
+  controller.setEnabled(false);
+  assert.equal(pet.dataset.rhythm, 'disabled');
+  assert.equal(image.style.transform, undefined, 'Turning off following must restore the original shape immediately');
+  assert.equal(audio.paused, false, 'Turning off following must not pause the music');
+  assert.equal(await controller.prepare(), true, 'An existing audible graph must stay usable with following off');
+  assert.equal(stats.sources, 1);
+  assert.equal(stats.destinationConnections, 1);
+  controller.setEnabled(true);
+  await controller.prepare();
+  assert.equal(pet.dataset.rhythm, 'live');
+  assert.equal(stats.sources, 1, 'Re-enabling following must reuse the audio graph');
+  controller.setEnabled(false);
+  const disabled = context.module.exports.attach(audio, pet, image, {enabled: false});
+  assert.equal(await disabled.prepare(), false);
+  assert.equal(stats.contexts, 1, 'A saved off setting must not create a new analysis graph');
+  audio.paused = true;
   context.initialState = 'suspended';
   active.hasBeenActive = active.isActive = false;
   const autoplay = context.module.exports.attach({...audio, paused: false}, pet, image);
@@ -113,5 +133,5 @@ async function checkAudioLifecycle() {
   assert.equal(audio.paused, true, 'The analyser must not change the player state');
 }
 
-checkAudioLifecycle().then(() => console.log('Passed: 12 tempo/gain fixtures, silence, sustained tones, spring stability and audio routing.'))
+checkAudioLifecycle().then(() => console.log('Passed: 12 tempo/gain fixtures, silence, sustained tones, spring stability, audio routing and rhythm on/off.'))
   .catch(error => {console.error(error); process.exitCode = 1;});

@@ -82,12 +82,13 @@
     }
   }
 
-  function attach(audio, pet, image) {
+  function attach(audio, pet, image, { enabled = true } = {}) {
+    let followEnabled = Boolean(enabled);
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
     const spring = new BeatSpring();
     let context, source, analyser, detector, spectrum, waveform, preparation;
     let frame = 0, lastFrame = 0, lastSample = -Infinity, beatCount = 0;
-    const canAnimate = () => !pet.hidden && !document.hidden && !reducedMotion.matches
+    const canAnimate = () => followEnabled && !pet.hidden && !document.hidden && !reducedMotion.matches
       && !audio.paused && !audio.ended && audio.readyState >= 3 && !audio.seeking;
     function resetPose() {
       spring.reset();
@@ -97,7 +98,7 @@
       cancelAnimationFrame(frame);
       frame = lastFrame = 0;
       resetPose();
-      pet.dataset.rhythm = "idle";
+      pet.dataset.rhythm = followEnabled ? "idle" : "disabled";
     }
     function tick(now) {
       if (!canAnimate() || context?.state !== "running") { stop(); return; }
@@ -132,7 +133,8 @@
     }
     async function prepare() {
       const AudioContext = global.AudioContext || global.webkitAudioContext;
-      if (!AudioContext || reducedMotion.matches) return false;
+      // Once routed through Web Audio, retain that audible path even with motion off.
+      if (!AudioContext || ((!followEnabled || reducedMotion.matches) && !source)) return false;
       // Autoplay must not be rerouted into a suspended context and become silent.
       if (!context && audio.paused && navigator.userActivation && !navigator.userActivation.hasBeenActive) return false;
       if (preparation) {
@@ -150,6 +152,7 @@
           }
           if (context.state !== "running") await context.resume();
           if (context.state !== "running") return false;
+          if (!source && (!followEnabled || reducedMotion.matches)) return false;
           if (!source) {
             analyser = context.createAnalyser();
             analyser.fftSize = 2048;
@@ -190,8 +193,13 @@
     new MutationObserver(sync).observe(pet, { attributes: true, attributeFilter: ["hidden"] });
     global.addEventListener("pagehide", stop);
     pet.dataset.rhythmBeats = "0";
-    pet.dataset.rhythm = "idle";
-    return { prepare };
+    pet.dataset.rhythm = followEnabled ? "idle" : "disabled";
+    function setEnabled(value) {
+      followEnabled = Boolean(value);
+      sync();
+      if (followEnabled && !audio.paused) void prepare();
+    }
+    return { prepare, setEnabled };
   }
 
   const api = { OnsetDetector, BeatSpring, attach };

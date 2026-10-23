@@ -17,6 +17,7 @@
   --home-design-width: 1200;
   --home-design-height: 660;
   --home-scale: 1;
+  --home-fit: contain;
   width: 100%;
   aspect-ratio: 20 / 11;
   margin-inline: auto;
@@ -138,6 +139,20 @@
   border: 1px solid #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 40px #46374412;
+  animation: home-panel-enter 0.55s ease-out both;
+}
+
+.home-copy .home-eyebrow { animation: home-text-enter 0.55s ease-out 0.05s both; }
+.home-copy h1 { animation: home-text-enter 0.65s ease-out 0.12s both; }
+.home-copy .home-description { animation: home-text-enter 0.65s ease-out 0.22s both; }
+.home-copy .home-link { animation: home-text-enter 0.65s ease-out 0.32s both; }
+@keyframes home-panel-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes home-text-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .home-background-tools {
@@ -151,6 +166,7 @@
   flex-wrap: wrap;
   gap: 10px 20px;
   font-size: 14px;
+  animation: home-text-enter 0.55s ease-out 0.4s both;
 }
 
 .home-background-tools button,
@@ -268,14 +284,34 @@
 #artbook-original { font-size: 0.65rem; }
 #artbook-status { margin: 0; padding: 0 1rem 0.8rem; color: #796773; font-size: 0.65rem; }
 
-@media (max-width: 600px) {
-  .home-hero { --home-design-width: 600; --home-design-height: 760; aspect-ratio: 15 / 19; }
+@media (max-width: 600px), (max-width: 960px) and (hover: none) and (pointer: coarse) {
+  .home-hero { --home-design-width: 600; --home-design-height: 1040; --home-fit: width; aspect-ratio: 15 / 26; }
+  .home-scene {
+    display: grid;
+    grid-template-rows: 460px auto auto;
+    align-content: center;
+    justify-items: center;
+    gap: 24px;
+    padding: 24px 24px 32px;
+  }
+  .home-scene::before { opacity: 0; }
+  .md-typeset .home-background {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    height: 460px;
+    object-fit: contain;
+    border-radius: 12px;
+  }
   .home-copy { width: 520px; padding: 30px 24px; }
   .md-typeset .home-hero h1 { font-size: 38px; }
   .home-description { font-size: 24px; }
   .home-eyebrow { font-size: 14px; }
   .md-typeset .home-link { font-size: 22px; }
-  .home-background-tools { font-size: 20px; }
+  .home-background-tools { position: static; width: 100%; font-size: 20px; }
+}
+
+@media (max-width: 600px) {
   .artbook-heading, .artbook-controls { padding: 0.7rem; }
   #artbook-jump { margin-left: 0; width: 100%; }
   .artbook-viewport { height: 55vh; min-height: 15rem; }
@@ -283,6 +319,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .home-background, #artbook-image, .acg-card { transition: none; }
+  .home-copy, .home-copy .home-eyebrow, .home-copy h1,
+  .home-copy .home-description, .home-copy .home-link,
+  .home-background-tools { animation: none; }
 }
 
 .tea-home .md-main__inner { margin-top: 0; margin-bottom: 0; }

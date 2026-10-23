@@ -281,7 +281,8 @@
   pet.setAttribute("aria-label", "课程页桌宠，可拖动；聚焦后用方向键移动");
   pet.append(petImage);
   document.body.append(pet);
-  petRhythm = window.TeaMusicRhythm?.attach(audio, pet, petImage);
+  let followBgm = read("tea-pet-follow-bgm", true) !== false;
+  petRhythm = window.TeaMusicRhythm?.attach(audio, pet, petImage, { enabled: followBgm });
   // Move only the artwork: the draggable container keeps its position and hit area.
   audio.addEventListener("playing", () => pet.classList.add("is-playing"));
   for (const event of ["pause", "ended", "waiting", "emptied", "error"]) {
@@ -384,7 +385,7 @@
     const select = make("select");
     select.setAttribute("aria-label", "选择陪读角色");
     petNames.forEach((name, index) => {
-      const option = make("option", "", `${name} · ${150 + index} 号`);
+      const option = make("option", "", name);
       option.value = String(index);
       select.append(option);
     });
@@ -400,8 +401,22 @@
       pet.hidden = !pet.hidden;
       toggle.textContent = pet.hidden ? "显示桌宠" : "收起桌宠";
     });
+    const rhythmToggle = make("button", "tea-text-button tea-pet-rhythm-toggle");
+    rhythmToggle.type = "button";
+    function updateRhythmToggle() {
+      rhythmToggle.textContent = followBgm ? "关闭 BGM 跟随" : "开启 BGM 跟随";
+      rhythmToggle.setAttribute("aria-pressed", String(followBgm));
+      rhythmToggle.title = followBgm ? "桌宠跟随音乐节奏伸缩，点击关闭" : "桌宠保持静止，点击恢复音乐跟随";
+    }
+    rhythmToggle.addEventListener("click", () => {
+      followBgm = !followBgm;
+      save("tea-pet-follow-bgm", followBgm);
+      petRhythm?.setEnabled(followBgm);
+      updateRhythmToggle();
+    });
+    updateRhythmToggle();
     label.append(select);
-    controls.append(label, toggle, make("span", "", "按住右下角的角色即可拖动"));
+    controls.append(label, toggle, rhythmToggle, make("span", "", "按住右下角的角色即可拖动"));
     document.querySelector(".md-content__inner h1")?.after(controls);
   }
 
