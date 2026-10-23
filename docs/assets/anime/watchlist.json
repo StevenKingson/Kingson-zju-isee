@@ -5,7 +5,7 @@
       "anime": [
         {
           "id": "jojo-sbr",
-          "title": "JOJO的奇妙冒险 彪马野郎第二第三赛段",
+          "title": "JOJO的奇妙冒险 彪马野郎 第二第三赛段",
           "cover": "assets/anime/jojo-sbr.jpg",
           "status": "正在追",
           "completed": false,
@@ -16,7 +16,7 @@
         },
         {
           "id": "cyberpunk-edgerunners-2",
-          "title": "赛博朋克 边缘行者第二季",
+          "title": "赛博朋克 边缘行者 第二季",
           "cover": "assets/anime/cyberpunk2.jpg",
           "status": "正在追",
           "completed": true,

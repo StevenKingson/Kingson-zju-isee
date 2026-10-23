@@ -26,7 +26,7 @@
 
 ## 专业必修课程
 
-- [信息与电子工程导论](major-required/isee-introduction/index.md) · 3 份实验报告
+- [信息与电子工程导论](major-required/isee-introduction/index.md) · 3 次实验作业、期末课程设计与 Markdown 模板
 - [半导体物理](major-required/semiconductor-physics/index.md)
 - [人工智能](major-required/artificial-intelligence/index.md)
 - [认知实践](major-required/cognitive-practice/index.md)

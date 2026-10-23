@@ -16,6 +16,10 @@ theme:
     - navigation.tabs
     - navigation.top
 
+exclude_docs: |
+  course/year2/major-required/isee-introduction/reports/experiment-*/source/report.md
+  course/year2/major-required/isee-introduction/resources/report-template/template.md
+
 nav:
 - 主页: index.md
 - 课程:
@@ -86,6 +90,8 @@ nav:
         - 实验 1 · 基于 MATLAB 的信号频谱分析: course/year2/major-required/isee-introduction/reports/experiment-1/index.md
         - 实验 2 · 基于 Simulink 的信号调制仿真: course/year2/major-required/isee-introduction/reports/experiment-2/index.md
         - 实验 3 · 基于 Multisim 的三极管放大电路仿真: course/year2/major-required/isee-introduction/reports/experiment-3/index.md
+        - 期末课程设计 · 四位加法器: course/year2/major-required/isee-introduction/reports/course-design/index.md
+        - Markdown 实验报告模板: course/year2/major-required/isee-introduction/resources/report-template/index.md
       - 半导体物理: course/year2/major-required/semiconductor-physics/index.md
       - 人工智能:
         - 课程心得: course/year2/major-required/artificial-intelligence/index.md

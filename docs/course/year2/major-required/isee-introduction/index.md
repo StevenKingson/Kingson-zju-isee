@@ -6,9 +6,12 @@
 
 ## 实验报告
 
-- [实验 1 · 基于 MATLAB 的信号频谱分析](reports/experiment-1/index.md) · PDF
-- [实验 2 · 基于 Simulink 的信号调制仿真](reports/experiment-2/index.md) · PDF
-- [实验 3 · 基于 Multisim 的三极管放大电路仿真](reports/experiment-3/index.md) · PDF
+- [实验 1 · 基于 MATLAB 的信号频谱分析](reports/experiment-1/index.md) · PDF / Markdown 原稿 / 题目 / 指导资料
+- [实验 2 · 基于 Simulink 的信号调制仿真](reports/experiment-2/index.md) · PDF / Markdown 原稿 / 题目 / 指导资料
+- [实验 3 · 基于 Multisim 的三极管放大电路仿真](reports/experiment-3/index.md) · PDF / Markdown 原稿 / 题目 / 指导资料
+
+- [期末课程设计 · 四位加法器](reports/course-design/index.md) · PDF / 逻辑公式
+- [Markdown 实验报告模板](resources/report-template/index.md) · 模板与校徽下载
 
 ## 课程心得
 

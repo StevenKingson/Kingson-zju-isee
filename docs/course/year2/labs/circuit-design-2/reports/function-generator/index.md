@@ -10,6 +10,6 @@
 <summary>展开 PDF 预览</summary>
 </details>
 
-- [下载清理后的 Word 报告](report.docx)
+- [下载 Word 原稿](report.docx)
 - [下载 STM32 单片机工程](stm32-source.zip)
 - [下载串口屏 HMI 工程](hmi-source.zip)

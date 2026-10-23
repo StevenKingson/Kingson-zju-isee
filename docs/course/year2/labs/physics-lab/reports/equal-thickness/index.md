@@ -8,7 +8,7 @@
 <summary>展开 PDF 预览</summary>
 </details>
 
-- [下载可编辑源文件与配套图片、脚本](source.zip)
+- [下载markdown版可编辑源文件与配套图片、脚本](source.zip)
 
 ---
 
