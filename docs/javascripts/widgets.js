@@ -80,7 +80,7 @@
   volumeLabel.append(volume);
   playerControls.append(randomButton, volumeLabel);
   panel.append(heading, playlistPicker, nowPlaying, musicStatus, trackList, playerControls,
-    make("p", "music-footnote", "仅在当前歌单内随机播放 · 首次播放请点击 ▶"));
+    make("p", "music-footnote", "当前歌单每轮随机不重复 · 首次播放请点击 ▶"));
   const audio = new Audio();
   audio.id = "tea-bgm";
   audio.preload = "metadata";
@@ -126,6 +126,7 @@
   let tracks = [];
   let playlists = [];
   let activePlaylist = null;
+  let shuffle;
   let current = -1;
   let attempted = new Set();
   const resume = read("tea-bgm-session", null, sessionStorage);
@@ -167,6 +168,8 @@
   function selectTrack(index, autoplay = true, seek = 0) {
     if (!tracks.length) return;
     current = index;
+    shuffle.consume(tracks[current].id);
+    save(`tea-shuffle-${activePlaylist.id}`, shuffle.snapshot());
     audio.src = url(tracks[current].src);
     const selectedId = tracks[current].id;
     if (seek > 0) audio.addEventListener("loadedmetadata", () => {
@@ -179,16 +182,16 @@
     rememberMusic();
     if (autoplay) void play();
   }
-  function randomTrack() {
+  function randomTrack(autoplay = true) {
     if (!tracks.length) return;
-    let next = Math.floor(Math.random() * tracks.length);
-    if (tracks.length > 1 && next === current) next = (next + 1) % tracks.length;
-    selectTrack(next);
+    const nextId = shuffle.next(tracks[current]?.id);
+    selectTrack(tracks.findIndex((track) => track.id === nextId), autoplay);
   }
   function activatePlaylist(playlist, autoplay = false, restore = null) {
     audio.pause();
     activePlaylist = playlist;
     tracks = playlist.tracks;
+    shuffle = new window.TeaMusicShuffle(tracks.map((track) => track.id), read(`tea-shuffle-${playlist.id}`, null));
     current = -1;
     attempted.clear();
     musicStatus.textContent = "";
@@ -211,7 +214,7 @@
     });
     const restoredIndex = restore ? tracks.findIndex((track) => track.id === restore.id) : -1;
     if (restoredIndex >= 0) selectTrack(restoredIndex, restore.playing, restore.time);
-    else selectTrack(Math.floor(Math.random() * tracks.length), autoplay);
+    else randomTrack(autoplay);
   }
   playlistSelect.addEventListener("change", () => {
     const playlist = playlists.find((item) => item.id === playlistSelect.value);
@@ -223,14 +226,14 @@
   playButton.addEventListener("click", () => {
     if (audio.paused) void play(); else audio.pause();
   });
-  randomButton.addEventListener("click", randomTrack);
+  randomButton.addEventListener("click", () => randomTrack());
   volume.addEventListener("input", () => {
     audio.volume = Number(volume.value);
     save("tea-volume", audio.volume);
   });
   audio.addEventListener("play", () => { syncPlayer(); rememberMusic(); });
   audio.addEventListener("pause", () => { syncPlayer(); rememberMusic(); });
-  audio.addEventListener("ended", randomTrack);
+  audio.addEventListener("ended", () => randomTrack());
   audio.addEventListener("error", () => {
     if (!tracks.length || !audio.error) return;
     attempted.add(current);

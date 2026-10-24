@@ -34,7 +34,12 @@ nav:
       - 大学物理（甲）Ⅰ: course/year1/hard/physics-1/index.md
       - 常微分方程: course/year1/hard/ode/index.md
     - 专业必修课程:
-      - 电子工程训练（甲）: course/year1/major/electronics-training/index.md
+      - 电子工程训练（甲）:
+        - 课程心得: course/year1/major/electronics-training/index.md
+        - 报告资料: course/year1/major/electronics-training/reports/index.md
+        - 基础实验报告: course/year1/major/electronics-training/reports/basic-training/index.md
+        - 智能小车预习作业: course/year1/major/electronics-training/reports/robot-preview/index.md
+        - 课程总结报告: course/year1/major/electronics-training/reports/course-summary/index.md
       - 集成电路导论: course/year1/major/ic-introduction/index.md
     - 思政军体类课程:
       - 军训: course/year1/politics/military-training/index.md
@@ -169,6 +174,7 @@ extra_css:
 extra_javascript:
   - javascripts/site.js
   - javascripts/music-rhythm.js
+  - javascripts/music-shuffle.js
   - javascripts/widgets.js
   - javascripts/pdf-preview.js
   - javascripts/watchlist.js
