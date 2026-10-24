@@ -8,6 +8,7 @@
 
 - [基础实验报告：仪器使用、电路板测试与基础总结](reports/basic-training/index.md)
 - [智能小车预习作业：抓取思路、伪代码与模拟截图](reports/robot-preview/index.md)
+- [智能插座实验报告：智能插座实验、连接手机系统测试](reports/smart-socket/index.md)
 - [课程总结报告](reports/course-summary/index.md)
 
 以上资料均提供 PDF 预览和可编辑 Word 下载，已去除个人身份信息。

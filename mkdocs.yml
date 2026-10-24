@@ -38,6 +38,7 @@ nav:
         - 课程心得: course/year1/major/electronics-training/index.md
         - 报告资料: course/year1/major/electronics-training/reports/index.md
         - 基础实验报告: course/year1/major/electronics-training/reports/basic-training/index.md
+        - 智能插座实验报告: course/year1/major/electronics-training/reports/smart-socket/index.md
         - 智能小车预习作业: course/year1/major/electronics-training/reports/robot-preview/index.md
         - 课程总结报告: course/year1/major/electronics-training/reports/course-summary/index.md
       - 集成电路导论: course/year1/major/ic-introduction/index.md
