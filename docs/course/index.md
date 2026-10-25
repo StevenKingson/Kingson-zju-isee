@@ -11,6 +11,12 @@ hide:
 
 文字是直接照搬我在98发的经验贴的原稿，所以会出现 lz 这样的自称。
 
+<div class="course-explorer" data-course-explorer>
+<p>正在整理课程目录…</p>
+</div>
+
+<noscript>课程筛选需要 JavaScript。你也可以通过下面的学年入口和侧边导航查找课程。</noscript>
+
 <div class="acg-cards">
   <a class="acg-card" href="year1/">
     <span class="acg-card-label">FRESHMAN YEAR · 01</span>

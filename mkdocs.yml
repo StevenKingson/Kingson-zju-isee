@@ -164,6 +164,10 @@ nav:
 - 友链: friends/index.md
 - 关于: about/index.md
 - 留言板: guestbook/index.md
+- 书签与更新: desk/index.md
+
+hooks:
+  - hooks/discovery.py
 
 extra_css:
   - stylesheets/extra.css
@@ -171,6 +175,7 @@ extra_css:
   - stylesheets/pdf-preview.css
   - stylesheets/watchlist.css
   - stylesheets/about.css
+  - stylesheets/discovery.css
 
 extra_javascript:
   - javascripts/site.js
@@ -180,6 +185,7 @@ extra_javascript:
   - javascripts/pdf-preview.js
   - javascripts/watchlist.js
   - javascripts/about.js
+  - javascripts/discovery.js
   - javascripts/mathjax.js
   - javascripts/vendor/mathjax/es5/tex-mml-chtml.js
 
