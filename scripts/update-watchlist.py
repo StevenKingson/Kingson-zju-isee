@@ -12,7 +12,7 @@ def update():
     data = json.loads((DOCS / "assets/anime/watchlist.json").read_text(encoding="utf-8"))
     groups = [("正在追 · " + group["season"], group["anime"]) for group in data["watching"]]
     groups += [("打算补", data["planned"]), ("疯狂推", data["recommended"])]
-    paragraphs = []
+    paragraphs = ["  <p>疯狂推：" + escape(data["recommendedIntro"]) + "</p>"] if data.get("recommendedIntro") else []
     ids = set()
     for group, entries in groups:
         for anime in entries:

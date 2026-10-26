@@ -165,6 +165,7 @@ nav:
 - 关于: about/index.md
 - 留言板: guestbook/index.md
 - 书签与更新: desk/index.md
+- 更新日志: changelog/index.md
 
 hooks:
   - hooks/discovery.py
@@ -176,6 +177,7 @@ extra_css:
   - stylesheets/watchlist.css
   - stylesheets/about.css
   - stylesheets/discovery.css
+  - stylesheets/changelog.css
 
 extra_javascript:
   - javascripts/site.js

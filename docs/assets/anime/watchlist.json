@@ -92,7 +92,7 @@
           "status": "正在追",
           "completed": true,
           "review": "制作精良的神人番剧，只要不在吃饭的时候看就行",
-          "score": 8,
+          "score": 9,
           "source": "https://yanineko-anime.com/",
           "sourceName": "尼古喵喵动画官网"
         },
@@ -197,6 +197,93 @@
           "sourceName": "BanG Dream！YUME∞MITA动画官网"
         }
       ]
+    },
+    {
+      "season": "2026年4月新番",
+      "anime": [
+        {
+          "id": "marriage-toxin",
+          "title": "婚姻剧毒",
+          "cover": "assets/anime/marriage-toxin.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "画风吸引人，但是剧情太垃圾了，每集都是公式圣母感化包饺子，男主的人设太幽默了",
+          "score": 4,
+          "source": "https://www.marriagetoxin-anime.com/",
+          "sourceName": "婚姻剧毒 官方作品页"
+        },
+        {
+          "id": "kamiina-botan",
+          "title": "上伊那牡丹，酒醉身姿如百合花般",
+          "cover": "assets/anime/kamiina-botan.jpg",
+          "status": "正在追",
+          "completed": true,
+          "review": "感觉算重百，每一集风格都略有差异，单集质量都很能打，但是放在一起就很割裂，不过还是美味捏",
+          "score": 7,
+          "source": "https://kamiina-botan.com/",
+          "sourceName": "上伊那牡丹，酒醉身姿如百合花般 官方作品页"
+        },
+        {
+          "id": "witch-hat",
+          "title": "尖帽子的魔法工房",
+          "cover": "assets/anime/witch-hat.jpg",
+          "status": "已弃坑",
+          "completed": false,
+          "review": "",
+          "score": null,
+          "source": "https://tongari-anime.com/",
+          "sourceName": "尖帽子的魔法工房 官方作品页"
+        }
+      ]
+    },
+    {
+      "season": "2026年1月新番",
+      "anime": [
+        {
+          "id": "oshi3",
+          "title": "我推的孩子 第三季",
+          "cover": "assets/anime/oshi3.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "如果不是cbm的漫画原作烂完了，推子系列本可以入选[疯狂推]一栏，不过动漫推子和漫画推子不能相提并论，这季质量还是比较稳定的，兄妹相认名场面做的也很好，十分的美味",
+          "score": 7,
+          "source": "https://ichigoproduction.com/Season3/",
+          "sourceName": "我推的孩子 第三季 官方作品页"
+        },
+        {
+          "id": "frieren2",
+          "title": "葬送的芙莉莲 第二季",
+          "cover": "assets/anime/frieren2.jpg",
+          "status": "正在追",
+          "completed": true,
+          "review": "质量相比第一季略有下滑，不过这是能猜到的毕竟第一季的质量摆在那，瑕不掩瑜吧",
+          "score": 8,
+          "source": "https://madhouse.co.jp/works/tv_frieren-anime_s2/",
+          "sourceName": "葬送的芙莉莲 第二季 官方作品页"
+        },
+        {
+          "id": "medalist2",
+          "title": "金牌得主 第二季",
+          "cover": "assets/anime/medalist2.jpg",
+          "status": "正在追",
+          "completed": true,
+          "review": "这个倒是保持了和第一季不相上下的质量，动画组还是很上心的，入坑这个系列之前lz也没想到自己会被不怎么看的运动番甚至是花滑这样的小众项目所吸引，只能说热爱的心情是共通的吧",
+          "score": 8,
+          "source": "https://kadokawa-animation.jp/lineup/medalist-pr",
+          "sourceName": "金牌得主 第二季 官方作品页"
+        },
+        {
+          "id": "mabotai2",
+          "title": "魔都精兵的奴隶 第二季",
+          "cover": "assets/anime/mabotai2.webp",
+          "status": "正在追",
+          "completed": true,
+          "review": "福利番也有好剧情，画风也很戳我，作者塑造了很多人物形象，个个鲜明，挺难得的",
+          "score": 7,
+          "source": "https://mabotai.jp/",
+          "sourceName": "魔都精兵的奴隶 第二季 官方作品页"
+        }
+      ]
     }
   ],
   "planned": [
@@ -232,6 +319,28 @@
       "score": null,
       "source": "https://sh-anime.shochiku.co.jp/seihantai_anime/",
       "sourceName": "正相反的你和我动画官网"
+    },
+    {
+      "id": "watanare",
+      "title": "我们不可能成为恋人！绝对不行。（※似乎可行？）",
+      "cover": "assets/anime/watanare.webp",
+      "status": "打算补",
+      "completed": false,
+      "review": "",
+      "score": null,
+      "source": "https://www.watanare-anime.com/",
+      "sourceName": "我们不可能成为恋人！绝对不行。（※似乎可行？） 官方作品页"
+    },
+    {
+      "id": "bakatest",
+      "title": "笨蛋测验召唤兽",
+      "cover": "assets/anime/bakatest.jpg",
+      "status": "打算补",
+      "completed": false,
+      "review": "",
+      "score": null,
+      "source": "https://kadokawa-animation.jp/lineup/bakatest",
+      "sourceName": "笨蛋测验召唤兽 官方作品页"
     }
   ],
   "recommended": [
@@ -291,6 +400,62 @@
       "score": 10,
       "source": "https://www.discoveryjapan.jp/cartoonnetwork/c1khkgwzg6zx/",
       "sourceName": "华纳兄弟探索 齐木楠雄节目官网"
+    },
+    {
+      "id": "summertime",
+      "title": "夏日重现",
+      "cover": "assets/anime/summertime.webp",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "二刷之后看来，这部作品还是有一些缺点在的，包括结局的设计，但是总体而言完成度还是很高的，不管是原作剧情还是动漫的改编，OP和ED更是神中之神，后面再没有作品能像这部作品一样带给我扑面而来的夏天的气息了",
+      "score": 9,
+      "source": "https://summertime-anime.com/",
+      "sourceName": "夏日重现 官方作品页"
+    },
+    {
+      "id": "chainsaw-reze",
+      "title": "电锯人系列",
+      "cover": "assets/anime/chainsaw-reze.webp",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "虽然都说电锯人第一季的电影感做出了坨大的，但是原作足够优秀，至少我看下来体验挺好的，剧场版蕾塞篇更是真正把电影感做出来了，另外TV12集12个ED，还都是业界顶流歌手专门作曲的，功大于过只能说，另外千万不要去看漫画电锯人二",
+      "score": 10,
+      "source": "https://chainsawman.dog/movie_reze/",
+      "sourceName": "电锯人系列 官方作品页"
+    },
+    {
+      "id": "junji-ito",
+      "title": "伊藤润二作品系列",
+      "cover": "assets/anime/junji-ito.jpg",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "不能接受恐怖灵异元素的就不要看了，《惊选集》和《狂热集》是各种短篇小故事的集合，《鱼》和《漩涡》是篇幅较长的故事，伊藤润二的想象力确实厉害，狂热集第三集的人头气球更是给当年半夜看番的我留下了深刻印象",
+      "score": 9,
+      "source": "https://ji-anime.com/",
+      "sourceName": "伊藤润二作品系列 官方作品页"
+    },
+    {
+      "id": "konosuba",
+      "title": "为美好的世界献上祝福系列",
+      "cover": "assets/anime/konosuba.jpg",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "我心目中排名前三的搞笑番，也是排名前三的异世界番，快点把下一季端出来罢",
+      "score": 10,
+      "source": "https://konosuba.com/3rd/",
+      "sourceName": "为美好的世界献上祝福系列 官方作品页"
+    },
+    {
+      "id": "panty-stocking",
+      "title": "吊带袜天使系列",
+      "cover": "assets/anime/panty-stocking.jpg",
+      "status": "疯狂推",
+      "completed": true,
+      "review": "美漫气息比较浓厚，画风很独特，剧情为单元剧，多为无厘头，也有很多neta环节，变身动画是真的劲啊",
+      "score": 9,
+      "source": "https://newpsg.com/",
+      "sourceName": "吊带袜天使系列 官方作品页"
     }
-  ]
+  ],
+  "recommendedIntro": "二刷、甚至 N 刷之后，依然想推荐给你的作品。"
 }

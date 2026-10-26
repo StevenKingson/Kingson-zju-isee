@@ -94,15 +94,21 @@
     document.body.dataset.mdColorScheme = theme === "night" ? "slate" : "default";
     themeImage.src = url(`${imagePath}theme-${theme}.png${theme === "night" ? "?v=pajamas-242" : ""}`);
     themeBadge.textContent = theme === "day" ? "☀" : "☾";
-    themeLabel.textContent = theme === "day" ? "白天模式" : "夜间模式";
-    themeButton.setAttribute("aria-label", theme === "day" ? "切换到夜晚主题" : "切换到白天主题");
-    themeButton.title = `本地时间 06:00–18:00 为白天，其余为夜间；点击切换到${theme === "day" ? "夜间" : "白天"}，下个昼夜时段恢复自动切换。`;
+    const automatic = window.teaThemeClock?.mode === "system";
+    themeLabel.textContent = automatic ? "跟随系统" : theme === "day" ? "白天模式" : "夜间模式";
+    themeButton.setAttribute("aria-label", automatic ? (theme === "day" ? "切换到夜晚主题" : "切换到白天主题") : "恢复跟随系统主题");
+    themeButton.title = automatic
+      ? `正在跟随系统的${theme === "day" ? "浅色" : "深色"}设置；点击手动切换到${theme === "day" ? "夜间" : "白天"}。`
+      : "当前为手动选择；点击恢复跟随系统的浅色或深色设置。";
     const frame = document.querySelector("iframe.giscus-frame");
     frame?.contentWindow?.postMessage({ giscus: { setConfig: { theme: theme === "night" ? "dark" : "light" } } }, "https://giscus.app");
   }
   themeButton.addEventListener("click", () => {
     const next = theme === "day" ? "night" : "day";
-    if (window.teaThemeClock) window.teaThemeClock.setManualTheme(next);
+    if (window.teaThemeClock) {
+      if (window.teaThemeClock.mode === "system") window.teaThemeClock.setManualTheme(next);
+      else window.teaThemeClock.useSystemTheme();
+    }
     else applyTheme(next);
   });
   window.addEventListener("tea-theme-change", (event) => applyTheme(event.detail));

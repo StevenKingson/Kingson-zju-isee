@@ -43,9 +43,9 @@ def git_dates():
     for line in result.stdout.splitlines():
         if line.startswith('@@'):
             current = line[2:]
-        elif line.startswith('docs/') and (line.endswith('.md') or line[5:] in {'assets/watchlist.json', 'assets/gallery.json'}):
+        elif line.startswith('docs/') and (line.endswith('.md') or line[5:] in {'assets/anime/watchlist.json', 'assets/gallery.json'}):
             dates.setdefault(line[5:], current)
-    for source, dependency in {'acg/diary/index.md': 'assets/watchlist.json', 'acg/gallery/index.md': 'assets/gallery.json'}.items():
+    for source, dependency in {'acg/diary/index.md': 'assets/anime/watchlist.json', 'acg/gallery/index.md': 'assets/gallery.json'}.items():
         if dependency in dates:
             dates[source] = max(dates.get(source, ''), dates[dependency])
     return dates

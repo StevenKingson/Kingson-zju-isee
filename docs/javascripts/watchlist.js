@@ -80,7 +80,7 @@
       const sections = [
         { key: "watching", title: "正在追", intro: "按季度收藏，每周的期待。", groups: data.watching },
         { key: "planned", title: "打算补", intro: "好故事从不怕晚一点相遇。", groups: [{ season: "待补清单", anime: data.planned }] },
-        { key: "recommended", title: "疯狂推", intro: "看过之后，仍然念念不忘。", groups: [{ season: "我的心头好", anime: data.recommended }] }
+        { key: "recommended", title: "疯狂推", intro: data.recommendedIntro || "二刷、甚至 N 刷之后，依然想推荐给你的作品。", groups: [{ season: "我的心头好", anime: data.recommended }] }
       ];
       sections.forEach((section, index) => {
         const shelf = make("section", `anime-shelf anime-${section.key}`);

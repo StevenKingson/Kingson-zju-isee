@@ -50,3 +50,24 @@
 | `assets/anime/saiki-series.png` | [华纳兄弟探索：齐木楠雄节目官网](https://www.discoveryjapan.jp/cartoonnetwork/c1khkgwzg6zx/) | https://images.microcms-assets.io/assets/9ec4dfe3f47b409aa5fea482e9d272af/dc4be10622a24448a073f817800a69e5/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E2%91%A0.png?w=1200 |
 
 保留原始图片文件。齐木楠雄的官方节目图片左右带黑边，卡片沿用已有的 `coverFit: cover` 展示中央作品视觉图；点击“官方视觉图”可以打开完整出处。
+
+## 2026-10-27 追番清单扩充
+
+新增封面均保留官方宣传图片原文件，卡片下方附出处链接。
+
+| 本机文件（相对于 docs） | 官方作品页 | 图片原地址 |
+| --- | --- | --- |
+| `assets/anime/marriage-toxin.webp` | [婚姻剧毒](https://www.marriagetoxin-anime.com/) | https://www.marriagetoxin-anime.com/img/kv-01-jp_sp.webp |
+| `assets/anime/kamiina-botan.jpg` | [上伊那牡丹，酒醉身姿如百合花般](https://kamiina-botan.com/) | https://kamiina-botan.com/assets_teaser/img/main/visual01.jpg |
+| `assets/anime/witch-hat.jpg` | [尖帽子的魔法工房](https://tongari-anime.com/) | https://tongari-anime.com/main/assets/img/top/kv_3.jpg |
+| `assets/anime/oshi3.webp` | [我推的孩子 第三季](https://ichigoproduction.com/Season3/) | https://ichigoproduction.com/Season3/core_sys/images/main/home/kv3rd-05.webp |
+| `assets/anime/frieren2.jpg` | [葬送的芙莉莲 第二季](https://madhouse.co.jp/works/tv_frieren-anime_s2/) | https://madhouse.co.jp/cms-data/images/works/5awsurjb8y8h2586esdytf1puujk1e.jpg |
+| `assets/anime/medalist2.jpg` | [金牌得主 第二季](https://kadokawa-animation.jp/lineup/medalist-pr) | https://kadokawa-animation.jp/wp-content/uploads/2026/03/M141302.jpg |
+| `assets/anime/mabotai2.webp` | [魔都精兵的奴隶 第二季](https://mabotai.jp/) | https://mabotai.jp/img/home/visual_05.webp?6 |
+| `assets/anime/watanare.webp` | [我们不可能成为恋人！绝对不行。（※似乎可行？）](https://www.watanare-anime.com/) | https://www.watanare-anime.com/wordpress/wp-content/themes/watanare-anime_v3/assets/webp/sp/img_kv03.webp |
+| `assets/anime/bakatest.jpg` | [笨蛋测验召唤兽](https://kadokawa-animation.jp/lineup/bakatest) | https://kadokawa-animation.jp/wp-content/uploads/2026/03/M109601.jpg |
+| `assets/anime/summertime.webp` | [夏日重现](https://summertime-anime.com/) | https://summertime-anime.com/wp/wp-content/themes/summertime-main/_assets/images/top/kv/webp/kv_004_sp2.webp |
+| `assets/anime/chainsaw-reze.webp` | [电锯人系列](https://chainsawman.dog/movie_reze/) | https://chainsawman.dog/movie_reze/assets/img/top/kv_visual4.webp |
+| `assets/anime/junji-ito.jpg` | [伊藤润二作品系列](https://ji-anime.com/) | https://ji-anime.com/wordpress/wp-content/themes/ij-maniac/assets/images/main-visual.jpg |
+| `assets/anime/konosuba.jpg` | [为美好的世界献上祝福系列](https://konosuba.com/3rd/) | https://konosuba.com/3rd/assets/img/index/mv5.jpg |
+| `assets/anime/panty-stocking.jpg` | [吊带袜天使系列](https://newpsg.com/) | https://newpsg.com/assets/img/top/visual2.jpg |

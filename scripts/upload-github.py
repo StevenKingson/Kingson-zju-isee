@@ -108,6 +108,7 @@ class Publisher:
         self.run("更新画集目录", [python, "scripts/update-gallery.py"])
         self.run("更新 BGM 曲库", [python, "scripts/update-music.py"])
         self.run("更新追番目录", [python, "scripts/update-watchlist.py"])
+        self.run("补充更新日志", [python, "scripts/update-changelog.py"])
         self.run("生成可双击阅读的操作指南", [python, "scripts/build-guide.py"])
         self.run("检查并构建网站", [python, "-m", "mkdocs", "build", "--strict"])
 

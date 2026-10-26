@@ -7,6 +7,8 @@ hide:
 
 把想再看的内容留在这里，下次来时接着读。
 
+[查看完整更新日志 →](../changelog/index.md)
+
 <div class="reading-desk" data-reading-desk>
 <p>正在打开阅读书签…</p>
 </div>

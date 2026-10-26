@@ -1,0 +1,5 @@
+.md-typeset .site-changelog h2 { padding-left: .8rem; border-left: 3px solid var(--tea-accent); color: var(--tea-accent); scroll-margin-top: 5rem; }
+.md-typeset .site-changelog h3 { font-size: .9rem; margin-top: 1.2rem; }
+.md-typeset .site-changelog > ul { padding: .5rem .8rem .5rem 1.8rem; border: 1px solid var(--tea-border); border-radius: .65rem; background: var(--tea-soft); }
+.md-typeset .site-changelog li { margin-block: .55rem; line-height: 1.9; }
+@media (max-width: 600px) { .md-typeset .site-changelog > ul { padding-left: 1.4rem; } }
