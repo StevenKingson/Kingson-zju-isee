@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# 书签与更新
+# 阅读书签
 
 把想再看的内容留在这里，下次来时接着读。
 
-[查看完整更新日志 →](../changelog/index.md)
+这里是你的个人阅读角落，保存收藏和最近浏览；网站有什么新变化，请看[更新日志](../changelog/index.md)。
 
 <div class="reading-desk" data-reading-desk>
 <p>正在打开阅读书签…</p>

@@ -77,7 +77,7 @@
     const persisted = save(BOOKMARKS, next);
     refreshBookmarks();
     const status = document.querySelector(".reading-feedback");
-    if (status) status.textContent = persisted ? (exists ? "已移除书签" : "已收藏，可在「书签与更新」找回")
+    if (status) status.textContent = persisted ? (exists ? "已移除书签" : "已收藏，可在「阅读书签」找回")
       : "浏览器未允许保存，书签暂存到本次页面关闭前。";
   }
   function bookmarkButton(title, url, compact = false) {
@@ -222,19 +222,19 @@
     updateCategories(); updateYears(); render();
   }
 
-  function renderDesk(host, data) {
+  function renderDesk(host) {
     host.replaceChildren();
     const privacy = make("p", "desk-privacy", "书签和最近浏览只保存在当前浏览器；无需登录，清除浏览器数据后会丢失。" );
     host.append(privacy);
     function section(title, note, entries, kind) {
       const area = make("section", "desk-section");
       const header = make("div", "discovery-heading");
-      header.append(make("h2", "", title), make("span", "discovery-count", `${entries.length}${kind === "updates" ? " 条" : " 篇"}`));
+      header.append(make("h2", "", title), make("span", "discovery-count", `${entries.length} 篇`));
       area.append(header, make("p", "desk-note", note));
       if (!entries.length) {
         const empty = make("div", "discovery-empty");
         const message = kind === "saved" ? "还没有书签。在文章标题下点击「☆ 收藏本页」，就能把它留在这里。"
-          : kind === "updates" ? "暂时没有更新记录，课程仍可从导航正常阅读。" : "读过的课程笔记和文章会出现在这里。";
+          : "读过的课程笔记和文章会出现在这里。";
         empty.append(make("p", "", message), link("去课程页逛逛 →", "course/"));
         area.append(empty);
       } else {
@@ -242,15 +242,14 @@
         for (const entry of entries) {
           const item = make("li");
           const copy = make("div"); copy.append(link(entry.title, entry.url));
-          if (kind === "updates") copy.append(make("p", "desk-row-meta", `${entry.date}${entry.section ? " · " + entry.section : ""}`));
-          else copy.append(make("p", "desk-row-meta", `${kind === "saved" ? "收藏于" : "阅读于"} ${new Date(entry.time).toLocaleDateString("zh-CN")}`));
+          copy.append(make("p", "desk-row-meta", `${kind === "saved" ? "收藏于" : "阅读于"} ${new Date(entry.time).toLocaleDateString("zh-CN")}`));
           item.append(copy);
           if (kind === "saved") {
             const remove = make("button", "desk-remove", "移除"); remove.type = "button";
             remove.setAttribute("aria-label", `移除书签：${entry.title}`);
             remove.addEventListener("click", () => {
               save(BOOKMARKS, read(BOOKMARKS).filter((p) => p.url !== entry.url));
-              renderDesk(host, data);
+              renderDesk(host);
               host.querySelector(".desk-section h2")?.focus();
             }, {signal: pageEvents.signal});
             item.append(remove);
@@ -264,7 +263,6 @@
     }
     section("我的收藏", "把常用课程和想回看的内容放在一起。", read(BOOKMARKS), "saved");
     section("最近浏览", "保留最近打开的 8 个页面，方便继续阅读。", read(HISTORY, 8), "history");
-    section("最近更新", "近期补充或修改的内容，从这里看看有什么新东西。", data.updates, "updates");
   }
 
   async function initialize() {
@@ -277,16 +275,18 @@
     global.addEventListener("storage", (event) => {
       if ([BOOKMARKS, HISTORY].includes(event.key)) refreshBookmarks();
     }, {signal});
-    if (!explorer && !desk) return;
+    if (desk) {
+      renderDesk(desk);
+      global.addEventListener("storage", (event) => {
+        if ([BOOKMARKS, HISTORY].includes(event.key)) renderDesk(desk);
+      }, {signal});
+    }
+    // Bookmarks work offline and do not depend on the course catalogue request.
+    if (!explorer) return;
     try {
       const data = await loadCatalogue();
       if (signal.aborted) return;
       if (explorer) setupExplorer(explorer, data);
-      if (desk) renderDesk(desk, data);
-      global.addEventListener("storage", (event) => {
-        if (![BOOKMARKS, HISTORY].includes(event.key)) return;
-        if (desk) renderDesk(desk, data);
-      }, {signal});
     } catch {
       if (signal.aborted) return;
       const host = explorer || desk;

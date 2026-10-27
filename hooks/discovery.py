@@ -1,8 +1,7 @@
-"""Build the course finder and update list from existing content, without a second catalogue."""
+"""Build the course finder from the existing navigation, without a second catalogue."""
 import json
 from pathlib import Path
 import re
-import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 ALIASES = {
@@ -31,31 +30,10 @@ def page_url(source):
     return source[:-8] if source.endswith('index.md') else source[:-3] + '/'
 
 
-def git_dates():
-    try:
-        result = subprocess.run(
-            ['git', '-c', 'core.quotepath=false', 'log', '--format=@@%cs', '--name-only', '--', 'docs'],
-            cwd=ROOT, capture_output=True, encoding='utf-8', check=True, timeout=20,
-        )
-    except (OSError, subprocess.SubprocessError):
-        return {}
-    dates, current = {}, ''
-    for line in result.stdout.splitlines():
-        if line.startswith('@@'):
-            current = line[2:]
-        elif line.startswith('docs/') and (line.endswith('.md') or line[5:] in {'assets/anime/watchlist.json', 'assets/gallery.json'}):
-            dates.setdefault(line[5:], current)
-    for source, dependency in {'acg/diary/index.md': 'assets/anime/watchlist.json', 'acg/gallery/index.md': 'assets/gallery.json'}.items():
-        if dependency in dates:
-            dates[source] = max(dates.get(source, ''), dates[dependency])
-    return dates
-
-
 def build_catalogue(config):
     docs = Path(config['docs_dir'])
     navigation = list(nav_pages(config['nav']))
-    dates = git_dates()
-    courses, pages = [], []
+    courses = []
     for source, crumbs in navigation:
         file = docs / source
         if not file.is_file():
@@ -76,13 +54,7 @@ def build_catalogue(config):
                 'resources': page_url(str((folder / 'resources/index.md').relative_to(docs)).replace('\\', '/')) if (folder / 'resources/index.md').is_file() else None,
                 'downloads': downloads,
             })
-        # Index pages aggregate other pages and aren't useful as update announcements.
-        if source not in {'index.md', 'course/index.md', 'course/year1/index.md', 'course/year2/index.md', 'desk/index.md'} and source in dates:
-            pages.append({'title': title, 'url': page_url(source), 'section': ' / '.join(crumbs[:-1]), 'date': dates[source]})
-    # Keep one entry for a page even if it appears twice in the navigation.
-    unique = {page['url']: page for page in pages}
-    updates = sorted(unique.values(), key=lambda p: (p['date'], p['url']), reverse=True)[:18]
-    return {'courses': courses, 'updates': updates}
+    return {'courses': courses}
 
 
 def on_post_build(config, **kwargs):

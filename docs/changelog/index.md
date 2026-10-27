@@ -7,7 +7,24 @@ hide:
 
 记录茶会一点一点长成现在模样的过程：新功能、新资料，还有新遇见的故事。
 
-[课程笔记](../course/index.md) · [追番日记](../acg/diary/index.md) · [书签与最近更新](../desk/index.md)
+[课程笔记](../course/index.md) · [追番日记](../acg/diary/index.md) · [阅读书签](../desk/index.md)
+
+<section class="site-stats" data-site-stats aria-label="茶会运行概况">
+  <div class="site-stat">
+    <span class="site-stat-label">茶会已开张</span>
+    <strong data-site-uptime>正在计算…</strong>
+    <span class="site-stat-detail">自 <time datetime="2026-10-22T17:08:29+08:00">2026.10.22</time> 起</span>
+  </div>
+  <div class="site-stat">
+    <span class="site-stat-label">累计访问人次 · PV</span>
+    <strong data-site-visits>正在读取…</strong>
+    <span class="site-stat-detail" data-site-visits-status>全站页面访问次数，重复访问也会计入</span>
+  </div>
+</section>
+
+<p class="site-stats-note">访问数据由<a href="https://busuanzi.ibruce.info/">不蒜子</a>提供，从接入后开始累计，无法补计此前访问；统计按本站域名汇总。本地预览不计数。服务不可用时会显示提示。</p>
+
+<noscript>运行时间与访问统计需要启用 JavaScript；下方更新日志仍可正常阅读。</noscript>
 
 早期记录按项目历史补录。最新改动放在最上面；只在本地体验过的功能会单独标注。
 
@@ -16,6 +33,13 @@ hide:
 <div class="site-changelog" markdown="1">
 
 ## 2026-10-27
+
+### 阅读入口、站点概况与评分调整
+
+- **阅读书签**：将“书签与更新”改为“阅读书签”，只保留收藏和最近浏览，网站变化统一在本页查看。
+- **外部链接**：课程资源、友链、个人主页等站外网页统一在新标签页打开，站内阅读和页内跳转保持原有方式。
+- **站点概况**：本页新增开站时长计时器和全站访问人次；本地预览不计入访问量，公开网站开始记录真实访问。
+- **评分调整**：《我推的孩子 第三季》由 7 分改为 8 分，保留原有评价。
 
 ### 更新日志、追番清单与系统主题
 

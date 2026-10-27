@@ -164,11 +164,12 @@ nav:
 - 友链: friends/index.md
 - 关于: about/index.md
 - 留言板: guestbook/index.md
-- 书签与更新: desk/index.md
+- 阅读书签: desk/index.md
 - 更新日志: changelog/index.md
 
 hooks:
   - hooks/discovery.py
+  - hooks/external_links.py
 
 extra_css:
   - stylesheets/extra.css
@@ -180,6 +181,8 @@ extra_css:
   - stylesheets/changelog.css
 
 extra_javascript:
+  - javascripts/site-links.js
+  - javascripts/site-stats.js
   - javascripts/site.js
   - javascripts/music-rhythm.js
   - javascripts/music-shuffle.js

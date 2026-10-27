@@ -2,7 +2,6 @@
 import importlib.util
 from pathlib import Path
 import unittest
-from datetime import date
 from mkdocs.config import load_config
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,14 +38,9 @@ class DiscoveryTests(unittest.TestCase):
         numerical = next(c for c in self.data['courses'] if 'numerical-analysis/' in c['url'])
         self.assertTrue(numerical['resources'])
 
-    def test_update_dates_come_from_history(self):
-        self.assertTrue(self.data['updates'])
-        for page in self.data['updates']:
-            date.fromisoformat(page['date'])
-            self.assertTrue(page['title'])
-            self.assertNotEqual(page['url'], 'desk/')
-            self.assertTrue((ROOT / 'docs' / (page['url'] + 'index.md')).is_file()
-                            or (ROOT / 'docs' / (page['url'].rstrip('/') + '.md')).is_file())
+    def test_catalogue_only_contains_courses(self):
+        # Public updates have one home: the manually maintained changelog.
+        self.assertEqual(set(self.data), {'courses'})
 
 
 if __name__ == '__main__':
