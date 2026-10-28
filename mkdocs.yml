@@ -182,6 +182,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/site-links.js
+  - javascripts/visit-session.js
   - javascripts/site-stats.js
   - javascripts/site.js
   - javascripts/music-rhythm.js

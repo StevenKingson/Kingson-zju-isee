@@ -16,13 +16,13 @@ hide:
     <span class="site-stat-detail">自 <time datetime="2026-10-22T17:08:29+08:00">2026.10.22</time> 起</span>
   </div>
   <div class="site-stat">
-    <span class="site-stat-label">累计访问人次 · PV</span>
+    <span class="site-stat-label">累计来访次数</span>
     <strong data-site-visits>正在读取…</strong>
-    <span class="site-stat-detail" data-site-visits-status>全站页面访问次数，重复访问也会计入</span>
+    <span class="site-stat-detail" data-site-visits-status>同一次来访只计一次，切换页面和刷新不重复计数</span>
   </div>
 </section>
 
-<p class="site-stats-note">访问数据由<a href="https://www.vercount.one/">Vercount</a>提供，按本站域名汇总，不代表独立访客人数，无法还原接入前的完整历史。本地预览不计数。连接失败时会标注上次成功读数及时间，没有历史读数时显示提示。</p>
+<p class="site-stats-note">同一浏览器的多个标签页合并为一次来访，正常关闭本站最后一个标签页后，再次进入算新来访；异常退出按 30 分钟无活动结束。来访次数从本次口径调整后单独累计，不混入旧的页面浏览量，不等于独立人数；无法识别同一人的不同浏览器或设备。数据由<a href="https://www.vercount.one/">Vercount</a>提供，本地预览不计数。连接失败时明确标注上次读数。</p>
 
 <noscript>运行时间与访问统计需要启用 JavaScript；下方更新日志仍可正常阅读。</noscript>
 
@@ -33,6 +33,11 @@ hide:
 <div class="site-changelog" markdown="1">
 
 ## 2026-10-28
+
+### 统计口径调整
+
+- **来访次数**：改为“从进入到离开算一次”，同一次来访切换页面、刷新和打开多个标签页不重复累计；正常关闭本站最后一个标签页后，再次进入算新来访，异常退出使用 30 分钟无活动兜底。
+- **独立计数**：来访次数从新口径单独累计，不将原有页面浏览量转换或混入；页面后续读取总数不再触发累计。
 
 ### 访问统计与番剧排版修复
 
