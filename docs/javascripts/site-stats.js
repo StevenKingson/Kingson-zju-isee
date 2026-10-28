@@ -1,9 +1,9 @@
-/* Site age is local; shared visit counts come from the public Busuanzi service. */
+/* Site age is local; shared visit counts come from the public Vercount service. */
 ((global) => {
   "use strict";
   const OPENED_AT = "2026-10-22T17:08:29+08:00";
   const PUBLIC_ROOT = "https://stevenkingson.github.io/Kingson-zju-isee/";
-  const COUNTER_ENDPOINT = "https://busuanzi.ibruce.info/busuanzi";
+  const COUNTER_ENDPOINT = "https://events.vercount.one/api/v2/log";
   function uptime(now, start = Date.parse(OPENED_AT)) {
     let seconds = Math.max(0, Math.floor((now - start) / 1000));
     const days = Math.floor(seconds / 86400); seconds %= 86400;
@@ -22,7 +22,16 @@
   }
   if (typeof module !== "undefined" && module.exports) module.exports = { uptime, isPublicPage, visitValue };
   if (typeof document === "undefined") return;
-  let timer, sequence = 0, visits = null, state = "loading";
+  const CACHE_KEY = "tea-site-visits-vercount-v1";
+  let timer, sequence = 0, visits = null, readAt = 0, state = "loading";
+  if (isPublicPage(location.href)) {
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+      if (visitValue(cached?.value) !== null && Number.isFinite(cached?.time)) {
+        visits = cached.value; readAt = cached.time; state = "cached";
+      }
+    } catch { /* Storage is optional and contains only the last public count. */ }
+  }
   function render() {
     const clock = document.querySelector("[data-site-uptime]");
     if (clock) clock.textContent = uptime(Date.now());
@@ -30,41 +39,42 @@
     const detail = document.querySelector("[data-site-visits-status]");
     if (!counter) return;
     counter.textContent = state === "local" ? "上线后开始统计"
-      : visits !== null ? `${visits.toLocaleString("zh-CN")} 次`
+      : visits !== null ? `${visits.toLocaleString("zh-CN")} 次${state !== "ready" ? "（上次读数）" : ""}`
         : state === "error" ? "暂不可用" : "正在读取…";
+    if (!detail) return;
     detail.textContent = state === "local" ? "本地预览不计入访问人次"
-      : state === "error" ? "统计服务暂不可用，下次打开页面时重试"
-        : "全站页面访问次数，重复访问也会计入";
+      : state !== "ready" && visits !== null ? `上次读取：${new Date(readAt).toLocaleString("zh-CN")}；${state === "error" ? "连接失败，下次打开页面时重试" : "正在更新"}`
+        : state === "error" ? "统计服务连接失败，下次打开页面时重试"
+          : "全站页面访问次数，重复访问也会计入";
   }
-  function countVisit() {
+  async function countVisit() {
     if (!isPublicPage(location.href)) { state = "local"; render(); return; }
     const request = ++sequence;
-    const callback = `teaVisit_${Date.now()}_${request}`;
-    const script = document.createElement("script");
-    let settled = false, timeout;
-    const cleanup = () => { clearTimeout(timeout); script.remove(); delete global[callback]; };
-    const fail = () => {
-      if (settled) return;
-      settled = true;
-      if (request === sequence) { state = "error"; render(); }
-      cleanup();
-    };
-    global[callback] = (data) => {
-      if (settled) return;
-      const value = visitValue(data?.site_pv);
-      if (value === null) { fail(); return; }
-      settled = true;
-      // A slow response from the previous page must not replace the newest count.
-      if (request === sequence) { visits = value; state = "ready"; render(); }
-      cleanup();
-    };
-    script.async = true;
-    script.src = `${COUNTER_ENDPOINT}?jsonpCallback=${callback}`;
-    script.referrerPolicy = "strict-origin-when-cross-origin";
-    script.onerror = fail;
-    script.onload = () => { if (!settled) fail(); };
-    timeout = setTimeout(fail, 10000);
-    document.head.append(script);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    // Only send the public page path: query strings, hashes and referrers aren't needed.
+    const page = new URL(location.href);
+    page.search = ""; page.hash = "";
+    state = visits === null ? "loading" : "cached"; render();
+    try {
+      const response = await fetch(COUNTER_ENDPOINT, {
+        method: "POST", headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({url: page.href, isNewUv: false}),
+        signal: controller.signal, credentials: "omit", referrerPolicy: "no-referrer"
+      });
+      if (!response.ok) throw Error("Counter request failed");
+      const data = await response.json();
+      const value = data?.status === "success" ? visitValue(data.data?.site_pv) : null;
+      if (value === null) throw Error("Invalid counter response");
+      if (request !== sequence) return;
+      visits = value; readAt = Date.now(); state = "ready";
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({value, time: readAt})); } catch { /* Optional. */ }
+    } catch {
+      if (request === sequence) state = "error";
+    } finally {
+      clearTimeout(timeout);
+      if (request === sequence) render();
+    }
   }
   function initialize() {
     clearInterval(timer);

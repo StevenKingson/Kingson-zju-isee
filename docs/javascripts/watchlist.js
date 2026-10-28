@@ -5,6 +5,7 @@
   const root = new URL("../", document.currentScript.src);
   const recommendationUrl = "https://github.com/StevenKingson/Kingson-zju-isee/issues/new?template=anime-recommendation.yml";
   let events;
+  let layoutObserver, layoutFrame;
   const make = (tag, className, text) => {
     const element = document.createElement(tag);
     element.className = className;
@@ -68,6 +69,8 @@
   }
   async function initialize() {
     events?.abort();
+    layoutObserver?.disconnect();
+    cancelAnimationFrame(layoutFrame);
     events = new AbortController();
     const { signal } = events;
     const target = document.getElementById("anime-watchlist");
@@ -148,6 +151,37 @@
       });
       if (!signal.aborted) {
         target.replaceChildren(shelves);
+        // Reserve enough room for complete titles at the current width, rather
+        // than truncating them or letting one column gradually drift downwards.
+        const blocks = [
+          [".anime-shelf-heading", "--anime-heading-block"],
+          [".anime-shelf-intro", "--anime-intro-block"],
+          [".anime-title", "--anime-title-block"],
+          [".anime-card-meta", "--anime-meta-block"]
+        ];
+        let previousWidth = -1;
+        const alignCards = () => {
+          if (signal.aborted) return;
+          for (const [, property] of blocks) shelves.style.removeProperty(property);
+          const heights = blocks.map(([selector]) => Math.ceil(Math.max(0,
+            ...[...shelves.querySelectorAll(selector)].map(node => node.getBoundingClientRect().height))));
+          blocks.forEach(([, property], i) => shelves.style.setProperty(property, `${heights[i]}px`));
+        };
+        const scheduleLayout = () => {
+          cancelAnimationFrame(layoutFrame);
+          layoutFrame = requestAnimationFrame(alignCards);
+        };
+        alignCards();
+        if (typeof ResizeObserver !== "undefined") {
+          layoutObserver = new ResizeObserver(entries => {
+            const width = entries[0].contentRect.width;
+            if (width === previousWidth) return;
+            previousWidth = width; scheduleLayout();
+          });
+          layoutObserver.observe(shelves);
+        }
+        window.addEventListener("resize", scheduleLayout, {signal});
+        document.fonts?.ready.then(() => { if (!signal.aborted) scheduleLayout(); });
         if (location.hash.startsWith("#anime-watching-season-")) {
           document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" });
         }

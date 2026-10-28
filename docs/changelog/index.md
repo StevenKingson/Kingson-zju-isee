@@ -22,7 +22,7 @@ hide:
   </div>
 </section>
 
-<p class="site-stats-note">访问数据由<a href="https://busuanzi.ibruce.info/">不蒜子</a>提供，从接入后开始累计，无法补计此前访问；统计按本站域名汇总。本地预览不计数。服务不可用时会显示提示。</p>
+<p class="site-stats-note">访问数据由<a href="https://www.vercount.one/">Vercount</a>提供，按本站域名汇总，不代表独立访客人数，无法还原接入前的完整历史。本地预览不计数。连接失败时会标注上次成功读数及时间，没有历史读数时显示提示。</p>
 
 <noscript>运行时间与访问统计需要启用 JavaScript；下方更新日志仍可正常阅读。</noscript>
 
@@ -31,6 +31,13 @@ hide:
 <!-- changelog:entries -->
 
 <div class="site-changelog" markdown="1">
+
+## 2026-10-28
+
+### 访问统计与番剧排版修复
+
+- **访问统计**：排查原接口超时，切换至已实测返回数字的 Vercount 接口；连接失败时保留并明确标注上次成功读取的数字和时间，本地预览仍不计数。
+- **番剧卡片**：三栏说明、标题和评分来源区域按当前宽度统一高度，让同排封面与后续卡片对齐；保留完整长标题，窗口缩放或手机横竖屏切换时自动重新排版。
 
 ## 2026-10-27
 
