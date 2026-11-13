@@ -8,7 +8,22 @@
 
 ## 课程资料
 
-- [专题报告 1（PDF）](resources/essay-1.pdf)
-- [专题报告 2（PDF）](resources/essay-2.pdf)
-- [专题报告 3（PDF）](resources/essay-3.pdf)
-- [期末论文（PDF）](resources/final-paper.pdf)
+<details class="report-pdf" data-pdf="resources/essay-1.pdf">
+<summary>专题报告 1 · 展开 PDF 预览</summary>
+<p><a href="resources/essay-1.pdf" download>下载专题报告 1</a></p>
+</details>
+
+<details class="report-pdf" data-pdf="resources/essay-2.pdf">
+<summary>专题报告 2 · 展开 PDF 预览</summary>
+<p><a href="resources/essay-2.pdf" download>下载专题报告 2</a></p>
+</details>
+
+<details class="report-pdf" data-pdf="resources/essay-3.pdf">
+<summary>专题报告 3 · 展开 PDF 预览</summary>
+<p><a href="resources/essay-3.pdf" download>下载专题报告 3</a></p>
+</details>
+
+<details class="report-pdf" data-pdf="resources/final-paper.pdf">
+<summary>期末论文 · 展开 PDF 预览</summary>
+<p><a href="resources/final-paper.pdf" download>下载期末论文</a></p>
+</details>
